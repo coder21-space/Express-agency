@@ -4,53 +4,51 @@ $("#connect").on("submit", function (e) {
     e.preventDefault();
 
     var name = $("#name").val();
-
     var email = $("#email").val();
     var phone = $("#phone").val();
-
-    
-
-
     var error = false;
 
-
-
-    if (name.length == 0) {
+    if (isEmpty(name)){
         error = true;
-        $("#name_error").html("name should not be blank");
-        $('#name_error').css("color", "red");
-       
+        $("#name_error").text("name should not be blank");
+        
     }
     else{
-        $("#name_error").html("");
-
+        $("#name_error").text("");
     }
-
-    if (email.length == 0) {
+    if (isEmpty(email)){
         error = true;
-        $("#email_error").html("email should not be blank");
-        $('#email_error').css("color", "red");
+        $("#email_error").text("email should not be blank");
 
     }
     else{
-        $("#email_error").html("");
-
+        $("#email_error").text("");
     }
     
-    if (phone.length == 0) {
+    if (isEmpty(phone)){
         error = true;
         $("#phone_error").html("phone should not be blank");
-        $('#phone_error').css("color", "red");
+        
 
     }
     else{
-        $("#phone_error").html("");
-
+        $("#phone_error").text("");
+    }
+    if (isEmpty(message)){
+        error = true;
+        $("#message_error").text("message should not be blank");
+        
+    }
+    else{
+        $("#message_error").text("");
+    }
+    if(error){
+        return false;
     }
 
     $.ajax({
         type: "POST",
-        url: "validation.php",
+        url: "php/contact.php",
         data: $(this).serialize() + "&submit=true",
         cache: false,
         success: function (response) {

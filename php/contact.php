@@ -2,7 +2,8 @@
 
 require'function.php';
 
-if(isset($_POST["submit"])){
+//server validation request validation
+if(isset($_POST["submit"])){ 
 
       
     $name = $_POST["name"];
@@ -35,17 +36,19 @@ if(isset($_POST["submit"])){
     $phone = sql_prevent($conn,xss_prevent($_POST['phone']));
 
 
-    $sql = "INSERT INTO validation(name,email,phone,message)VALUES('$name','$email','$phone','$message')";
+    $sql = "INSERT INTO contact(name,email,phone,message)VALUES('$name','$email','$phone','$message')";
 
 
 
     
     if($conn->query($sql)==TRUE){
-        echo json_encode(array("success" => true, "message" => " $name cheak now message."));
+        echo json_encode(array("success" => true, "message" => " hello $name cheak now message."));
 
-    }else{
-        echo json_encode(array("success" => true, "message" => "some error"));
+    } else {
+        echo json_encode(array("success" => true, "message" => "Method not found"));
     }
-
+} else {
+    echo json_encode(array("success" => false, "message" => "Method not found"));
 }
+
 ?>
