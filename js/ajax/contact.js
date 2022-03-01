@@ -35,7 +35,7 @@ $("#connect").on("submit", function (e) {
     
     if (isEmpty(message)){
         error = true;
-        $("#message_error").text("**message should not be blank");       
+        $("#message_error").text("*message should not be blank");       
     }
     else{
         $("#message_error").text("");

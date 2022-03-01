@@ -154,39 +154,43 @@
           </div>
           <div class="row contact-form-design-area">
               <div class="col-lg12 col-md-12 col-xxl">
-                  <!-- START CONTACT FORM DESIGN AREA -->
-                  <div class="contact-form">
-                      <form id="connect" method="post" enctype="multipart/form-data">
-                          <div class="row">
-                              <div class="form-group col-md-4">
-                                  <input type="text" name="name" class="form-control" id="name" placeholder="Name" >
-                                  <span id="name_error"></span>
-                              </div>
-                              <div class="form-group col-md-4">
-                                  <input type="email" name="email" class="form-control" id="email" placeholder="Email" >
-                                  <span id="email_error"></span>
-                              </div>
-                              <div class="form-group col-md-4">
-                                  <input type="text" name="phone" class="form-control" id="phone" placeholder="phone">
-                                  <span id="phone_error"></span>
-                              </div>
-                              <div class="form-group col-md-12">
-                                  <textarea rows="6" name="message" class="form-control" id="message" placeholder="Your Message" ></textarea>
-                              </div>
-                              <div class="col-md-12 text-center">
-                                  <div class="actions wow fadeInUp" data-wow-delay=".4s">
-                                      <input type="submit" value="send message" name="submit" id="submit" class="" title="Submit Your Message!">
-                                  </div>
-                              </div>
-                          </div>
-                      </form>
-                  </div>
-                  <!-- / END CONTACT FORM DESIGN AREA -->
-              </div>
-          </div>
-      </div>
-  </section>
-  <!-- / END CONTACT DESIGN AREA -->
+                      <!-- START CONTACT FORM DESIGN AREA -->
+                      <div class="contact-form">
+                        <form id="connect"  method="post" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Name" >
+                                    <span class="text-danger" id="name_error"></span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="Email" >
+                                    <span class="text-danger" id="email_error"></span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" name="phone" class="form-control" id="phone" placeholder="phone">
+                                    <span class="text-danger"id="phone_error"></span>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <textarea rows="6" name="message" class="form-control" id="message" placeholder="Your Message" ></textarea>
+                                    <span class="text-danger"id="message_error"></span>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <div class="actions wow fadeInUp" data-wow-delay=".4s">
+                                        <input type="submit" value="send message" name="submit" id="submit" class="" title="Submit Your Message!">
+                                        <div id="loader"  class="spinner-grow text-danger "  role="status">
+                                       <span class="visually-hidden "  >Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- / ENd CONTACT FORM DESIGN AREA -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- / END CONTACT DESIGN AREA -->
 
 
    
@@ -301,8 +305,9 @@
     <!-- JavaScript -->
 
       <script src="js/jquery.js"></script>
-    <script src="js/ajax/contact.js"></script>
-    <script src="js/sweetalert.js"></script>
+      <script src="js/ajax/contact.js"></script>
+      <script src="js/sweetalert.js"></script>
+      <script src="js/ajax/common.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.nivo.slider.pack.js"></script>

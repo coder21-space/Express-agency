@@ -14,15 +14,12 @@ if ($_SERVER['SERVER_NAME'] == constant("HOST_NAME")) {
     $error = array();
 
      // validate data
-
      if (empty($name)) array_push($error, "Name is required");
     else if(preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=|!:,.;]*[-a-z0-9+&@#\/%=|]/i",$name))$error['name']="Name should be valid";
 
-
     if (empty($email)) array_push($error, "email is required");
     else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $error['email']="Email should  be valid";
-
-    
+   
     if (empty($phone)) array_push($error, "Phone is required");
     else if(!preg_match("/^(\+\d{1,3}[- ]?)?\d{10}$/",$phone))$error['phone']="please enter valied phone number";
 
