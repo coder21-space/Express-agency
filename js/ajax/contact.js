@@ -1,4 +1,4 @@
-$("#contact_submit_loader").hide();
+$("#loader").hide();
 $("#connect").on("submit", function (e) {
 
     e.preventDefault();
@@ -6,20 +6,20 @@ $("#connect").on("submit", function (e) {
     var name = $("#name").val();
     var email = $("#email").val();
     var phone = $("#phone").val();
+    var message = $("#message").val();
     var error = false;
 
     if (isEmpty(name)){
         error = true;
-        $("#name_error").text("name should not be blank");
-        
+        $("#name_error").text("*name should not be blank");       
     }
     else{
         $("#name_error").text("");
     }
+
     if (isEmpty(email)){
         error = true;
-        $("#email_error").text("email should not be blank");
-
+        $("#email_error").text("*email should not be blank");
     }
     else{
         $("#email_error").text("");
@@ -27,17 +27,15 @@ $("#connect").on("submit", function (e) {
     
     if (isEmpty(phone)){
         error = true;
-        $("#phone_error").html("phone should not be blank");
-        
-
+        $("#phone_error").text("*phone should not be blank");
     }
     else{
         $("#phone_error").text("");
     }
+    
     if (isEmpty(message)){
         error = true;
-        $("#message_error").text("message should not be blank");
-        
+        $("#message_error").text("**message should not be blank");       
     }
     else{
         $("#message_error").text("");
@@ -45,6 +43,9 @@ $("#connect").on("submit", function (e) {
     if(error){
         return false;
     }
+    
+    $("#submit").hide();
+    $("#loader").show();
 
     $.ajax({
         type: "POST",
@@ -52,8 +53,8 @@ $("#connect").on("submit", function (e) {
         data: $(this).serialize() + "&submit=true",
         cache: false,
         success: function (response) {
-            $("#btn").show();
-            $("#contact_submit_loader").hide();
+            $("#submit").show();
+            $("#loader").hide();
             response = JSON.parse(response);
             if (response.success === true) {
                 swal({
@@ -74,8 +75,8 @@ $("#connect").on("submit", function (e) {
                 title: "something went wrong",
                 text: response.message
             });
-            $("#btn").show();
-            $("#contact_submit_loader").hide();
+            $("#submit").show();
+            $("#loader").hide();
         },
     });
 });
