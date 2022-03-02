@@ -9,7 +9,5 @@ include 'connection.php';
     function sql_prevent($conn,$value){
 
         return mysqli_real_escape_string($conn,$value);
-
     }
-
 ?>

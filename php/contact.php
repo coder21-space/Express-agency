@@ -17,14 +17,14 @@ if ($_SERVER['SERVER_NAME'] == constant("HOST_NAME")) {
      if (empty($name)) array_push($error, "Name is required");
     else if(preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=|!:,.;]*[-a-z0-9+&@#\/%=|]/i",$name))$error['name']="Name should be valid";
 
-    if (empty($email)) array_push($error, "email is required");
+    if (empty($email)) array_push($error, "Email is required");
     else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $error['email']="Email should  be valid";
    
     if (empty($phone)) array_push($error, "Phone is required");
-    else if(!preg_match("/^(\+\d{1,3}[- ]?)?\d{10}$/",$phone))$error['phone']="please enter valied phone number";
+    else if(!preg_match("/^(\+\d{1,3}[- ]?)?\d{10}$/",$phone))$error['phone']="Please enter valied phone number";
 
-    if (empty($message)) array_push($error, "message is required");
-    else if(preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=|!:,.;]*[-a-z0-9+&@#\/%=|]/i",$name))$error['message']="message should be valid";
+    if (empty($message)) array_push($error, "Message is required");
+    else if(preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=|!:,.;]*[-a-z0-9+&@#\/%=|]/i",$name))$error['message']="Message should be valid";
 
     if (sizeof($error) > 0) {
         echo json_encode(array("success" => false, "data" => $error));

@@ -1,9 +1,11 @@
 ### kaushal Project Work List
 
 
-- [ ] new: resonsive website
-- [ ] button match with themes
-- [ ] banner
+- [ ]  resonsive website
+- [ ]  gallery section:- video icon fix ,magnific pop not working
+- [ ]  preloader
+- [ ]  image size reduce
+- [ ]  top header ui make best
 
 
 

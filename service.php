@@ -1,100 +1,22 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="images/icons8-truck-64.png" type="image/x-icon">
-       
+    <!--================INCLUDE HEAD START PHP=================-->
+    <?php  include_once'components/head_start.php' ?>
+    <!--================END INCLUDE HEAD END PHP=================-->
+
+    <link rel="icon" href="images/icons8-truck-64.png" type="image/x-icon">       
     <title>express agency</title>
-   
- 
-<!-- Icon css link -->      
-<link href="css/font-awesome.min.css" rel="stylesheet">
-<script src="https://kit.fontawesome.com/5f6d2ceec8.js" crossorigin="anonymous"></script>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/font-awesome.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
-    <!--  STYLE AND RESPONSIVE css -->
-    <link href="css/style.css" rel="stylesheet">
-   
-    <!-- scrollreveal ANIMATION -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-  </head>
-  <body>
+  <!--================INCLUDE HEAD END PHP=================-->
+    <?php  include_once'components/head_end.php' ?>
+  <!--================END INCLUDE HEAD END PHP=================-->
 
     <!-- Preloader -->
     <!-- <div id="preloader">
       <div id="status"></div>
     </div> -->
 
-    <!-- Header Top start -->
-    <section class="header-top">
-     <div class="container">
-       <div class="row">
-         <div class="col-md-4 col-sm-5 text-center text-md-left">
-            <ul class="company-marquee">
-              <li>We are Trusted Company</li>
-            </ul>
-         </div>
-         <div class="col-md-8 col-sm-7 text-center text-md-right ml-auto">
-           <div class="language">
-             <span> <i class="fa-solid fa-phone"></i>+917011432718</span>
-            
-           </div>
-           <div class="signup">
-             <a href="mailto:info@code4webs.com">Expresstransport@gmail.com</a>
-           </div>
-         </div>
-       </div>
-     </div>
-    </section>
-    <!-- Header Top end -->
-
-    <!-- Header start -->
-    <header class="header-sec">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-3">
-           
-            <a href="index.html" class="logo"><img src="images/E-removebg-preview.png" alt=""></a>
-
-          </div>
-          <div class="col-md-9">
-            <nav class="nav-menu text-right">
-              <div class="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <ul class="primary-menu">
-                <li class="current-menu-item menu-item-has-children">
-                  <a href="index.html">home</a>
-                </li>
-                <li><a href="aboutus.html">about us</a></li>
-                <li><a href="service.html">service</a></li>
-                <li><a href="gallery.html">gallery</a></li>
-                <li><a href="contactus.html">contact</a></li>
-              </ul>              
-            </nav>
-            <form action="index.html" method="post" class="searchWrap">
-              <a href="javaScript:void(0);" class="search-btn"></a>
-              <input type="text" class="head-searchBox" placeholder="Search here..." required>
-            </form>
-          </div>
-        </div>
-      </div>
-    </header>
-    <!-- Header end -->
-        <!--================ end navbar section================ -->
+<!--================INCLUDE HEADER NAV PHP=================-->
+    <?php include_once 'components/header.php' ?>
+<!--================END INCLUDE HEADER NAV PHP=================-->  
 
         <!--================Banner Area =================-->
         <section class="callToAct-sec overlay-dblue">
@@ -204,7 +126,7 @@
                         </div>
                     </div>
                     <p style="justify-content: center;">We Deliver what we promise!” is not a tag line that we invented, it is actually how customers describe us. ... We follow our clients' individual directions, fulfill their demands and requirements, and we also give them our technical advice so that they know all their options and their investments are in place and on time.</p>
-                    <a class="readmore_btn balck_btn" href="readmore.html">Read more</a>
+                    <a class="readmore_btn balck_btn" href="readmore.php">Read more</a>
                 </div>
             </div>
             <div class="col-md-4">
@@ -219,7 +141,7 @@
                     </div>
                     <p>
                         Our Operations and award-winning Customer Service teams are at the heart of Amazon’s mission to be Earth’s most customer-centric company. Together, we create, we build, and we take ownership for what we do—whether we’re developing new technology in-house, launching an Amazon fulfillment center.</p>
-                    <a class="readmore_btn balck_btn" href="readmore.html">Read more</a>
+                    <a class="readmore_btn balck_btn" href="readmore.php">Read more</a>
                 </div>
             </div>
             <div class="col-md-4">
@@ -233,7 +155,7 @@
                         </div>
                     </div>
                     <p>Timely deliveries make for high customer and client satisfaction. Not only will receiving their goods on time please them but courteous courier services will make for a pleasant delivery process. Certain goods have an expiration date, which is why they may need to be delivered within strict timeframes. </p>
-                    <a class="readmore_btn balck_btn" href="">Read more</a>
+                    <a class="readmore_btn balck_btn" href="readmore.php">Read more</a>
                 </div>
             </div>
         </div>
@@ -303,136 +225,18 @@
       </div>
   </div>
 </section>
-                   <!--================ /ENDSTART SERVICE CARD DESIGN AREA  =================-->
-       
-     
-        <!-- START FOOTER DESIGN AREA -->
-        <footer class="bg-black text-white pt-5 pb-4" >
-  
-          <div class="container text-center text-md-left">
-        
-            <div class="row text-center text-md-left">
-        
-              <div class=" col-lg-2  mx-auto mt-3">
-                <img src="images/E-removebg-preview.png" alt="" style="width: 200px; height: 120px;">
-                <p></p>
-              </div>
-        
-              <div class="col-md-3 col-lg-3 col-xl-2 mx-auto mt-3">
-                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Services</h5>
-                <p>
-                  <a href="contactus.html" class="text-white" style="text-decoration: none;">book now</a>
-                </p>
-                <p>
-                  <a href="index.html" class="text-white" style="text-decoration: none;">deshboard</a>
-                </p>
-                <p>
-                  <a href="service.html" class="text-white" style="text-decoration: none;">services</a>
-                </p>
-                <p>
-                  <a href="contactus.html" class="text-white" style="text-decoration: none;">Checkout</a>
-                </p>
-        
-        
-              </div>
-        
-              <div class=" col-lg-3 mx-auto mt-3">
-                <h5 class="text-uppercase mb-4 font-weight-bold text-warning hov">
-                  Useful Links
-                </h5>
-                <p>
-                  <a href="index.html" class="text-white" style="text-decoration: none;">Home</a>
-                </p>
-                <p>
-                  <a href="aboutus.html" class="text-white" style="text-decoration: none;">about us</a>
-                </p>
-                <p>
-                  <a href="gallery.html" class="text-white" style="text-decoration: none;"><gallery/a>
-                </p>
-                <p>
-                  <a href="service.html" class="text-white" style="text-decoration: none;">services</a>
-                </p>
-                <p>
-                  <a href="contactus.html" class="text-white" style="text-decoration: none;">Contact Us</a>
-                </p>
-              </div>
-        
-              <div class="col-3 offset-1">
-                <form>
-                
-                 <P><h5 class="text-uppercase mb-4 font-weight-bold text-warning" style="bottom :180px;">We provide best security</h5></P>
-                  <h6 class="text-uppercase mb-4 font-weight-bold text" style="bottom :180px;"> 
-  
-                    no one else can be faster than express</h6></form>                 
-                </form>
-                  <div class="col-md-5 col-lg-4">
-                    <div class="text-center text-md-right">
-                      <ul class="list-unstyled list-unstyled d-flex">
-                        <li class="list-unstyled-item  display-flex">
-                          <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px; display: inline-block;"><i class="fab fa-instagram"></i></a>
-                        </li>
-                        <li class="list-unstyled-item ">
-                          <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px; display: inline-block;"><i class="fab fa-youtube"></i></a>
-                        </li>
-                        <li class="list-unstyled-item ">
-                          <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px; display: inline-block;"><i class="fab fa-snapchat"></i></a>
-                        </li>
-                        <li class="list-unstyled-item ">
-                          <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px; display: inline-block;"><i class="fab fa-twitter"></i></a>
-                        </li>
-                        <li class="list-unstyled-item ">
-                          <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px; display: inline-block;"><i class="fab fa-google"></i></a>
-                        </li>
-                        <li class="list-unstyled-item ">
-                          <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px; display: inline-block;"><i class="fab fa-facebook"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>       
-              </div>
-  
-              
-              <hr class="mb-3">
-        
-                <div class="row align-items-center">
-                  <div class="col-md- col-lg-12">
-                    <p>&copy;copyright | express 2021.all right Reserved </p>
-                    <a href="index.html">
-                      <strong class="text-warning">express </strong>
-                    </a>
-                  </div>
-        
-                </div>     
-          </div>
-         </footer>
-    <!-- / END FOOTER  AREA -->   
+<!--================ /ENDSTART SERVICE CARD DESIGN AREA ===========-->
 
-    <!-- Scroll to Top  -->
-    <a href="JavaScript:void(0);" id="back-to-top">
-      <i class="fa fa-arrow-up"></i>
- 
-    </a>
+<!--================INCLUDE FOOTER PHP=================-->
+<?php include_once'components/footer.php'?>  
+<!--================END INCLUDE FOOTER PHP=================--> 
 
+<!--================INCLUDE SCRIPT START PHP=================-->
+    <?php include_once'components/script_start.php'?>
+<!--================END INCLUDE SCRIPT START PHP=================--> 
 
-    <!-- JavaScript -->
+<!--================INCLUDE SCRIPT END PHP=================-->
+    <?php include_once'components/script_end.php'?>
+<!--================END INCLUDE SCRIPT END PHP=================-->
     
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nivo.slider.pack.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-   <script src="js/jquery.fancybox.min.js"></script>    <!-- //video -->
-    <script src="js/wow.min.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/jquery-2.1.4.min.js"></script>
-    <script src="js/theme.js"></script>
 
-     <!-- Extra plugin js -->
-         
-     <script src="js/jquery-modal-video.min.js"></script>
-     <script src="js/video_player.js"></script> 
-     <script src="js/scroll.js"></script>     
-
-
-
-  </body>
-</html>

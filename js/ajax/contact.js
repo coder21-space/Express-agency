@@ -11,7 +11,7 @@ $("#connect").on("submit", function (e) {
 
     if (isEmpty(name)){
         error = true;
-        $("#name_error").text("*name should not be blank");       
+        $("#name_error").text("*Name should not be blank");       
     }
     else{
         $("#name_error").text("");
@@ -19,7 +19,7 @@ $("#connect").on("submit", function (e) {
 
     if (isEmpty(email)){
         error = true;
-        $("#email_error").text("*email should not be blank");
+        $("#email_error").text("*Email should not be blank");
     }
     else{
         $("#email_error").text("");
@@ -27,7 +27,7 @@ $("#connect").on("submit", function (e) {
     
     if (isEmpty(phone)){
         error = true;
-        $("#phone_error").text("*phone should not be blank");
+        $("#phone_error").text("*Phone should not be blank");
     }
     else{
         $("#phone_error").text("");
@@ -35,7 +35,7 @@ $("#connect").on("submit", function (e) {
     
     if (isEmpty(message)){
         error = true;
-        $("#message_error").text("*message should not be blank");       
+        $("#message_error").text("*Message should not be blank");       
     }
     else{
         $("#message_error").text("");
