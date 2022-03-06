@@ -21,13 +21,13 @@
             <li>
                 <a href="#sidebarTables" data-bs-toggle="collapse">
                     <i class="mdi mdi-table"></i>
-                    <span> Tables </span>
+                    <span> User contact </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarTables">
                     <ul class="nav-second-level">
                         <li>
-                            <a href="tables-datatables.php">Data Tables</a>
+                            <a href="contactus.php">Contact us</a>
                         </li>
                         
                     </ul>
