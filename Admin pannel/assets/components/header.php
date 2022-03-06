@@ -1,132 +1,110 @@
-  <!-- ========== Left Sidebar Start ========== -->
-  <div class="left-side-menu">
+<?php 
 
-<div class="h-100" data-simplebar>
+include 'php/function.php';
+if(!user_check($conn) ){
+    header('location:index.php');
+}
+?>
+<!-- Topbar Start -->
+<div class="navbar-custom">
+                    <ul class="list-unstyled topnav-menu float-end mb-0">
+                    
 
-     <!-- User box -->
-    <div class="user-box text-center">
-
-        <img src="assets/images/users/user-1.jpg" alt="user-img" title="Mat Helme" class="rounded-circle img-thumbnail avatar-md">
-            <div class="dropdown">
-                <a href="#" class="user-name dropdown-toggle h5 mt-2 mb-1 d-block" data-bs-toggle="dropdown"  aria-expanded="false">kaushal</a>
-                <div class="dropdown-menu user-pro-dropdown">
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <i class="fe-user me-1"></i>
-                        <span>My Account</span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <i class="fe-settings me-1"></i>
-                        <span>Settings</span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <i class="fe-lock me-1"></i>
-                        <span>Lock Screen</span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <i class="fe-log-out me-1"></i>
-                        <span>Logout</span>
-                    </a>
-
-                </div>
-            </div>
-
-        <p class="text-muted left-user-info">Admin Head</p>
-
-        <ul class="list-inline">
-            <li class="list-inline-item">
-                <a href="#" class="text-muted left-user-info">
-                    <i class="mdi mdi-cog"></i>
-                </a>
-            </li>
-
-            <li class="list-inline-item">
-                <a href="#">
-                    <i class="mdi mdi-power"></i>
-                </a>
-            </li>
-        </ul>
-    </div>
-
-    <!--- Sidemenu -->
-    <div id="sidebar-menu">
-
-        <ul id="side-menu">
-
-            <li class="menu-title">Navigation</li>
-
-            <li>
-                <a href="index2.php">
-                    <i class="mdi mdi-view-dashboard-outline"></i>
-                    <span class="badge bg-success rounded-pill float-end">9+</span>
-                    <span> Dashboard </span>
-                </a>
-            </li>
-
-            
-
-            <li>
-                                <a href="#contacts" data-bs-toggle="collapse">
-                                    <i class="mdi mdi-book-open-page-variant-outline"></i>
-                                    <span> Contacts </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="contacts">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="contacts-list.php">Members List</a>
-                                        </li>
-                                        <li>
-                                            <a href="contacts-profile.php">Profile</a>
-                                        </li>
-                                    </ul>
+                        <li class="d-none d-lg-block">
+                            <form class="app-search">
+                                <div class="app-search-box">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search..." id="top-search">
+                                        <button class="btn input-group-text" type="submit">
+                                            <i class="fe-search"></i>
+                                        </button>
+                                    </div>
+                                    <div class="dropdown-menu dropdown-lg" id="search-dropdown">
+                                       
+                                      
+                                    </div> 
                                 </div>
-                            </li>
-
-                
-
-            <li>
-                <a href="#sidebarTables" data-bs-toggle="collapse">
-                    <i class="mdi mdi-table"></i>
-                    <span> Tables </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarTables">
-                    <ul class="nav-second-level">
-                        <li>
-                            <a href="tables-datatables.php">Data Tables</a>
+                            </form>
                         </li>
-                        
-                    </ul>
-                </div>
-            </li>
-
-            <li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
+    
+                        <li class="dropdown d-inline-block d-lg-none">
+                            <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <i class="fe-search noti-icon"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-lg dropdown-menu-end p-0">
+                                <form class="p-3">
+                                    <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                </form>
                             </div>
                         </li>
+            
+                      
+    
+                        <li class="dropdown notification-list topbar-dropdown">
+                            <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle">
+                                <span class="pro-user-name ms-1">
+                                <?php
+                                 echo $_SESSION['user']['user_name']
+                                ?>
+                               <i class="mdi mdi-chevron-down"></i> 
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
+                                <!-- item-->
+                                <div class="dropdown-header noti-title">
+                                    <h6 class="text-overflow m-0">Welcome !</h6>
+                                    <a href="index.php" class="dropdown-item notify-item">
+                                    <i class="fe-log-out"></i>
+                                    <span>Logout</span>
+                                </a>
+    
+                                </div>
+    
+                                <!-- item-->
+                               
+    
+                                <!-- item-->
+                                
+                            </div>
+                        </li>                    
                     </ul>
-                </div>
-            </li>
-        </ul>
+    
+                 <!-- LOGO -->
+                 <div class="logo-box">
+                        <a href="index.html" class="logo logo-light text-center">
+                            <span class="logo-sm">
+                                <img src="assets/images/E-removebg-preview.png" alt="" height="100">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="assets/images/E-removebg-preview.png" alt="" height="100">
+                            </span>
+                        </a>
+                        <a href="index.html" class="logo logo-dark text-center">
+                            <span class="logo-sm">
+                                <img src="assets/images/E-removebg-preview.png" alt="" height="30">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="assets/images/E-removebg-preview.png" alt="" height="60">
+                            </span>
+                        </a>
+                    </div>
 
-    </div>
-    <!-- End Sidebar -->
 
-    <div class="clearfix"></div>
+                    <ul class="list-unstyled topnav-menu topnav-menu-left mb-0">
+                        <li>
+                            <button class="button-menu-mobile disable-btn waves-effect">
+                                <i class="fe-menu"></i>
+                            </button>
+                        </li>
+    
+                        <li>
+                            <h4 class="page-title-main"> <?php echo $header_heading  ?> </h4>
+                        </li>
+            
+                    </ul>
 
-</div>
-<!-- Sidebar -left -->
-
-</div>
-<!-- Left Sidebar End -->
+                    <div class="clearfix"></div> 
+               
+            </div>
+            <!-- end Topbar -->

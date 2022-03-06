@@ -3,7 +3,7 @@ $("#login").on("submit", function (e) {
 
     e.preventDefault();
 
-    var url = 'index2.php'
+    var url = 'dashboard.php'
    
     var email = $("#email").val();
     var password = $("#password").val();

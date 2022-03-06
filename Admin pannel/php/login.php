@@ -2,9 +2,6 @@
 
 include 'function.php';
 
-// session_start();
-
-
 if(isset($_POST['submit'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -37,8 +34,14 @@ if(isset($_POST['submit'])){
         $password_decode = decryption($db_pass,hex2bin($user['iv']));
        
         if($password_decode==$password){
-            echo json_encode(array("success" => true, "message" => "Login successful"));
-            $_SESSION['username']=$user['username'];
+            
+         
+            $iv = openssl_random_pseudo_bytes(16);
+                    $id = encryption($user['id'],$iv);
+                    $_SESSION['user']['check_user'] = $id;
+                    $_SESSION['user']['check_iv'] = bin2hex($iv);
+                    $_SESSION['user']['user_name'] = $user['username'];
+                    echo json_encode(array("success" => true, "message" => "Login successful"));
             die;
         }else{
             echo json_encode(array("success" => false, "data" => array("password"=>"Invalid password")));

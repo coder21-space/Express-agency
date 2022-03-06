@@ -2,7 +2,7 @@ $("#loader").hide();
 $("#register").on("submit", function (e) {
 
     e.preventDefault();
-    var url = 'index.php'
+   
 
     var name = $("#name").val();
     var email = $("#email").val();
@@ -57,7 +57,7 @@ $("#register").on("submit", function (e) {
                     title: "success",
                     text: response.message
                 });
-                $(location).prop('href',url);
+               
                 $('#php/register.php')[0].reset();
             } else {
                 for (const error in response.data) {

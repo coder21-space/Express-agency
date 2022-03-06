@@ -1,5 +1,6 @@
-﻿    <!--================INCLUDE HEAD START PHP=================-->
-    <?php  include_once'assets/components/head_start.php' ?>
+﻿
+    <!--================INCLUDE HEAD START PHP=================-->
+       <?php  include_once'assets/components/head_start.php' ?>
     <!--================END INCLUDE HEAD END PHP=================-->
 
         <link rel="shortcut icon" href="assets/images/favicon.ico">
@@ -16,264 +17,17 @@
     <?php  include_once'assets/components/head_end.php' ?>
     <!--================END INCLUDE HEAD END PHP=================-->	
             
-            <!-- Topbar Start -->
-            <div class="navbar-custom">
-                    <ul class="list-unstyled topnav-menu float-end mb-0">
+    <!--================INCLUDE HEAD START PHP=================-->
+     
+    <?php  $header_heading ='Datatable';
+     include_once'assets/components/header.php';
+    ?>
+    <!--================END INCLUDE HEAD END PHP=================-->
 
-                        <li class="d-none d-lg-block">
-                            <form class="app-search">
-                                <div class="app-search-box">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Search..." id="top-search">
-                                        <button class="btn input-group-text" type="submit">
-                                            <i class="fe-search"></i>
-                                        </button>
-                                    </div>
-                                    <div class="dropdown-menu dropdown-lg" id="search-dropdown">
-                                        <!-- item-->
-                                        <div class="dropdown-header noti-title">
-                                            <h5 class="text-overflow mb-2">Found 22 results</h5>
-                                        </div>
-            
-                                        <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                            <i class="fe-home me-1"></i>
-                                            <span>Analytics Report</span>
-                                        </a>
-            
-                                        <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                            <i class="fe-aperture me-1"></i>
-                                            <span>How can I help you?</span>
-                                        </a>
-                            
-                                        <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                            <i class="fe-settings me-1"></i>
-                                            <span>User profile settings</span>
-                                        </a>
-
-                                        <!-- item-->
-                                        <div class="dropdown-header noti-title">
-                                            <h6 class="text-overflow mb-2 text-uppercase">Users</h6>
-                                        </div>
-
-                                        <div class="notification-list">
-                                            <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                                <div class="d-flex align-items-start">
-                                                    <img class="d-flex me-2 rounded-circle" src="assets/images/users/user-2.jpg" alt="Generic placeholder image" height="32">
-                                                    <div class="w-100">
-                                                        <h5 class="m-0 font-14">Erwin E. Brown</h5>
-                                                        <span class="font-12 mb-0">UI Designer</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-
-                                            <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                                <div class="d-flex align-items-start">
-                                                    <img class="d-flex me-2 rounded-circle" src="assets/images/users/user-5.jpg" alt="Generic placeholder image" height="32">
-                                                    <div class="w-100">
-                                                        <h5 class="m-0 font-14">Jacob Deo</h5>
-                                                        <span class="font-12 mb-0">Developer</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-            
-                                    </div> 
-                                </div>
-                            </form>
-                        </li>
-    
-                        <li class="dropdown d-inline-block d-lg-none">
-                            <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <i class="fe-search noti-icon"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-lg dropdown-menu-end p-0">
-                                <form class="p-3">
-                                    <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
-                                </form>
-                            </div>
-                        </li>
-            
-                        <li class="dropdown notification-list topbar-dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <i class="fe-bell noti-icon"></i>
-                                <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-lg">
-    
-                                <!-- item-->
-                                <div class="dropdown-item noti-title">
-                                    <h5 class="m-0">
-                                        <span class="float-end">
-                                            <a href="" class="text-dark">
-                                                <small>Clear All</small>
-                                            </a>
-                                        </span>Notification
-                                    </h5>
-                                </div>
-    
-                                <div class="noti-scroll" data-simplebar="">
-    
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item active">
-                                        <div class="notify-icon">
-                                            <img src="assets/images/users/user-1.jpg" class="img-fluid rounded-circle" alt=""> </div>
-                                        <p class="notify-details">Cristina Pride</p>
-                                        <p class="text-muted mb-0 user-msg">
-                                            <small>Hi, How are you? What about our next meeting</small>
-                                        </p>
-                                    </a>
-    
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-primary">
-                                            <i class="mdi mdi-comment-account-outline"></i>
-                                        </div>
-                                        <p class="notify-details">Caleb Flakelar commented on Admin
-                                            <small class="text-muted">1 min ago</small>
-                                        </p>
-                                    </a>
-    
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon">
-                                            <img src="assets/images/users/user-4.jpg" class="img-fluid rounded-circle" alt=""> </div>
-                                        <p class="notify-details">Karen Robinson</p>
-                                        <p class="text-muted mb-0 user-msg">
-                                            <small>Wow ! this admin looks good and awesome design</small>
-                                        </p>
-                                    </a>
-    
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-warning">
-                                            <i class="mdi mdi-account-plus"></i>
-                                        </div>
-                                        <p class="notify-details">New user registered.
-                                            <small class="text-muted">5 hours ago</small>
-                                        </p>
-                                    </a>
-    
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-info">
-                                            <i class="mdi mdi-comment-account-outline"></i>
-                                        </div>
-                                        <p class="notify-details">Caleb Flakelar commented on Admin
-                                            <small class="text-muted">4 days ago</small>
-                                        </p>
-                                    </a>
-    
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-secondary">
-                                            <i class="mdi mdi-heart"></i>
-                                        </div>
-                                        <p class="notify-details">Carlos Crouch liked
-                                            <b>Admin</b>
-                                            <small class="text-muted">13 days ago</small>
-                                        </p>
-                                    </a>
-                                </div>
-    
-                                <!-- All-->
-                                <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
-                                    View all
-                                    <i class="fe-arrow-right"></i>
-                                </a>
-    
-                            </div>
-                        </li>
-    
-                        <li class="dropdown notification-list topbar-dropdown">
-                            <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle">
-                                <span class="pro-user-name ms-1">
-                                    Nowak <i class="mdi mdi-chevron-down"></i> 
-                                </span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
-                                <!-- item-->
-                                <div class="dropdown-header noti-title">
-                                    <h6 class="text-overflow m-0">Welcome !</h6>
-                                </div>
-    
-                                <!-- item-->
-                                <a href="contacts-profile.html" class="dropdown-item notify-item">
-                                    <i class="fe-user"></i>
-                                    <span>My Account</span>
-                                </a>
-    
-                                <!-- item-->
-                                <a href="auth-lock-screen.html" class="dropdown-item notify-item">
-                                    <i class="fe-lock"></i>
-                                    <span>Lock Screen</span>
-                                </a>
-    
-                                <div class="dropdown-divider"></div>
-    
-                                <!-- item-->
-                                <a href="auth-logout.html" class="dropdown-item notify-item">
-                                    <i class="fe-log-out"></i>
-                                    <span>Logout</span>
-                                </a>
-    
-                            </div>
-                        </li>
-    
-                        <li class="dropdown notification-list">
-                            <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect waves-light">
-                                <i class="fe-settings noti-icon"></i>
-                            </a>
-                        </li>
-    
-                    </ul>
-    
-                    <!-- LOGO -->
-                    <div class="logo-box">
-                        <a href="index.html" class="logo logo-light text-center">
-                            <span class="logo-sm">
-                                <img src="assets/images/logo-sm.png" alt="" height="22">
-                            </span>
-                            <span class="logo-lg">
-                                <img src="assets/images/logo-light.png" alt="" height="16">
-                            </span>
-                        </a>
-                        <a href="index.html" class="logo logo-dark text-center">
-                            <span class="logo-sm">
-                                <img src="assets/images/logo-sm.png" alt="" height="22">
-                            </span>
-                            <span class="logo-lg">
-                                <img src="assets/images/logo-dark.png" alt="" height="16">
-                            </span>
-                        </a>
-                    </div>
-
-                    <ul class="list-unstyled topnav-menu topnav-menu-left mb-0">
-                        <li>
-                            <button class="button-menu-mobile disable-btn waves-effect">
-                                <i class="fe-menu"></i>
-                            </button>
-                        </li>
-    
-                        <li>
-                            <h4 class="page-title-main">Datatables</h4>
-                        </li>
-            
-                    </ul>
-
-                    <div class="clearfix"></div> 
-               
-            </div>
-            <!-- end Topbar -->
-
-        <!--================INCLUDE HEAD START PHP=================-->
-           <?php  include_once'assets/components/header.php' ?>
-        <!--================END INCLUDE HEAD END PHP================-->   
+    <!--================INCLUDE HEAD START PHP=================-->
+    <?php  include_once'assets/components/sidebar.php'?>
+    <!--================END INCLUDE HEAD END PHP=================-->
+  
             
             <!-- ============================================================== -->
             <!-- Start Page Content here -->
@@ -304,7 +58,7 @@
                                                 <th>Office</th>
                                                 <th>Age</th>
                                                 <th>Start date</th>
-                                                <th><button type="button" class="btn btn-outline-success"><i class="fa-solid fa-eye-slash  "></i></button><button type="button" class="btn btn-outline-primary mx-2 "><i class="fa-solid fa-reply"></i></button><button type="button" class="btn btn-outline-danger mx-2"><i class="fa-solid fa-trash-can"></i></button></th>
+                                                <th><button type="button" class="btn btn-outline-success"><i class="fa-solid fa-envelope  "></i></button><button  type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-outline-primary mx-2 "><i class="fa-solid fa-reply"></i></button><button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" class="btn btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button></th>
                                                 
                                             </tr>
                                             </thead>
@@ -548,9 +302,50 @@
             <!-- ============================================================== -->
             <!-- End Page content -->
             <!-- ============================================================== -->
+           
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                                                        non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                                                        tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Understood</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- end col -->
 
 
-        </div>
+
+                            
+                                        <!-- Danger Alert Modal -->
+                                        <div id="danger-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content modal-filled bg-danger">
+                                                    <div class="modal-body">
+                                                        <div class="text-center">
+                                                            <i class="dripicons-wrong h1 text-white"></i>
+                                                            <h4 class="mt-2 text-white">Oh snap!</h4>
+                                                            <p class="mt-3 text-white">Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+                                                            <button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Continue</button>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                        </div><!-- /.modal -->
         
         <script src="https://kit.fontawesome.com/76d2de9cd5.js" crossorigin="anonymous"></script>
 

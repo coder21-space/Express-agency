@@ -1,6 +1,19 @@
-    <!--================INCLUDE HEAD START PHP=================-->
-    <?php  include_once'assets/components/head_start.php' ?>
-    <!--================END INCLUDE HEAD END PHP=================-->
+<?php 
+
+include 'php/function.php';
+if(user_check($conn) ){
+    header('location:dashboard.php');
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Register & Signup | Adminto - Responsive Admin Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
@@ -13,14 +26,14 @@
 
     </head>
 
-    <body class="">
+    <body>
 
         <div class="account-pages mt-5 mb-5">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6 col-xl-4">
                         <div class="text-center">
-                            <a href="index.html">
+                            <a href="index.php">
                                 <img src="assets/images/E-removebg-preview.png" alt="" height="100" class="mx-auto">
                             </a>
                             <p class="text-muted mt-2 mb-4">Register your details</p>
@@ -70,7 +83,7 @@
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p class="text-muted">Already have account?  <a href="pages-login.html" class="text-dark ms-1"><b>Sign In</b></a></p>
+                                <p class="text-muted">Already have account?  <a href="index.php" class="text-dark ms-1"><b>Sign In</b></a></p>
                             </div> <!-- end col -->
                         </div>
                         <!-- end row -->
@@ -83,15 +96,21 @@
         </div>
         <!-- end page -->
 
+      
         <!-- Vendor -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+     <!-- Vendor -->
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="assets/libs/jquery/jquery.min.js"></script>
         <script src="assets/ajax/common.js"></script>
-        <script src="assets/ajax/sweetalert.js"></script>
         <script src="assets/ajax/register.js"></script>
+        <script src="assets/ajax/sweetalert.js"></script>
+  
 
 
-        
+
+
+
+        <script src="assets/libs/jquery/jquery.min.js"></script>
         <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="assets/libs/simplebar/simplebar.min.js"></script>
         <script src="assets/libs/node-waves/waves.min.js"></script>
@@ -101,9 +120,6 @@
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
- 
-    <!--================INCLUDE HEAD START PHP=================-->
-    <?php  include_once'assets/components/script_end.php' ?>
-    <!--================END INCLUDE HEAD END PHP=================-->
-    
-   
+        
+    </body>
+</html>

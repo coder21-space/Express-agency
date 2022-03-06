@@ -1,10 +1,10 @@
 <?php
 
-session_start();
-if(!isset($_SESSION['username'])){
+include 'function.php';
+if(!user_check($conn)){
    echo 'you are logged out';
 }
 session_destroy();
-header('location:../index2.php');
+header('location:./index.php');
 
 ?>
