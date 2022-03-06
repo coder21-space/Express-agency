@@ -1,7 +1,7 @@
 ### kaushal Project Work List
 
 
-- [ ]  resonsive website
+- [ ]  responsive website
 - [ ]  gallery section:- video icon fix ,magnific pop not working
 - [ ]  preloader
 - [ ]  image size reduce

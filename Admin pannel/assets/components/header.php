@@ -70,76 +70,27 @@
                 </a>
             </li>
 
-            <li class="menu-title mt-2">Apps</li>
-
-            <li>
-                <a href="apps-calendar.html">
-                    <i class="mdi mdi-calendar-blank-outline"></i>
-                    <span> Calendar </span>
-                </a>
-            </li>
-
-          
-            <li>
-                <a href="#contacts" data-bs-toggle="collapse">
-                    <i class="mdi mdi-book-open-page-variant-outline"></i>
-                    <span> Contacts </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="contacts">
-                    <ul class="nav-second-level">
-                        <li>
-                            <a href="contacts-list.php">Members List</a>
-                        </li>
-                        <li>
-                            <a href="contacts-profile.php">Profile</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-
-            <li class="menu-title mt-2">Custom</li>
-
-            <li>
-                <a href="#sidebarAuth" data-bs-toggle="collapse">
-                    <i class="mdi mdi-account-multiple-plus-outline"></i>
-                    <span> Auth Pages </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarAuth">
-                    <ul class="nav-second-level">
-                        <li>
-                            <a href="auth-login.php">Log In</a>
-                        </li>
-                        <li>
-                            <a href="auth-register.php">Register</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <a href="widgets.php">
-                    <i class="mdi mdi-gift-outline"></i>
-                    <span> Widgets </span>
-                </a>
-            </li>
-
             
+
             <li>
-                <a href="#sidebarForms" data-bs-toggle="collapse">
-                    <i class="mdi mdi-texture"></i>
-                    <span> Forms </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarForms">
-                    <ul class="nav-second-level">
-                       <li>
-                            <a href="forms-wizard.php">Wizard</a>
-                        </li>
-                        
-                    </ul>
-                </div>
-            </li>
+                                <a href="#contacts" data-bs-toggle="collapse">
+                                    <i class="mdi mdi-book-open-page-variant-outline"></i>
+                                    <span> Contacts </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="contacts">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="contacts-list.php">Members List</a>
+                                        </li>
+                                        <li>
+                                            <a href="contacts-profile.php">Profile</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                
 
             <li>
                 <a href="#sidebarTables" data-bs-toggle="collapse">
