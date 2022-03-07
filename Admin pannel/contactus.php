@@ -19,7 +19,7 @@
             
     <!--================INCLUDE HEAD START PHP=================-->
      
-    <?php  $header_heading ='Datatable';
+    <?php  $header_heading ='Contact us';
      include_once'assets/components/header.php';
     ?>
     <!--================END INCLUDE HEAD END PHP=================-->
@@ -45,20 +45,22 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="mt-0 header-title">DATA TABLE</h4>
+                                        <h4 class="mt-0 header-title">Contact lists</h4>
                                         <p class="text-muted font-14 mb-3">
-                                            The Buttons extension for DataTables provides a common set of options, API methods and styling to display buttons on a page that will interact with a DataTable. The core library provides the based framework upon which plug-ins can built.
+                                        express & Logistics Email lists are segmented into a number of fields and offer a variety of selects including:
                                         </p>
     
                                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap">
                                             <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th><button type="button" class="btn btn-outline-success"><i class="fa-solid fa-envelope  "></i></button><button  type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-outline-primary mx-2 "><i class="fa-solid fa-reply"></i></button><button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" class="btn btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button></th>
+                                                <th>S.no</th>
+                                                <th>Name </th>
+                                                <th>E-mail</th>
+                                                <th>Phone</th>
+                                                <th>Subject</th>
+                                                <th><button type="button" 
+                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                                                class="btn btn-outline-success"><i class="fa-solid fa-envelope  "></i></button><button  type="button"  class="btn btn-outline-primary mx-2 "><i class="fa-solid fa-pen-to-square"></i></button><button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" class="btn btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button></th>
                                                 
                                             </tr>
                                             </thead>
@@ -67,222 +69,108 @@
                                             <tbody>
                                            
                                             <tr>
+                                                <td>1</td>
+                                                <td><a href="contactdetails.php">kaushal</a></td>
+                                                <td>kaushal@gmail.com</td>
+                                                <td>7011432718</td>
+                                                <td>hi</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>ronak</td>
+                                                <td>ronak2002@gmail.com</td>
+                                                <td>3456789212</td>
+                                                <td>vimal</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>lokesh</td>
+                                                <td>LK@gmail.com</td>
+                                                <td>7011439034</td>
+                                                <td>i am lokesh</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                               
+                                                <td>4</td>
+                                                <td>rahul</td>
+                                                <td>rk123@gmail.com</td>
+                                                <td>7023459843</td>
+                                                <td>good ui</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
                                                 <td>Kaushal</td>
-                                                <td>Software engineer</td>
-                                                <td>Delhi</td>
-                                                <td>18</td>
-                                                <td>2022/04/25</td>
+                                                <td>kaushal@gmail.com</td>
+                                                <td>7011432718</td>
+                                                <td>hi</td>
                                                 <td></td>
                                             </tr>
                                             <tr>
-                                                <td>Ronak</td>
-                                                <td>Software engineer</td>
-                                                <td>Tokyo</td>
-                                                <td>18</td>
-                                                <td>2022/07/25</td>
+                                                <td>6</td>
+                                                <td>ronak</td>
+                                                <td>ronak2002@gmail.com</td>
+                                                <td>3456789212</td>
+                                                <td>vimal</td>
                                                 <td></td>
                                             </tr>
                                             <tr>
-                                                <td>Lokesh</td>
-                                                <td>Software engineer</td>
-                                                <td>Ukrain</td>
-                                                <td>18</td>
-                                                <td>2022/07/25</td>
+                                                <td>7</td>
+                                                <td>lokesh</td>
+                                                <td>LK@gmail.com</td>
+                                                <td>7011439034</td>
+                                                <td>i am lokesh</td>
                                                 <td></td>
                                             </tr>
                                             <tr>
-                                                <td>Kaushal</td>
-                                                <td>Software engineer</td>
-                                                <td>Delhi</td>
-                                                <td>18</td>
-                                                <td>2022/04/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Ronak</td>
-                                                <td>Software engineer</td>
-                                                <td>Tokyo</td>
-                                                <td>18</td>
-                                                <td>2022/07/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lokesh</td>
-                                                <td>Software engineer</td>
-                                                <td>Ukrain</td>
-                                                <td>18</td>
-                                                <td>2022/07/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Kaushal</td>
-                                                <td>Software engineer</td>
-                                                <td>Delhi</td>
-                                                <td>18</td>
-                                                <td>2022/04/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Ronak</td>
-                                                <td>Software engineer</td>
-                                                <td>Tokyo</td>
-                                                <td>18</td>
-                                                <td>2022/07/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lokesh</td>
-                                                <td>Software engineer</td>
-                                                <td>Ukrain</td>
-                                                <td>18</td>
-                                                <td>2022/07/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Kaushal</td>
-                                                <td>Software engineer</td>
-                                                <td>Delhi</td>
-                                                <td>18</td>
-                                                <td>2022/04/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Ronak</td>
-                                                <td>Software engineer</td>
-                                                <td>Tokyo</td>
-                                                <td>18</td>
-                                                <td>2022/07/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lokesh</td>
-                                                <td>Software engineer</td>
-                                                <td>Ukrain</td>
-                                                <td>18</td>
-                                                <td>2022/07/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Kaushal</td>
-                                                <td>Software engineer</td>
-                                                <td>Delhi</td>
-                                                <td>18</td>
-                                                <td>2022/04/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Ronak</td>
-                                                <td>Software engineer</td>
-                                                <td>Tokyo</td>
-                                                <td>18</td>
-                                                <td>2022/07/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lokesh</td>
-                                                <td>Software engineer</td>
-                                                <td>Ukrain</td>
-                                                <td>18</td>
-                                                <td>2022/07/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Kaushal</td>
-                                                <td>Software engineer</td>
-                                                <td>Delhi</td>
-                                                <td>18</td>
-                                                <td>2022/04/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Ronak</td>
-                                                <td>Software engineer</td>
-                                                <td>Tokyo</td>
-                                                <td>18</td>
-                                                <td>2022/07/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lokesh</td>
-                                                <td>Software engineer</td>
-                                                <td>Ukrain</td>
-                                                <td>18</td>
-                                                <td>2022/07/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Kaushal</td>
-                                                <td>Software engineer</td>
-                                                <td>Delhi</td>
-                                                <td>18</td>
-                                                <td>2022/04/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Ronak</td>
-                                                <td>Software engineer</td>
-                                                <td>Tokyo</td>
-                                                <td>18</td>
-                                                <td>2022/07/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lokesh</td>
-                                                <td>Software engineer</td>
-                                                <td>Ukrain</td>
-                                                <td>18</td>
-                                                <td>2022/07/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Kaushal</td>
-                                                <td>Software engineer</td>
-                                                <td>Delhi</td>
-                                                <td>18</td>
-                                                <td>2022/04/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Ronak</td>
-                                                <td>Software engineer</td>
-                                                <td>Tokyo</td>
-                                                <td>18</td>
-                                                <td>2022/07/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lokesh</td>
-                                                <td>Software engineer</td>
-                                                <td>Ukrain</td>
-                                                <td>18</td>
-                                                <td>2022/07/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Kaushal</td>
-                                                <td>Software engineer</td>
-                                                <td>Delhi</td>
-                                                <td>18</td>
-                                                <td>2022/04/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Ronak</td>
-                                                <td>Software engineer</td>
-                                                <td>Tokyo</td>
-                                                <td>18</td>
-                                                <td>2022/07/25</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lokesh</td>
-                                                <td>Software engineer</td>
-                                                <td>Ukrain</td>
-                                                <td>18</td>
-                                                <td>2022/07/25</td>
+                                               
+                                                <td>8</td>
+                                                <td>rahul</td>
+                                                <td>rk123@gmail.com</td>
+                                                <td>7023459843</td>
+                                                <td>hello</td>
                                                 <td></td>
                                             </tr>
                                            
+
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Kaushal</td>
+                                                <td>kaushal@gmail.com</td>
+                                                <td>7011432718</td>
+                                                <td>hi</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>ronak</td>
+                                                <td>ronak2002@gmail.com</td>
+                                                <td>3456789212</td>
+                                                <td>vimal</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>11</td>
+                                                <td>lokesh</td>
+                                                <td>LK@gmail.com</td>
+                                                <td>7011439034</td>
+                                                <td>i am lokesh</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                               
+                                                <td>12</td>
+                                                <td>rahul</td>
+                                                <td>rk123@gmail.com</td>
+                                                <td>7023459843</td>
+                                                <td>hello</td>
+                                                <td></td>
+                                            </tr>
+                                           
+
 
                                             </tbody>
                                         </table>
@@ -309,13 +197,11 @@
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                                        <h5 class="modal-title" id="staticBackdropLabel">MESSAGE</h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                                                        non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-                                                        tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                                    Responsible for setting environment, packaging, and deploying code on Staging, Pre-production, and Live, along with System, Regression, and UAT Testing, Support for LIVE P1-P2 bugs in the existing system, with SLA of 4 hours.
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -338,9 +224,10 @@
                                                     <div class="modal-body">
                                                         <div class="text-center">
                                                             <i class="dripicons-wrong h1 text-white"></i>
-                                                            <h4 class="mt-2 text-white">Oh snap!</h4>
-                                                            <p class="mt-3 text-white">Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-                                                            <button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Continue</button>
+                                                            <h4 class="mt-2 text-white">This action is dangerous</h4>
+                                                            <p class="mt-3 text-white"> Delete Message
+Locate the conversation that has the message you want to delete then tap on it. Touch and hold the message you want to delete</p>
+                                                            <button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">DELETE</button>
                                                         </div>
                                                     </div>
                                                 </div><!-- /.modal-content -->
@@ -373,6 +260,11 @@
         <script src="assets/libs/pdfmake/build/pdfmake.min.js"></script>
         <script src="assets/libs/pdfmake/build/vfs_fonts.js"></script>
         <!-- third party js ends -->
+
+         <!-- Table Editable plugin-->
+         <script src="assets/libs/jquery-tabledit/jquery.tabledit.min.js"></script>
+
+
 
         <!-- Datatables init -->
         <script src="assets/js/pages/datatables.init.js"></script>
