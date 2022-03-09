@@ -1,6 +1,6 @@
 <?php 
 
-include 'php/function.php';
+include_once 'php/function.php';
 if(user_check($conn) ){
     header('location:dashboard.php');
 }
@@ -59,10 +59,7 @@ if(user_check($conn) ){
                                     </div>
 
                                     <div class="mb-3">
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="checkbox-signin" checked>
-                                            <label class="form-check-label" for="checkbox-signin">Remember me</label>
-                                        </div>
+                                        
                                     </div>
 
                                     <div class="mb-3 d-grid text-center">
@@ -78,7 +75,7 @@ if(user_check($conn) ){
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p> <a href="pages-recoverpw.html" class="text-muted ms-1"><i class="fa fa-lock me-1"></i>Forgot your password?</a></p>
+                              
                                 <p class="text-muted">Don't have an account? <a href="registerpage.php" class="text-dark ms-1"><b>Sign Up</b></a></p>
                             </div> <!-- end col -->
                         </div>
@@ -96,7 +93,7 @@ if(user_check($conn) ){
         <script src="assets/libs/jquery/jquery.min.js"></script>
         <script src="assets/ajax/common.js"></script>
         <script src="assets/ajax/login.js"></script>
-        <script src="assets/ajax/sweetalert.js"></script>
+  <script src="assets/ajax/sweetalert.js"></script>
   
 
 

@@ -6,5 +6,3 @@ $conn = mysqli_connect(constant("HOST_NAME"),constant("DB_USER"),constant("DB_PA
 if($conn->connect_error){
     die("connection failed");
 }
-
-?>

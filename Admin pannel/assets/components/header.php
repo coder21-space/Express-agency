@@ -54,7 +54,7 @@ if(!user_check($conn) ){
                                 <!-- item-->
                                 <div class="dropdown-header noti-title">
                                     <h6 class="text-overflow m-0"></h6>
-                                    <a href="index.php" class="dropdown-item notify-item">
+                                    <a href="php/logout.php" class="dropdown-item notify-item">
                                     <i class="fe-log-out"></i>
                                     <span>Logout</span>
                                 </a>

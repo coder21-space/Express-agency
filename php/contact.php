@@ -51,4 +51,3 @@ if ($_SERVER['SERVER_NAME'] == constant("HOST_NAME")) {
   }
  }
 }
-?>

@@ -63,10 +63,7 @@ if(user_check($conn) ){
                                         <span class="text-danger" id="password_error"></span>
                                     </div>
                                     <div class="mb-3">
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="checkbox-signup">
-                                            <label class="form-check-label" for="checkbox-signup">I accept <a href="javascript: void(0);" class="text-dark">Terms and Conditions</a></label>
-                                        </div>
+                                        
                                     </div>
                                     <div class="mb-3 text-center d-grid">
                                         <button class="btn btn-primary" type="submit" name="submit"> Sign Up </button>
