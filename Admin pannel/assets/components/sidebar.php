@@ -24,7 +24,7 @@
                   <li>
                       <a href="contactus.php">
                           <i class="mdi mdi-view-dashboard-outline"></i>
-                          <span> contact us </span>
+                          <span> Contact us </span>
                       </a>
                   </li>
 

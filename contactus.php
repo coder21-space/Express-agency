@@ -26,7 +26,6 @@
             <a class="active" href="contactus.html">Contact us</a>
             <p class="wow fadeInUp" data-wow-delay="500ms">CONTACT US</p>
           </div>
-
         </div>
       </div>
     </section>
@@ -94,7 +93,7 @@
                     <span class="text-danger" id="phone_error"></span>
                   </div>
                   <div class="form-group col-md-12">
-                    <input rows="6" name="subject" class="form-control" id="subject" placeholder="Your subject"></input>
+                    <input rows="6" type="text" name="subject" class="form-control" id="subject" placeholder="Your subject"></input>
                     <span class="text-danger" id="subject_error"></span>
                   </div>
                   <div class="form-group col-md-12">

@@ -67,7 +67,7 @@ if (!isset($_GET['contact'])) {
                             </li>
 
                             <li class="nav-item">
-                                <a href="#messages-b1" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                                <a href="#messages-b1" id="previous-tab" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
                                     previous contact
                                 </a>
                             </li>
@@ -100,17 +100,18 @@ if (!isset($_GET['contact'])) {
 
                                                 <div class="table-responsive">
                                                     <table class="table table-centered mb-0" id="inline-editable">
-                                                        <tbody id="contact">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>ID</th>
-                                                                    <th>Name</th>
-                                                                    <th>Email</th>
-                                                                    <th>SUBJECT</th>
-                                                                    <th>created_at</th>
 
-                                                                </tr>
-                                                            </thead>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>ID</th>
+                                                                <th>Name</th>
+                                                                <th>Email</th>
+                                                                <th>SUBJECT</th>
+                                                                <th>created_at</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="contact">
                                                         </tbody>
                                                     </table>
                                                 </div> <!-- end .table-responsive-->
@@ -220,7 +221,7 @@ if (!isset($_GET['contact'])) {
         <script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
         <script src="assets/libs/feather-icons/feather.min.js"></script>
         <script>
-            var contact_email = <?php echo $message['email'] ?>;
+            var contact_email = "<?php echo $message['email'] ?>";
         </script>
         <script src="assets/ajax/contact-data.js"></script>
 

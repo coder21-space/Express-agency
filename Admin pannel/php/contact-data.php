@@ -24,12 +24,14 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
 
                 if (mysqli_num_rows($query_execute) > 0) {
                     $data = array();
-                    while ($result = mysqli_fetch_array($query_execute)) {
+                    while ($result = mysqli_fetch_array($query_execute, MYSQLI_ASSOC)) {
                         $data[] = $result;
                     }
                     echo json_encode(array("success" => true, "data" => $data));
+                    die;
                 } else {
                     echo json_encode(array("success" => false, "data" => "data not found"));
+                    die;
                 }
 
                 break;
@@ -37,17 +39,17 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 break;
             case 'contact-message':
                 break;
-            case 'email':
+            case 'previous-contact':
                 $user_email = $_POST['email'];
-                $query = "SELECT * FROM contact  WHERE email = '$user_email' ORDER BY created_at DESC";
-                $query_execute = mysqli_query($conn, $query);
+                $query = "SELECT id, name, email, subject, created_at FROM contact  WHERE email = '" . $user_email . "' ORDER BY created_at DESC";
+                $query_execute2 = mysqli_query($conn, $query);
 
-                if (mysqli_num_rows($query_execute) > 0) {
-                    $data = array();
-                    while ($result = mysqli_fetch_array($query_execute)) {
-                        $data[] = $result;
+                if (mysqli_num_rows($query_execute2) > 0) {
+                    $data2 = array();
+                    while ($result2 = mysqli_fetch_array($query_execute2, MYSQLI_ASSOC)) {
+                        $data2[] = $result2;
                     }
-                    echo json_encode(array("success" => true, "data" => $data));
+                    echo json_encode(array("success" => true, "data" => $data2, 'data-no' => mysqli_num_rows($query_execute2)));
                 } else {
                     echo json_encode(array("success" => true, "data" => "NO data found!"));
                 }
