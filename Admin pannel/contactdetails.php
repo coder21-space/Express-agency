@@ -14,6 +14,29 @@
 
 <?php $header_heading = 'Contact details';
 include_once 'assets/components/header.php';
+
+
+
+if (!isset($_GET['contact'])) {
+    header('location : contactus.php');
+} else {
+    $id = $_GET['contact'];
+    $check_id = "select id from contact where id = $id";
+    $query = mysqli_query($conn, $check_id);
+    $result = mysqli_num_rows($query);
+
+    if ($result > 0) {
+        $sql = "select * from contact where id = $id";
+        $result = mysqli_query($conn, $sql);
+        $message = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $message = $row;
+        }
+    } else {
+        header('location : contactus.php');
+    }
+}
+
 ?>
 <!--================END INCLUDE HEAD END PHP=================-->
 
@@ -50,28 +73,11 @@ include_once 'assets/components/header.php';
                             </li>
                         </ul>
                         <div class="tab-content">
-                            <h5><i class="fa-solid fa-user"></i> Kaushal sahni</h5>
-                            <p><a href="mailto:someone@example.com">kaushal2132002@gmail.com</a></p>
+                            <h5><i class="fa-solid fa-user"></i> <?php echo $message['name'] ?> </h5>
+                            <p><a href="mailto:someone@example.com"><?php echo $message['email'] ?></a></p>
                             <hr>
                             <div class="tab-pane" id="home-b1">
-                                <p>Vakal text here dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
-                                    eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
-                                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
-                                    pretium quis, sem. Nulla consequat massa quis enim.</p>
-                                <p class="mb-0">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
-                                    enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu
-                                    pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi.
-                                    Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
-                                    eleifend ac, enim.</p>
-                                <p class="mb-0">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
-                                    enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu
-                                    pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi.
-                                    Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
-                                    eleifend ac, enim.
-
-                                </p>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#con-close-modal"
-                                    class="btn btn-outline-primary mx-2 "><i class="fa-solid fa-reply"></i></button>
+                                <?php echo $message['message'] ?> <button type="button" data-bs-toggle="modal" data-bs-target="#con-close-modal" class="btn btn-outline-primary mx-2 "><i class="fa-solid fa-reply"></i></button>
                             </div>
                             <div class="tab-pane show active" id="profile-b1">
                                 <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,
@@ -94,59 +100,17 @@ include_once 'assets/components/header.php';
 
                                                 <div class="table-responsive">
                                                     <table class="table table-centered mb-0" id="inline-editable">
+                                                        <tbody id="contact">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>ID</th>
+                                                                    <th>Name</th>
+                                                                    <th>Email</th>
+                                                                    <th>SUBJECT</th>
+                                                                    <th>created_at</th>
 
-                                                        <thead>
-                                                            <tr>
-                                                                <th>ID</th>
-                                                                <th>Name</th>
-                                                                <th>Email</th>
-
-                                                                <th>subject</th>
-                                                                <th>created_at</th>
-
-                                                            </tr>
-                                                        </thead>
-
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>1</td>
-                                                                <td>kaushal</td>
-                                                                <td>kaushal@gmail.com</td>
-
-                                                                <td>hello</td>
-                                                                <td>2022-03-05 23:39:32</td>
-
-                                                            </tr>
-                                                            <tr>
-                                                                <td>2</td>
-                                                                <td>kaushal</td>
-                                                                <td>kaushal@gmail.com</td>
-
-                                                                <td>hello</td>
-                                                                <td>2022-03-05 23:39:32</td>
-
-                                                            </tr>
-                                                            <tr>
-                                                                <td>3</td>
-                                                                <td>kaushal</td>
-                                                                <td>kaushal@gmail.com</td>
-
-                                                                <td>hello</td>
-                                                                <td>2022-03-05 23:39:32</td>
-
-                                                            </tr>
-                                                            <tr>
-                                                                <td>4</td>
-                                                                <td>kaushal</td>
-                                                                <td>kaushal@gmail.com</td>
-
-                                                                <td>hello</td>
-                                                                <td>2022-03-05 23:39:32</td>
-
-                                                            </tr>
-
-
-
+                                                                </tr>
+                                                            </thead>
                                                         </tbody>
                                                     </table>
                                                 </div> <!-- end .table-responsive-->
@@ -176,9 +140,40 @@ include_once 'assets/components/header.php';
     <!-- END wrapper -->
 
     <!-- sample modal content -->
+    <!-- //bootstrap modals -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Message:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true" style="display: none;">
+
+    <!-- sample modal content -->
+
+    <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -189,65 +184,31 @@ include_once 'assets/components/header.php';
                     <div class="row">
                         <div class="col-md-6">
                         </div>
-
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="">
+                                    <label for="field-7" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="">
                                     <label for="field-7" class="form-label">Message</label>
-                                    <textarea class="form-control" id="field-7"
-                                        placeholder="Write something about yourself"></textarea>
+                                    <textarea class="form-control" id="field-7" placeholder="Write something about yourself"></textarea>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary waves-effect"
-                            data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-info waves-effect waves-light">Send message</button>
                     </div>
                 </div>
             </div>
         </div><!-- /.modal -->
-
-
-        <!-- Modal -->
-        <div class="modal fade" id="custom-modal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header bg-light">
-                        <h4 class="modal-title" id="myCenterModalLabel">Add Contact</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter name">
-                            </div>
-                            <div class="mb-3">
-                                <label for="position" class="form-label">Position</label>
-                                <input type="text" class="form-control" id="position" placeholder="Enter position">
-                            </div>
-                            <div class="mb-3">
-                                <label for="company" class="form-label">Company</label>
-                                <input type="text" class="form-control" id="company" placeholder="Enter company">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1"
-                                    placeholder="Enter email">
-                            </div>
-
-                            <button type="submit" class="btn btn-light waves-effect waves-light">Save</button>
-                            <button type="button" class="btn btn-danger waves-effect waves-light"
-                                data-bs-dismiss="modal">Cancel</button>
-                        </form>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-
         <script src="https://kit.fontawesome.com/76d2de9cd5.js" crossorigin="anonymous"></script>
 
         <!-- Vendor -->
@@ -258,8 +219,11 @@ include_once 'assets/components/header.php';
         <script src="assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
         <script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
         <script src="assets/libs/feather-icons/feather.min.js"></script>
+        <script>
+            var contact_email = <?php echo $message['email'] ?>;
+        </script>
+        <script src="assets/ajax/contact-data.js"></script>
 
-        <script src="assets/ajax/contact-data.php"></script>
 
         <!-- Table Editable plugin-->
         <script src="assets/libs/jquery-tabledit/jquery.tabledit.min.js"></script>

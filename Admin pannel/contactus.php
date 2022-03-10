@@ -6,8 +6,7 @@
 
 <!-- third party css -->
 <link href="assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet"
-    type="text/css" />
+<link href="assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
 <link href="assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
 <link href="assets/libs/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
 <!-- third party css end -->
@@ -50,45 +49,18 @@ include_once 'assets/components/header.php';
                                 can built.
                             </p>
 
-                            <table id="datatable-buttons"
-                                class="table table-striped table-bordered dt-responsive nowrap">
+                            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
                                         <th>NAME</th>
                                         <th>EMAIL</th>
-                                        <th>MESSAGE</th>
+                                        <th>SUBJECT</th>
                                         <th>ACTION</th>
                                     </tr>
                                 </thead>
 
                                 <tbody id="contact-list">
-
-                                    <!-- <tr>
-                                        <td>Jonas Alexander</td>
-                                        <td>Developer</td>
-                                        <td>San Francisco</td>
-                                        <td>30</td>
-                                        <td>2010/07/14</td>
-                                        <td>$86,500</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Shad Decker</td>
-                                        <td>Regional Director</td>
-                                        <td>Edinburgh</td>
-                                        <td>51</td>
-                                        <td>2008/11/13</td>
-                                        <td>$183,000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Michael Bruce</td>
-                                        <td>Javascript Developer</td>
-                                        <td>Singapore</td>
-                                        <td>29</td>
-                                        <td>2011/06/27</td>
-                                        <td>$183,000</td>
-                                    </tr> -->
-
                                 </tbody>
                             </table>
                         </div>
@@ -102,8 +74,7 @@ include_once 'assets/components/header.php';
     </div>
     <!-- content -->
     <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -154,8 +125,7 @@ include_once 'assets/components/header.php';
 
 
 <!-- //bootstrap modals -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -188,8 +158,7 @@ include_once 'assets/components/header.php';
 
 <!-- sample modal content -->
 
-<div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true" style="display: none;">
+<div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -204,8 +173,7 @@ include_once 'assets/components/header.php';
                         <div class="col-md-12">
                             <div class="">
                                 <label for="field-7" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                             </div>
                         </div>
                     </div>
@@ -214,8 +182,7 @@ include_once 'assets/components/header.php';
                         <div class="col-md-12">
                             <div class="">
                                 <label for="field-7" class="form-label">Message</label>
-                                <textarea class="form-control" id="field-7"
-                                    placeholder="Write something about yourself"></textarea>
+                                <textarea class="form-control" id="field-7" placeholder="Write something about yourself"></textarea>
                             </div>
                         </div>
                     </div>

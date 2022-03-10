@@ -16,3 +16,4 @@ if (constant("LOCAL_ENVIORNMENT") === true) {
 define("KEY", "7654309876234567");
 define("CIPHER", "AES-128-CTR");
 define("OPTIONS", 0);
+?>

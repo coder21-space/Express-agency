@@ -1,57 +1,56 @@
   <!-- ========== Left Sidebar Start ========== -->
   <div class="left-side-menu">
 
-<div class="h-100" data-simplebar>
+      <div class="h-100" data-simplebar>
 
-    
-    <!--- Sidemenu -->
-    <div id="sidebar-menu">
 
-        <ul id="side-menu">
+          <!--- Sidemenu -->
+          <div id="sidebar-menu">
 
-            <li class="menu-title">MAIN MENU</li>
+              <ul id="side-menu">
 
-            <li>
-                <a href="dashboard.php">
-                    <i class="mdi mdi-view-dashboard-outline"></i>
-                    <span> Dashboard </span>
-                </a>
-            </li>     
+                  <li class="menu-title">MAIN MENU</li>
 
-            <li>
-                <a href="#sidebarTables" data-bs-toggle="collapse">
-                    <i class="mdi mdi-table"></i>
-                    <span> User contact </span>
-                    
-                </a>
-               
-                        <li>
-                            <a href="contactus.php" > Contact us</a>
-                        </li>
-                        
-                    </ul>
-                </div>
-            </li>
+                  <li>
+                      <a href="dashboard.php">
+                          <i class="mdi mdi-view-dashboard-outline"></i>
+                          <span> Dashboard </span>
+                      </a>
+                  </li>
 
-            <li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
+                  <li class="menu-title">user contact</li>
 
-    </div>
-    <!-- End Sidebar -->
 
-    <div class="clearfix"></div>
+                  <li>
+                      <a href="contactus.php">
+                          <i class="mdi mdi-view-dashboard-outline"></i>
+                          <span> contact us </span>
+                      </a>
+                  </li>
 
-</div>
-<!-- Sidebar -left -->
+              </ul>
+          </div>
+          </li>
 
-</div>
-<!-- Left Sidebar End -->
+          <li>
+              </ul>
+      </div>
+      </li>
+      </ul>
+  </div>
+  </li>
+  </ul>
+  </div>
+  </li>
+  </ul>
+
+  </div>
+  <!-- End Sidebar -->
+
+  <div class="clearfix"></div>
+
+  </div>
+  <!-- Sidebar -left -->
+
+  </div>
+  <!-- Left Sidebar End -->
