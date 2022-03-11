@@ -36,6 +36,14 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
 
                 break;
             case 'contact-delete':
+                $id = $_POST['id'];
+                $query = "DELETE FROM contact where id='$id'";
+                $query_execute = mysqli_query($conn, $query);
+                if ($query_execute) {
+                    echo json_encode(array("success" => true, "message" => "Record Deleted successfully"));
+                } else {
+                    echo json_encode(array("success" => false, "message" => "Some error Occured"));
+                }
                 break;
             case 'contact-message':
                 break;

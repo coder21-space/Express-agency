@@ -39,7 +39,7 @@ include_once 'assets/components/header.php';
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body" id="contact_error">
                             <h4 class="mt-0 header-title">Buttons example</h4>
                             <p class="text-muted font-14 mb-3">
                                 The Buttons extension for DataTables provides a common set
@@ -107,13 +107,15 @@ include_once 'assets/components/header.php';
             <div class="modal-body">
                 <div class="text-center">
                     <i class="dripicons-wrong h1 text-white"></i>
+                    <input type="hidden" id="contact_delete">
                     <h4 class="mt-2 text-white">This action is dangerous</h4>
+
                     <p class="mt-3 text-white"> Delete Message
                         Locate the conversation that has the message you want to delete then tap on it. Touch and hold
                         the message you want to delete</p>
 
                     <button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary my-2" data-bs-dismiss="modal">Delete</button>
+                    <button type="button" class="btn btn-primary my-2" data-bs-dismiss="modal" id="delete">Delete</button>
                 </div>
             </div>
         </div><!-- /.modal-content -->
@@ -241,7 +243,48 @@ include_once 'assets/components/header.php';
 
 <script>
     $(document).ready(function() {
+
+        $('#delete').click(function(e) {
+            e.preventDefault();
+
+            var id = $('#contact_delete').val();
+            alert(id);
+
+            $.ajax({
+                url: "php/contact-data.php",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    submit: 'contact-delete',
+                    id: id
+                },
+                success: function(response) {
+                    $('#danger-alert-modal').modal('hide');
+                    if (response.success) {
+                        swal({
+                            icon: "success",
+                            title: "success",
+                            text: response.message
+                        });
+                        getdata();
+                    } else {
+                        swal({
+                            icon: "error",
+                            title: "error",
+                            text: response.message
+                        });
+                    }
+                }
+            });
+        });
+        $(document).on('click', '.delete', function() {
+            var id = $(this).attr('data-id');
+            // alert(id);
+            $('#contact_delete').val(id);
+            $("#danger-alert-modal").modal('show');
+        });
         output = "";
+        output_error = "";
         $.ajax({
             url: "PHP/contact-data.php",
             type: "POST",
@@ -262,13 +305,26 @@ include_once 'assets/components/header.php';
                 <td>${contact.subject}</td>
                 <td>
                 <button type="button"
-                data-bs-toggle="modal" data-bs-target="#staticBackdrop"class="btn btn-outline-success"><i class="fa-solid fa-envelope"></i></button><button  type="button"data-bs-toggle="modal" data-bs-target="#con-close-modal"class="btn btn-outline-primary mx-2 "><i class="fa-solid fa-reply"></i></button><button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" class="btn btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button> </td> </tr>`;
+                data-bs-toggle="modal" data-bs-target="#staticBackdrop"class="btn btn-outline-success"><i class="fa-solid fa-envelope"></i></button><button  type="button"data-bs-toggle="modal" data-bs-target="#con-close-modal"class="btn btn-outline-primary mx-2 "><i class="fa-solid fa-reply"></i></button><button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" data-id=${contact.id} class="btn delete btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button> </td> </tr>`;
                     });
 
                     $("#contact-list").html(output);
                 } else {
-                    // show server error message
+
+                    //     output_error += `
+                    //                         <div class="card">
+                    //     <div class="card-body p-4">
+                    //         <div class="text-center">
+                    //             <h1 class="text-error">OOPS!</h1>
+                    //             <h3 class="mt-3 mb-2">Page not Found</h3>
+                    //             <p class="text-muted mb-3">NO INFORMATION FOUND</p>
+                    //             <a href="dashboard.php" class="btn btn-danger waves-effect waves-light"><i class="fas fa-home me-1"></i> Back to Home</a>
+                    //         </div>
+                    //     </div> 
+                    //     </div>`;
+
                 }
+                // $("#contact_error").html(output_error);
             },
             error: function(error) {},
         });
