@@ -97,6 +97,9 @@ if (!isset($_GET['contact'])) {
                                         <div class="card">
                                             <div class="card-body">
 
+                                                <div id="loader" class="spinner-grow text-info" role="status">
+                                                    <span class="visually-hidden">Loading...</span>
+                                                </div>
 
                                                 <div class="table-responsive">
                                                     <table class="table table-centered mb-0" id="inline-editable">
@@ -108,6 +111,7 @@ if (!isset($_GET['contact'])) {
                                                                 <th>Email</th>
                                                                 <th>SUBJECT</th>
                                                                 <th>created_at</th>
+                                                                <th>ACTION</th>
 
                                                             </tr>
                                                         </thead>
@@ -140,101 +144,34 @@ if (!isset($_GET['contact'])) {
     </div>
     <!-- END wrapper -->
 
-    <!-- sample modal content -->
-    <!-- //bootstrap modals -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Recipient:</label>
-                            <input type="text" class="form-control" id="recipient-name">
-                        </div>
-                        <div class="form-group">
-                            <label for="message-text" class="col-form-label">Message:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
+    <?php include_once 'assets/components/modals.php' ?>
 
-    <!-- sample modal content -->
+    <script src="https://kit.fontawesome.com/76d2de9cd5.js" crossorigin="anonymous"></script>
 
-    <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Reply</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="">
-                                    <label for="field-7" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                </div>
-                            </div>
-                        </div>
+    <!-- Vendor -->
+    <script src="assets/libs/jquery/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
+    <script src="assets/libs/feather-icons/feather.min.js"></script>
+    <script>
+        var contact_email = "<?php echo $message['email'] ?>";
+    </script>
+    <script src="assets/ajax/contact-data.js"></script>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="">
-                                    <label for="field-7" class="form-label">Message</label>
-                                    <textarea class="form-control" id="field-7" placeholder="Write something about yourself"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-info waves-effect waves-light">Send message</button>
-                    </div>
-                </div>
-            </div>
-        </div><!-- /.modal -->
-        <script src="https://kit.fontawesome.com/76d2de9cd5.js" crossorigin="anonymous"></script>
+    <script src="assets/ajax/sweetalert.js"></script>
+    <!-- Table Editable plugin-->
+    <script src="assets/libs/jquery-tabledit/jquery.tabledit.min.js"></script>
 
-        <!-- Vendor -->
-        <script src="assets/libs/jquery/jquery.min.js"></script>
-        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/libs/simplebar/simplebar.min.js"></script>
-        <script src="assets/libs/node-waves/waves.min.js"></script>
-        <script src="assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
-        <script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
-        <script src="assets/libs/feather-icons/feather.min.js"></script>
-        <script>
-            var contact_email = "<?php echo $message['email'] ?>";
-        </script>
-        <script src="assets/ajax/contact-data.js"></script>
+    <!-- Table editable init-->
+    <script src="assets/js/pages/tabledit.init.js"></script>
 
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
 
-        <!-- Table Editable plugin-->
-        <script src="assets/libs/jquery-tabledit/jquery.tabledit.min.js"></script>
-
-        <!-- Table editable init-->
-        <script src="assets/js/pages/tabledit.init.js"></script>
-
-        <!-- App js -->
-        <script src="assets/js/app.min.js"></script>
-
-        <!--================INCLUDE HEAD START PHP=================-->
-        <?php include_once 'assets/components/script_end.php' ?>
-        <!--================END INCLUDE HEAD END PHP=================--
+    <!--================INCLUDE HEAD START PHP=================-->
+    <?php include_once 'assets/components/script_end.php' ?>
+    <!--================END INCLUDE HEAD END PHP=================--

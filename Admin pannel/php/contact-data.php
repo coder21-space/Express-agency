@@ -46,6 +46,20 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 }
                 break;
             case 'contact-message':
+                // $id = sql_prevent($conn, xss_prevent($_POST['id']));
+                $id = $_POST['id'];
+                $query = "SELECT message FROM contact where id='$id' ORDER BY created_at DESC";
+                $query_execute = mysqli_query($conn, $query);
+                if (mysqli_num_rows($query_execute) > 0) {
+                    $message = array();
+                    while ($result = mysqli_fetch_array($query_execute, MYSQLI_ASSOC)) {
+                        $message[] = $result;
+                    }
+                    echo json_encode(array("success" => true, "data" => $message));
+                } else {
+                    $message[] = "No information found!";
+                    echo json_encode(array("success" => false, "message" => $message));
+                }
                 break;
             case 'previous-contact':
                 $user_email = $_POST['email'];
