@@ -19,7 +19,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
         $submit = $_POST['submit'];
         switch ($submit) {
             case 'contact-list':
-                $query = "select id,name,email,subject from contact";
+                $query = "select id,name,email,subject,created_at from contact";
                 $query_execute = mysqli_query($conn, $query);
 
                 if (mysqli_num_rows($query_execute) > 0) {

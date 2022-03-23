@@ -97,21 +97,21 @@ if (!isset($_GET['contact'])) {
                                         <div class="card">
                                             <div class="card-body">
 
-                                                <div id="loader" class="spinner-grow text-info" role="status">
+                                                <!-- <div id="loader" class="spinner-grow text-info" role="status">
                                                     <span class="visually-hidden">Loading...</span>
-                                                </div>
+                                                </div> -->
 
                                                 <div class="table-responsive">
                                                     <table class="table table-centered mb-0" id="inline-editable">
 
                                                         <thead>
                                                             <tr>
-                                                                <th>ID</th>
+                                                                <th>Id</th>
                                                                 <th>Name</th>
                                                                 <th>Email</th>
-                                                                <th>SUBJECT</th>
+                                                                <th>Subject</th>
                                                                 <th>created_at</th>
-                                                                <th>ACTION</th>
+                                                                <th>Action</th>
 
                                                             </tr>
                                                         </thead>

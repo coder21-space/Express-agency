@@ -27,6 +27,66 @@
                           <span> Contact us </span>
                       </a>
                   </li>
+                  <li class="menu-title">data information</li>
+                  <li>
+
+                      <a href="Customer_list.php">
+                          <i class="mdi mdi-view-dashboard-outline"></i>
+                          <span> Customer list </span>
+                      </a>
+                  </li>
+
+
+                  <li>
+                      <a href="Customer_order_list.php">
+                          <i class="mdi mdi-view-dashboard-outline"></i>
+                          <span> Customer order list </span>
+                      </a>
+                  </li>
+
+
+                  <li>
+                      <a href="staff.php">
+                          <i class="mdi mdi-view-dashboard-outline"></i>
+                          <span>staff list </span>
+                      </a>
+                  </li>
+
+                  <li>
+                      <a href="add_staff.php">
+                          <i class="mdi mdi-view-dashboard-outline"></i>
+                          <span>Add_staff </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="staff_type.php">
+                          <i class="mdi mdi-view-dashboard-outline"></i>
+                          <span>staff type </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="staff_form.php">
+                          <i class="mdi mdi-view-dashboard-outline"></i>
+                          <span>staff form </span>
+                      </a>
+                  </li>
+
+                  <li>
+                      <a href="payment_list.php">
+                          <i class="mdi mdi-view-dashboard-outline"></i>
+                          <span> payment list </span>
+                      </a>
+                  </li>
+
+
+                  <li>
+                      <a href="vehical_list.php">
+                          <i class="mdi mdi-view-dashboard-outline"></i>
+                          <span> vehical list </span>
+                      </a>
+                  </li>
+
+
 
               </ul>
           </div>

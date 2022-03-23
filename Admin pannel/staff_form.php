@@ -1,4 +1,4 @@
-﻿<!--================INCLUDE HEAD START PHP=================-->
+<!--================INCLUDE HEAD START PHP=================-->
 <?php include_once 'assets/components/head_start.php' ?>
 <!--================END INCLUDE HEAD END PHP=================-->
 <!-- App favicon -->
@@ -16,7 +16,7 @@
 
 <!--================INCLUDE HEAD START PHP=================-->
 
-<?php $header_heading = 'Contact US';
+<?php $header_heading = 'staff list';
 include_once 'assets/components/header.php';
 ?>
 <!--================END INCLUDE HEAD END PHP=================-->
@@ -26,58 +26,57 @@ include_once 'assets/components/header.php';
 <!--================END INCLUDE HEAD END PHP=================-->
 
 
+
 <!-- ============================================================== -->
 <!-- Start Page Content here -->
 <!-- ============================================================== -->
 
 <div class="content-page">
     <div class="content">
+
         <!-- Start Content-->
         <div class="container-fluid">
 
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-
-                        <div class="card-body" id="list_error">
-
-                            <h4 class="mt-0 header-title">CONTACT LISTS</h4>
-                            <p class="text-muted font-14 mb-3">
-
-                            </p>
-
-                            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap">
-                                <!-- <div id="loader" class="spinner-grow text-info" role="status">
-                                    <span class="visually-hidden">Loading...</span>
-                                </div> -->
-                                <thead>
-                                    <tr>
-
-                                        <th>Id</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Subject</th>
-                                        <th>Created_at</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody id="contact-list">
-
-                                </tbody>
-                            </table>
+            <div class="modal fade" id="custom-modal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-light">
+                            <h4 class="modal-title" id="myCenterModalLabel">Add Contact</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end row -->
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="position" class="form-label">Position</label>
+                                    <input type="text" class="form-control" id="position" placeholder="Enter position">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="company" class="form-label">Company</label>
+                                    <input type="text" class="form-control" id="company" placeholder="Enter company">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                </div>
 
-        </div>
-        <!-- container-fluid -->
-    </div>
+                                <button type="submit" class="btn btn-light waves-effect waves-light">Save</button>
+                                <button type="button" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal">Cancel</button>
+                            </form>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+        </div> <!-- container -->
+
+    </div> <!-- content -->
+
     <!-- content -->
-    <?php include_once 'assets/components/modals.php' ?>
+
     <!-- Footer Start -->
     <!--================INCLUDE FOOTER PHP=================-->
     <?php include_once 'assets/components/footer.php' ?>
@@ -123,23 +122,8 @@ include_once 'assets/components/header.php';
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
 
-<script>
-    // $('#loader').show();
-    // $('#datatable-buttons').hide();
-
-    $(document).ready(function() {
-        // $('#loader').hide();
-        // $('#datatable-buttons').show();
-
-        // getdata();
-
-
-
-
-    });
-</script>
 <script src="assets/ajax/sweetalert.js"></script>
 
-</body>
-
-</html>
+<!--================INCLUDE FOOTER PHP=================-->
+<?php include_once 'assets/components/script_end.php' ?>
+<!--================END INCLUDE FOOTER PHP=================-->

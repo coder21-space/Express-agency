@@ -1,4 +1,4 @@
-﻿<!--================INCLUDE HEAD START PHP=================-->
+<!--================INCLUDE HEAD START PHP=================-->
 <?php include_once 'assets/components/head_start.php' ?>
 <!--================END INCLUDE HEAD END PHP=================-->
 <!-- App favicon -->
@@ -16,7 +16,7 @@
 
 <!--================INCLUDE HEAD START PHP=================-->
 
-<?php $header_heading = 'Contact US';
+<?php $header_heading = 'Customer list';
 include_once 'assets/components/header.php';
 ?>
 <!--================END INCLUDE HEAD END PHP=================-->
@@ -26,58 +26,58 @@ include_once 'assets/components/header.php';
 <!--================END INCLUDE HEAD END PHP=================-->
 
 
+
 <!-- ============================================================== -->
 <!-- Start Page Content here -->
 <!-- ============================================================== -->
 
 <div class="content-page">
     <div class="content">
+
         <!-- Start Content-->
         <div class="container-fluid">
-
 
             <div class="row">
                 <div class="col-12">
                     <div class="card">
+                        <div class="card-body">
 
-                        <div class="card-body" id="list_error">
+                            <h5 class="mt-0">Inline edit</h5>
+                            <p class="sub-header">Inline edit like a spreadsheet on two columns only and without identifier column.</p>
+                            <div class="table-responsive">
+                                <table class="table table-centered mb-0" id="inline-editable">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>Addtrss</th>
+                                            <th>City</th>
+                                            <th>Pincode</th>
+                                            <th>State</th>
+                                            <th>created_at</th>
 
-                            <h4 class="mt-0 header-title">CONTACT LISTS</h4>
-                            <p class="text-muted font-14 mb-3">
 
-                            </p>
+                                        </tr>
+                                    </thead>
 
-                            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap">
-                                <!-- <div id="loader" class="spinner-grow text-info" role="status">
-                                    <span class="visually-hidden">Loading...</span>
-                                </div> -->
-                                <thead>
-                                    <tr>
+                                    <tbody>
 
-                                        <th>Id</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Subject</th>
-                                        <th>Created_at</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
+                                    </tbody>
+                                </table>
+                            </div> <!-- end .table-responsive-->
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card -->
+                </div> <!-- end col -->
+            </div> <!-- end row -->
 
-                                <tbody id="contact-list">
+        </div> <!-- container -->
 
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end row -->
+    </div> <!-- content -->
 
-        </div>
-        <!-- container-fluid -->
-    </div>
     <!-- content -->
-    <?php include_once 'assets/components/modals.php' ?>
+
     <!-- Footer Start -->
     <!--================INCLUDE FOOTER PHP=================-->
     <?php include_once 'assets/components/footer.php' ?>
@@ -123,23 +123,8 @@ include_once 'assets/components/header.php';
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
 
-<script>
-    // $('#loader').show();
-    // $('#datatable-buttons').hide();
-
-    $(document).ready(function() {
-        // $('#loader').hide();
-        // $('#datatable-buttons').show();
-
-        // getdata();
-
-
-
-
-    });
-</script>
 <script src="assets/ajax/sweetalert.js"></script>
 
-</body>
-
-</html>
+<!--================INCLUDE FOOTER PHP=================-->
+<?php include_once 'assets/components/script_end.php' ?>
+<!--================END INCLUDE FOOTER PHP=================-->
