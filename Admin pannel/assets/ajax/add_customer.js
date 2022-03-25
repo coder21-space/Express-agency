@@ -3,10 +3,6 @@
 $("#staff_form").on("submit", function (e) {
   e.preventDefault();
 
-  var username = $("#username").val();
-
-  var email = $("#email").val();
-  var password = $("#password").val();
   var name = $("#name").val();
   var e_mail = $("#e_mail").val();
   var phone = $("#phone").val();
@@ -14,15 +10,8 @@ $("#staff_form").on("submit", function (e) {
   var city = $("#city").val();
   var pincode = $("#pincode").val();
   var state = $("#state").val();
-  var salary = $("#salary").val();
   var error = false;
 
-  if (isEmpty(username)) {
-    error = true;
-    $("#username_error").text("username should not be blank!");
-  } else {
-    $("#username_error").text("");
-  }
   if (isEmpty(name)) {
     error = true;
     $("#name_error").text("Name should not be blank!");
@@ -41,18 +30,7 @@ $("#staff_form").on("submit", function (e) {
   } else {
     $("#e-mail_error").text("");
   }
-  if (isEmpty(email)) {
-    error = true;
-    $("#email_error").text("E-mail should not be blank!");
-  } else {
-    $("#email_error").text("");
-  }
-  if (isEmpty(password)) {
-    error = true;
-    $("#password_error").text("password should not be blank!");
-  } else {
-    $("#password_error").text("");
-  }
+
   if (isEmpty(address)) {
     error = true;
     $("#address_error").text("password should not be blank!");
@@ -78,12 +56,6 @@ $("#staff_form").on("submit", function (e) {
   } else {
     $("#state_error").text("");
   }
-  if (isEmpty(salary)) {
-    error = true;
-    $("#salary_error").html("This field should not be blank!");
-  } else {
-    $("#salary_error").html("");
-  }
 
   if (error) {
     return false;
@@ -93,7 +65,7 @@ $("#staff_form").on("submit", function (e) {
   // $("#contact_submit_loader").show();
   $.ajax({
     type: "POST",
-    url: "php/staff_register.php",
+    url: "php/customer.php",
     data: $(this).serialize() + "&save=true",
     cache: false,
     success: function (response) {

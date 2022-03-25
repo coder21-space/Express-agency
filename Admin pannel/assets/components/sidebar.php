@@ -36,7 +36,12 @@
                       </a>
                   </li>
 
-
+                  <li>
+                      <a href="add_customer.php">
+                          <i class="mdi mdi-view-dashboard-outline"></i>
+                          <span>Add customer </span>
+                      </a>
+                  </li>
                   <li>
                       <a href="Customer_order_list.php">
                           <i class="mdi mdi-view-dashboard-outline"></i>
@@ -48,7 +53,7 @@
                   <li>
                       <a href="staff.php">
                           <i class="mdi mdi-view-dashboard-outline"></i>
-                          <span>staff list </span>
+                          <span>staff </span>
                       </a>
                   </li>
 
@@ -65,9 +70,9 @@
                       </a>
                   </li>
                   <li>
-                      <a href="staff_form.php">
+                      <a href="staff_single.php">
                           <i class="mdi mdi-view-dashboard-outline"></i>
-                          <span>staff form </span>
+                          <span>single staff </span>
                       </a>
                   </li>
 
@@ -83,6 +88,18 @@
                       <a href="vehical_list.php">
                           <i class="mdi mdi-view-dashboard-outline"></i>
                           <span> vehical list </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="add_vehical.php">
+                          <i class="mdi mdi-view-dashboard-outline"></i>
+                          <span> add vehical </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="vehicle_type.php">
+                          <i class="mdi mdi-view-dashboard-outline"></i>
+                          <span> vehical type </span>
                       </a>
                   </li>
 

@@ -16,8 +16,8 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
         $submit = $_POST['submit'];
         $submit = sql_prevent($conn, xss_prevent($_POST['submit']));
         switch ($submit) {
-            case 'staff_type_list':
-                $query = "select id,name,email,phone,address,city,pincode,state,salary,staff_type_id,created_at from staff_type";
+            case 'staff list':
+                $query = "select id,name,email,phone,created_at from staff";
                 $query_execute = mysqli_query($conn, $query);
 
                 if (mysqli_num_rows($query_execute) > 0) {
@@ -35,12 +35,12 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             case 'delete':
                 $id = sql_prevent($conn, xss_prevent($_POST['id']));
 
-                $check_id = "select id from staff_type where id=$id";
+                $check_id = "select id from staff where id=$id";
 
                 //check id exist or not
                 // encrypt id
                 if ($check_id) {
-                    $query = "DELETE FROM staff_type where id='$id'";
+                    $query = "DELETE FROM staff where id='$id'";
                     $query_execute = mysqli_query($conn, $query);
                     if ($query_execute) {
                         echo json_encode(array("success" => true, "message" => "Record Deleted successfully"));
@@ -55,7 +55,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 $id = sql_prevent($conn, xss_prevent($_POST['id']));
                 $name = sql_prevent($conn, xss_prevent($_POST['name']));
                 // $query = "UPDATE vehicle_type SET name = '$name', WHERE id ='$id' ";
-                $query = "UPDATE `staff_type` SET `name` = '$name' WHERE `staff_type`.`id` = $id ";
+                $query = "UPDATE `staff` SET `name` = '$name' WHERE `staff`.`id` = $id ";
 
                 $query_execute = mysqli_query($conn, $query);
                 if ($query_execute) {

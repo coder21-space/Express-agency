@@ -8,10 +8,10 @@ $(document).ready(function () {
   getdata();
   function getdata() {
     $.ajax({
-      url: "php/staff_type.php",
+      url: "php/vehicle_type.php",
       type: "POST",
       dataType: "json",
-      data: { submit: "staff_type_list" },
+      data: { submit: "vehicle_type" },
       success: function (response) {
         console.log(response);
         output = "";
@@ -20,17 +20,17 @@ $(document).ready(function () {
           var output = get_contactlist_html(response.data);
           $("#contact").html(output);
         } else {
-          // output_error += `
-          // // <div class="card">
-          // // <div class="card-body p-4">
-          // //     <div class="text-center">
-          // //         <h1 class="text-error">OOPS!</h1>
-          // //         <h3 class="mt-3 mb-2">Page not Found</h3>
-          // //         <p class="text-muted mb-3">NO INFORMATION FOUND</p>
-          // //         <a href="dashboard.php" class="btn btn-danger waves-effect waves-light"><i class="fas fa-home me-1"></i> Back to Home</a>
-          // //     </div>
-          // // </div>
-          // // </div>`;
+          //           output_error += `
+          // <div class="card">
+          // <div class="card-body p-4">
+          //     <div class="text-center">
+          //         <h1 class="text-error">OOPS!</h1>
+          //         <h3 class="mt-3 mb-2">Page not Found</h3>
+          //         <p class="text-muted mb-3">NO INFORMATION FOUND</p>
+          //         <a href="dashboard.php" class="btn btn-danger waves-effect waves-light"><i class="fas fa-home me-1"></i> Back to Home</a>
+          //     </div>
+          // </div>
+          // </div>`;
         }
         // $("#contact_error").html(output_error);
       },
@@ -42,30 +42,28 @@ $(document).ready(function () {
     previous = "";
     contacts.forEach((contact, index) => {
       previous += `
-        <tr>
-            <td>${index + 1}</td>
-            <td>${contact.name}</td>
-            <td>${contact.created_at}</td>
-            
-          
-          
-            <td>
-                <div class="d-flex">
-                <button type="button"class="btn btn-outline-primary  mx-2 "><i class="fa-solid fa-location-crosshairs"></i></button>
-                <button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" data-id=${
-                  contact.id
-                }  class="btn delete btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button>
-                <button type="button" class=" update mx-2 btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-id=${
-                  contact.id
-                } data-name=${
+      <tr>
+          <td>${index + 1}</td>
+          <td>${contact.name}</td>
+          <td>${contact.created_at}</td>
+
+          <td>
+              <div class="d-flex">
+              <button type="button"class="btn btn-outline-primary  mx-2 "><i class="fa-solid fa-location-crosshairs"></i></button>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" data-id=${
+                contact.id
+              }  class="btn delete btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button>
+              <button type="button" class=" update mx-2 btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-id=${
+                contact.id
+              } data-name=${
         contact.name
       } data-bs-target="#updateModal"><i class="fa-solid fa-pen-to-square"></i></button>
-                  
-                </div>
-             
-            </td>
-        </tr>
-        `;
+
+              </div>
+
+          </td>
+      </tr>
+      `;
     });
 
     return previous;
@@ -78,7 +76,7 @@ $(document).ready(function () {
     previous_error = "";
 
     $.ajax({
-      url: "staff_type.php",
+      url: "vehicle_type.php",
       type: "POST",
       dataType: "json",
       data: { submit: "email", email: email },
@@ -88,7 +86,7 @@ $(document).ready(function () {
           var contact_list = get_contactlist_html(response.data);
           $("#previous-contact").html(contact_list);
         } else {
-          // previous_error += `
+          //           previous_error += `
           // <div class="card">
           // <div class="card-body p-4">
           //     <div class="text-center">
@@ -127,7 +125,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: "php/add_data.php",
+      url: "php/add_vehicle_data.php",
       data: $(this).serialize() + "&submit=true",
       cache: false,
       success: function (response) {
@@ -157,7 +155,7 @@ $(document).ready(function () {
       },
     });
   });
-  // update
+  update;
 
   $("#update-btn").click(function (e) {
     e.preventDefault();
@@ -178,7 +176,7 @@ $(document).ready(function () {
     }
 
     $.ajax({
-      url: "php/staff_type.php",
+      url: "php/vehicle_type.php",
       type: "POST",
       dataType: "json",
       data: { submit: "update", id: id, name: name },
@@ -237,7 +235,7 @@ $(document).ready(function () {
     var id = $(this).attr("data-id");
     $("#confirm").on("click", function () {
       $.ajax({
-        url: "php/staff_type.php",
+        url: "php/vehicle_type.php",
         type: "POST",
         dataType: "json",
         data: { submit: "delete", id: id },

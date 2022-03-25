@@ -13,7 +13,31 @@
 <!--================INCLUDE HEAD START PHP=================-->
 
 <?php $header_heading = 'Contact order single-list';
-include_once 'assets/components/header.php'; ?>
+include_once 'assets/components/header.php';
+
+if (!isset($_GET['staff'])) {
+    header('location : staff.php');
+} else {
+    $id = $_GET['staff'];
+    $check_id = "select id from staff where id = $id";
+    $query = mysqli_query($conn, $check_id);
+    $result = mysqli_num_rows($query);
+
+    if ($result > 0) {
+        $sql = "select * from staff where id = $id";
+        $result = mysqli_query($conn, $sql);
+        $message = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $message = $row;
+        }
+    } else {
+        header('location : staff.php');
+    }
+}
+
+
+
+?>
 
 
 
@@ -32,91 +56,75 @@ include_once 'assets/components/header.php'; ?>
     <div class="content">
         <!-- end row -->
 
+        <!-- end row -->
         <div class="row">
-            <div class="col-xl-6">
+            <div class="col-xl-4">
                 <div class="card">
-                    <div class="card-body">
-                        <h4 class="header-title mb-4">single customer order</h4>
-                       <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
+                    <div class="text-center card-body">
+                        <div>
+                            <img src="assets/images/users/teamwork.png" class="rounded-circle avatar-xl img-thumbnail mb-2" alt="profile-image">
+                            <!-- 
+                            <p class="text-muted font-13 mb-3">
+                                Hi I'm Johnathn Deo,has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+                            </p> -->
 
+                            <div class="text-start">
+                                <p class="text-muted font-13"><strong>Full Name :</strong><?php echo $message['name'] ?> <span class="ms-2">Johnathan Deo</span></p>
 
+                                <p class="text-muted font-13"><strong>Mobile :</strong><span class="ms-2">(123) 123 1234</span></p>
 
-                                        <div class="table-responsive">
-                                            <table class="table table-centered mb-0" id="inline-editable">
+                                <p class="text-muted font-13"><strong>Email :</strong> <span class="ms-2">coderthemes@gmail.com</span></p>
 
-                                                <thead>
-                                                    <tr>
-                                                        <th>Id</th>
-                                                        <th>Customer_id</th>
-                                                        <th>Source_add</th>
-                                                        <th>destination_add</th>
-                                                        <th>st_date</th>
-                                                        <th>end_date</th>
-                                                        <th>vehical_id</th>
-                                                        <th>pay_id</th>
-                                                        <th>staus</th>
-                                                        <th>created_at</th>
+                                <p class="text-muted font-13"><strong>Location :</strong> <span class="ms-2">USA</span></p>
+                            </div>
 
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="contact">
-                                                </tbody>
-                                            </table>
-                                        </div> <!-- end .table-responsive-->
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card -->
-                            </div> <!-- end col -->
-                        </div> <!-- end row -->
+                        </div>
                     </div>
                 </div>
+
+
+
+                <!--================INCLUDE FOOTER PHP=================-->
+                <?php include_once 'assets/components/footer.php' ?>
+                <!--================END INCLUDE FOOTER PHP=================-->
+
+
             </div>
-        </div> <!-- end card-->
-    </div> <!-- end col -->
 
-    <!--================INCLUDE FOOTER PHP=================-->
-    <?php include_once 'assets/components/footer.php' ?>
-    <!--================END INCLUDE FOOTER PHP=================-->
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
 
 
-</div>
-
-<!-- ============================================================== -->
-<!-- End Page content -->
-<!-- ============================================================== -->
+        </div>
+        <!-- END wrapper -->
 
 
-</div>
-<!-- END wrapper -->
+        <?php include_once 'assets/components/modals.php' ?>
+
+        <script src="https://kit.fontawesome.com/76d2de9cd5.js" crossorigin="anonymous"></script>
+
+        <!-- Vendor -->
+        <script src="assets/libs/jquery/jquery.min.js"></script>
+        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/libs/simplebar/simplebar.min.js"></script>
+        <script src="assets/libs/node-waves/waves.min.js"></script>
+        <script src="assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
+        <script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
+        <script src="assets/libs/feather-icons/feather.min.js"></script>
+
+        <script src="assets/ajax/contact-data.js"></script>
 
 
-<?php include_once 'assets/components/modals.php' ?>
+        <!-- Table Editable plugin-->
+        <script src="assets/libs/jquery-tabledit/jquery.tabledit.min.js"></script>
 
-<script src="https://kit.fontawesome.com/76d2de9cd5.js" crossorigin="anonymous"></script>
+        <!-- Table editable init-->
+        <script src="assets/js/pages/tabledit.init.js"></script>
 
-<!-- Vendor -->
-<script src="assets/libs/jquery/jquery.min.js"></script>
-<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/libs/simplebar/simplebar.min.js"></script>
-<script src="assets/libs/node-waves/waves.min.js"></script>
-<script src="assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
-<script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
-<script src="assets/libs/feather-icons/feather.min.js"></script>
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
 
-<script src="assets/ajax/contact-data.js"></script>
-
-
-<!-- Table Editable plugin-->
-<script src="assets/libs/jquery-tabledit/jquery.tabledit.min.js"></script>
-
-<!-- Table editable init-->
-<script src="assets/js/pages/tabledit.init.js"></script>
-
-<!-- App js -->
-<script src="assets/js/app.min.js"></script>
-
-<!--================INCLUDE HEAD START PHP=================-->
-<?php include_once 'assets/components/script_end.php' ?>
-<!--================END INCLUDE HEAD END PHP=================--
+        <!--================INCLUDE HEAD START PHP=================-->
+        <?php include_once 'assets/components/script_end.php' ?>
+        <!--================END INCLUDE HEAD END PHP=================--

@@ -8,10 +8,10 @@ $(document).ready(function () {
   getdata();
   function getdata() {
     $.ajax({
-      url: "php/staff_type.php",
+      url: "php/add_customer_data.php",
       type: "POST",
       dataType: "json",
-      data: { submit: "staff_type_list" },
+      data: { submit: "customer list" },
       success: function (response) {
         console.log(response);
         output = "";
@@ -45,13 +45,15 @@ $(document).ready(function () {
         <tr>
             <td>${index + 1}</td>
             <td>${contact.name}</td>
+            <td>${contact.email}</td>
+            <td>${contact.phone}</td>
             <td>${contact.created_at}</td>
             
           
           
             <td>
                 <div class="d-flex">
-                <button type="button"class="btn btn-outline-primary  mx-2 "><i class="fa-solid fa-location-crosshairs"></i></button>
+                <button type="button"class="btn btn-outline-primary  mx-2 "><i class="fa-solid fa-location-crosshairs"></i></button>   
                 <button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" data-id=${
                   contact.id
                 }  class="btn delete btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button>
@@ -78,7 +80,7 @@ $(document).ready(function () {
     previous_error = "";
 
     $.ajax({
-      url: "staff_type.php",
+      url: "add_customer_data.php",
       type: "POST",
       dataType: "json",
       data: { submit: "email", email: email },
@@ -127,7 +129,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: "php/add_data.php",
+      url: "php/customer.php",
       data: $(this).serialize() + "&submit=true",
       cache: false,
       success: function (response) {
@@ -178,7 +180,7 @@ $(document).ready(function () {
     }
 
     $.ajax({
-      url: "php/staff_type.php",
+      url: "php/add_customer_data",
       type: "POST",
       dataType: "json",
       data: { submit: "update", id: id, name: name },

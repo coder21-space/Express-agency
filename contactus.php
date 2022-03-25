@@ -59,7 +59,6 @@
               </div>
               <h2>contact number:</h2>
               <p><a href="callto:someone@example.com">+234567890</a></p>
-
             </div>
           </div>
           <div class="col-sm-4">
@@ -69,8 +68,6 @@
               </div>
               <h2>Email us:</h2>
               <p><a href="mailto:someone@example.com">xyz@gmail.com</a></p>
-
-
             </div>
           </div>
         </div>

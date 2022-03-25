@@ -8,10 +8,10 @@ $(document).ready(function () {
   getdata();
   function getdata() {
     $.ajax({
-      url: "php/staff_type.php",
+      url: "php/vehicle_fetch.php",
       type: "POST",
       dataType: "json",
-      data: { submit: "staff_type_list" },
+      data: { submit: "vehicle list" },
       success: function (response) {
         console.log(response);
         output = "";
@@ -45,13 +45,16 @@ $(document).ready(function () {
         <tr>
             <td>${index + 1}</td>
             <td>${contact.name}</td>
+            <td>${contact.vehical_no}</td>
+            <td>${contact.trip_type}</td>
+            <td>${contact.load_capacity}</td>
             <td>${contact.created_at}</td>
             
           
           
             <td>
                 <div class="d-flex">
-                <button type="button"class="btn btn-outline-primary  mx-2 "><i class="fa-solid fa-location-crosshairs"></i></button>
+                <button type="button"class="btn btn-outline-primary  mx-2 "><i class="fa-solid fa-location-crosshairs"></i></button>   
                 <button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" data-id=${
                   contact.id
                 }  class="btn delete btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button>
@@ -78,7 +81,7 @@ $(document).ready(function () {
     previous_error = "";
 
     $.ajax({
-      url: "staff_type.php",
+      url: "vehicle_fetch.php",
       type: "POST",
       dataType: "json",
       data: { submit: "email", email: email },
@@ -127,7 +130,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: "php/add_data.php",
+      url: "php/vehicle_data.php",
       data: $(this).serialize() + "&submit=true",
       cache: false,
       success: function (response) {
@@ -178,7 +181,7 @@ $(document).ready(function () {
     }
 
     $.ajax({
-      url: "php/staff_type.php",
+      url: "php/vehicle_fetch.php",
       type: "POST",
       dataType: "json",
       data: { submit: "update", id: id, name: name },
@@ -237,7 +240,7 @@ $(document).ready(function () {
     var id = $(this).attr("data-id");
     $("#confirm").on("click", function () {
       $.ajax({
-        url: "php/staff_type.php",
+        url: "php/vehicle_data.php.php",
         type: "POST",
         dataType: "json",
         data: { submit: "delete", id: id },

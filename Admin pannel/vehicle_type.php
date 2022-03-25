@@ -16,7 +16,7 @@
 
 <!--================INCLUDE HEAD START PHP=================-->
 
-<?php $header_heading = 'vehicle list';
+<?php $header_heading = 'vehical type';
 include_once 'assets/components/header.php';
 ?>
 <!--================END INCLUDE HEAD END PHP=================-->
@@ -42,20 +42,17 @@ include_once 'assets/components/header.php';
                     <div class="card">
                         <div class="card-body" id="contact_error">
 
-                            <h5 class="mt-0">staff information</h5>
+                            <h5 class="mt-0">vehical type list</h5>
 
                             <p class="sub-header"></p>
-                            <button type="button" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#custom-modal"><i class="mdi mdi-plus-circle me-1"></i> Add staff</button>
+                            <button type="button" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#custom-modal"><i class="mdi mdi-plus-circle me-1"></i> Add vehical</button>
                             <div class="table-responsive">
                                 <table class="table table-centered mb-0" id="inline-editable">
                                     <thead>
                                         <tr>
                                             <th>Id</th>
                                             <th>Name</th>
-                                            <th>vehicle number</th>
-                                            <th>Trip type</th>
-                                            <th>Load capacity</th>
-                                            <th>Created_at</th>
+                                            <th>created_at</th>
                                             <th>Action</th>
 
 
@@ -92,7 +89,7 @@ include_once 'assets/components/header.php';
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header bg-light">
-                <h4 class="modal-title" id="myCenterModalLabel">Add vehicle</h4>
+                <h4 class="modal-title" id="myCenterModalLabel">Add vehical</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
@@ -117,7 +114,7 @@ include_once 'assets/components/header.php';
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header bg-light">
-                <h4 class="modal-title" id="myCenterModalLabel">Add vehicle</h4>
+                <h4 class="modal-title" id="myCenterModalLabel">Add vehical</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
@@ -168,42 +165,29 @@ include_once 'assets/components/header.php';
 
 <script src="https://kit.fontawesome.com/76d2de9cd5.js" crossorigin="anonymous"></script>
 <!-- Vendor -->
-
 <script src="assets/libs/jquery/jquery.min.js"></script>
 <script src="assets/ajax/common.js"></script>
-<script src="assets/ajax/vehicle.js"></script>
+<script src="assets/ajax/vehicle_type.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/libs/simplebar/simplebar.min.js"></script>
 <script src="assets/libs/node-waves/waves.min.js"></script>
-<script src="assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
-<script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
+<!-- <script src="assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
+<script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script> -->
 <script src="assets/libs/feather-icons/feather.min.js"></script>
+<script src="assets/js/pages/wizard.js"></script>
 
 
-
-<!-- third party js -->
-<script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
-<script src="assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script src="assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
-<script src="assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
-<script src="assets/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="assets/libs/datatables.net-buttons/js/buttons.flash.min.js"></script>
-<script src="assets/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script src="assets/libs/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-<script src="assets/libs/datatables.net-select/js/dataTables.select.min.js"></script>
 <script src="assets/libs/pdfmake/build/pdfmake.min.js"></script>
 <script src="assets/libs/pdfmake/build/vfs_fonts.js"></script>
-<!-- third party js ends -->
 
-<!-- Datatables init -->
-<script src="assets/js/pages/datatables.init.js"></script>
+<!-- third party js ends -->
 
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
-
 <script src="assets/ajax/sweetalert.js"></script>
+
+
 
 <!--================INCLUDE FOOTER PHP=================-->
 <?php include_once 'assets/components/script_end.php' ?>
