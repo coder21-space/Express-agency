@@ -32,23 +32,34 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
 
                 break;
 
-            case 'delete':
-                $id = sql_prevent($conn, xss_prevent($_POST['id']));
+                // case 'delete':
+                // $id = sql_prevent($conn, xss_prevent($_POST['id']));
 
-                $check_id = "select id from staff_type where id=$id";
+                // $check_id = "select id from staff_type where id=$id";
 
-                //check id exist or not
-                // encrypt id
-                if ($check_id) {
-                    $query = "DELETE FROM staff_type where id='$id'";
-                    $query_execute = mysqli_query($conn, $query);
-                    if ($query_execute) {
-                        echo json_encode(array("success" => true, "message" => "Record Deleted successfully"));
-                    } else {
-                        echo json_encode(array("success" => false, "message" => "Some error Occured"));
-                    }
+                // //check id exist or not
+                // // encrypt id
+                // if ($check_id) {
+                //     $query = "DELETE FROM staff_type where id='$id'";
+                //     $query_execute = mysqli_query($conn, $query);
+                //     if ($query_execute) {
+                //         echo json_encode(array("success" => true, "message" => "Record Deleted successfully"));
+                //     } else {
+                //         echo json_encode(array("success" => false, "message" => "Some error Occured"));
+                //     }
+                // }
+
+                // break;
+
+            case 'contact-delete':
+                $id = $_POST['id'];
+                $query = "DELETE FROM staff_type where id='$id'";
+                $query_execute = mysqli_query($conn, $query);
+                if ($query_execute) {
+                    echo json_encode(array("success" => true, "message" => "Record Deleted successfully"));
+                } else {
+                    echo json_encode(array("success" => false, "message" => "Some error Occured"));
                 }
-
                 break;
 
             case 'update':
@@ -59,7 +70,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
 
                 $query_execute = mysqli_query($conn, $query);
                 if ($query_execute) {
-                    echo json_encode(array("success" => true, "message" => "vehicle details Updated successfully"));
+                    echo json_encode(array("success" => true, "message" => " staff add successfully "));
                     die;
                 } else {
                     echo json_encode(array("success" => false, "message" => "Some error Occured"));

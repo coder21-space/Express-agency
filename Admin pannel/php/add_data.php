@@ -32,7 +32,7 @@ if ($_SERVER['SERVER_NAME'] == constant("HOST_NAME")) {
             $sql = "INSERT INTO `staff_type` (`name`, `created_at`) VALUES ( '$name', current_timestamp());";
 
             if ($conn->query($sql) == true) {
-                echo json_encode(array("success" => true, "message" => "Hello $name your message is recieved our team will get back to you."));
+                echo json_encode(array("success" => true, "message" => " $name add successfully ."));
             }
         } else {
             echo json_encode(array("success" => false, "message" => "Method not found"));

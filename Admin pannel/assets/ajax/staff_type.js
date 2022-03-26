@@ -50,18 +50,17 @@ $(document).ready(function () {
           
           
             <td>
-                <div class="d-flex">
-                <button type="button"class="btn btn-outline-primary  mx-2 "><i class="fa-solid fa-location-crosshairs"></i></button>
-                <button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" data-id=${
-                  contact.id
-                }  class="btn delete btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button>
-                <button type="button" class=" update mx-2 btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-id=${
-                  contact.id
-                } data-name=${
+            <div class="d-flex">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" data-id=${
+              contact.id
+            }  class="btn delete btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button>
+            <button type="button" class=" update mx-2 btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-id=${
+              contact.id
+            } data-name=${
         contact.name
       } data-bs-target="#updateModal"><i class="fa-solid fa-pen-to-square"></i></button>
-                  
-                </div>
+
+            </div>
              
             </td>
         </tr>
@@ -240,7 +239,7 @@ $(document).ready(function () {
         url: "php/staff_type.php",
         type: "POST",
         dataType: "json",
-        data: { submit: "delete", id: id },
+        data: { submit: "contact-delete", id: id },
         success: function (response) {
           $("#danger-alert-modal").modal("hide");
           if (response.success) {
@@ -261,4 +260,50 @@ $(document).ready(function () {
       });
     });
   });
+
+  // $("#contact").click(function (e) {
+  //   // contact-list - all data
+  //   // single - single data
+  //   e.preventDefault();
+
+  //   var id = $("#contact_delete").val();
+  //   // var page = "contactus";
+
+  //   $.ajax({
+  //     url: "php/staff_type.php",
+  //     type: "POST",
+  //     dataType: "json",
+  //     data: {
+  //       submit: "contact-delete",
+  //       id: id,
+  //     },
+  //     success: function (response) {
+  //       $("#danger-alert-modal").modal("hide");
+  //       if (response.success) {
+  //         swal({
+  //           icon: "success",
+  //           title: "success",
+  //           text: response.message,
+  //         });
+
+  //         // if (page == "contactus") {
+  //         //   getdata();
+  //         // } else {
+  //         //   previous();
+  //         // }
+  //       } else {
+  //         swal({
+  //           icon: "error",
+  //           title: "error",
+  //           text: response.message,
+  //         });
+  //       }
+  //     },
+  //   });
+  // });
+  // // $(document).on("click", ".delete", function () {
+  // //   var id = $(this).attr("data-id");
+  // //   $("#contact_delete").val(id);
+  // //   $("#danger-alert-modal").modal("show");
+  // // });
 });

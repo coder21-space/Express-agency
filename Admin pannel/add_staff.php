@@ -74,7 +74,7 @@ include_once 'assets/components/header.php';
                                     </div>
                             </fieldset>
                             <fieldset class="wizard-fieldset">
-                                <h5>Staff Information</h5>
+                                <h5>Staff Registration</h5>
                                 <div class="form-group">
                                     <input type="text" class="form-control wizard-required" name="name" id="name">
                                     <label for="email" class="wizard-form-text-label">Name</label>
@@ -103,7 +103,7 @@ include_once 'assets/components/header.php';
                             </fieldset>
 
                             <fieldset class="wizard-fieldset">
-                                <h5>Staff Information</h5>
+                                <h5>Staff Registration</h5>
                                 <div class="form-group">
                                     <input type="text" class="form-control wizard-required" name="city" id="city">
                                     <label for="username" class="wizard-form-text-label">City</label>

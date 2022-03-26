@@ -16,8 +16,8 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
         $submit = $_POST['submit'];
         $submit = sql_prevent($conn, xss_prevent($_POST['submit']));
         switch ($submit) {
-            case 'customer list':
-                $query = "select id,name,email,phone,created_at from customer";
+            case 'customer order list':
+                $query = "select id,customer_id,source_add,destination_add,start_date,end_data,vehical_type_id,pay_id,created_at from order";
                 $query_execute = mysqli_query($conn, $query);
 
                 if (mysqli_num_rows($query_execute) > 0) {
@@ -35,7 +35,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             case 'delete':
                 $id = sql_prevent($conn, xss_prevent($_POST['id']));
 
-                $check_id = "select id from customer where id=$id";
+                $check_id = "select id from order where id=$id";
 
                 //check id exist or not
                 // encrypt id

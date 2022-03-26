@@ -45,7 +45,7 @@ include_once 'assets/components/header.php';
                             <h5 class="mt-0">customer information</h5>
 
                             <p class="sub-header"></p>
-                            <button type="button" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#custom-modal"><i class="mdi mdi-plus-circle me-1"></i> Add staff</button>
+                            <a href="add_customer.php"><button type="button" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-plus-circle me-1"></i> Add new customer</button></a>
                             <div class="table-responsive">
                                 <table class="table table-centered mb-0" id="inline-editable">
                                     <thead>
@@ -91,7 +91,8 @@ include_once 'assets/components/header.php';
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header bg-light">
-                <h4 class="modal-title" id="myCenterModalLabel">Add staff</h4>
+                <h4 class="modal-title" id="myCenterModalLabel">Add
+                    customer</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
@@ -116,7 +117,8 @@ include_once 'assets/components/header.php';
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header bg-light">
-                <h4 class="modal-title" id="myCenterModalLabel">Add staff</h4>
+                <h4 class="modal-title" id="myCenterModalLabel">Add
+                    customer</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">

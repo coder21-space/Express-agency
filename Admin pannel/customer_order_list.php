@@ -16,7 +16,7 @@
 
 <!--================INCLUDE HEAD START PHP=================-->
 
-<?php $header_heading = 'Customer order list';
+<?php $header_heading = 'customer order list';
 include_once 'assets/components/header.php';
 ?>
 <!--================END INCLUDE HEAD END PHP=================-->
@@ -40,30 +40,29 @@ include_once 'assets/components/header.php';
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body" id="contact_error">
 
-                            <h5 class="mt-0">Inline edit</h5>
-                            <p class="sub-header">Inline edit like a spreadsheet on two columns only and without identifier column.</p>
+                            <h5 class="mt-0">vehicle list</h5>
+
+                            <p class="sub-header"></p>
+                            <a href="add_vehical.php"><button type="button" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-plus-circle me-1"></i> Add new vehical</button></a>
                             <div class="table-responsive">
                                 <table class="table table-centered mb-0" id="inline-editable">
                                     <thead>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>Customer_id</th>
-                                            <th>Source_add</th>
-                                            <th>destination_add</th>
-                                            <th>st_date</th>
-                                            <th>end_date</th>
-                                            <th>vehical_id</th>
-                                            <th>pay_id</th>
-                                            <th>staus</th>
-                                            <th>created_at</th>
-
+                                        <th>Id</th>
+                                        <th>Customer_id</th>
+                                        <th>Source_add</th>
+                                        <th>destination_add</th>
+                                        <th>st_date</th>
+                                        <th>end_date</th>
+                                        <th>vehical_id</th>
+                                        <th>pay_id</th>
+                                        <th>created_at</th>
 
                                         </tr>
                                     </thead>
 
-                                    <tbody>
+                                    <tbody id="contact">
 
                                     </tbody>
                                 </table>
@@ -80,10 +79,87 @@ include_once 'assets/components/header.php';
     <!-- content -->
 
     <!-- Footer Start -->
+
     <!--================INCLUDE FOOTER PHP=================-->
     <?php include_once 'assets/components/footer.php' ?>
     <!--================END INCLUDE FOOTER PHP=================-->
 </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="custom-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-light">
+                <h4 class="modal-title" id="myCenterModalLabel">Add vehicle</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+            </div>
+            <div class="modal-body">
+                <form id="insert-form">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+                        <span class="text-danger" id="name_error"></span>
+
+                    </div>
+
+                    <button type="submit" class="btn btn-light waves-effect waves-light" id="submit">Save</button>
+                    <button type="button" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal">Cancel</button>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-light">
+                <h4 class="modal-title" id="myCenterModalLabel">Add vehicle</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+            </div>
+            <div class="modal-body">
+                <form id="insert-form">
+                    <div class="mb-3">
+                        <input type="hidden" id="id">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+                        <span class="text-danger" id="name_error"></span>
+
+                    </div>
+
+                    <button type="submit" class="btn btn-light waves-effect waves-light" id="update">update</button>
+                    <button type="button" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal">Cancel</button>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Danger Alert Modal -->
+<div id="danger-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content modal-filled bg-danger">
+            <div class="modal-body">
+                <div class="text-center">
+                    <i class="dripicons-wrong h1 text-white"></i>
+                    <input type="hidden" id="contact_delete">
+                    <h4 class="mt-2 text-white">This action is dangerous</h4>
+
+                    <p class="mt-3 text-white"> Delete Message
+                        Locate the conversation that has the message you want to delete then tap on it. Touch and hold
+                        the message you want to delete</p>
+
+                    <button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary my-2" data-bs-dismiss="modal" id="delete">Delete</button>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 
 <!-- ============================================================== -->
 <!-- End Page content -->
@@ -92,7 +168,10 @@ include_once 'assets/components/header.php';
 
 <script src="https://kit.fontawesome.com/76d2de9cd5.js" crossorigin="anonymous"></script>
 <!-- Vendor -->
+
 <script src="assets/libs/jquery/jquery.min.js"></script>
+<script src="assets/ajax/common.js"></script>
+<script src="assets/ajax/order.js"></script>
 <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/libs/simplebar/simplebar.min.js"></script>
 <script src="assets/libs/node-waves/waves.min.js"></script>
@@ -100,7 +179,7 @@ include_once 'assets/components/header.php';
 <script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
 <script src="assets/libs/feather-icons/feather.min.js"></script>
 
-<script src="assets/ajax/contact-data.js"></script>
+
 
 <!-- third party js -->
 <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>

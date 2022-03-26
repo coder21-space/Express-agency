@@ -53,7 +53,7 @@ $(document).ready(function () {
           
             <td>
                 <div class="d-flex">
-                <button type="button"class="btn btn-outline-primary  mx-2 "><i class="fa-solid fa-location-crosshairs"></i></button>   
+                <a href="customer_single.php"><button type="button"class="btn btn-outline-primary  mx-2 "><i class="fa-solid fa-location-crosshairs"></i></button></a>  
                 <button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" data-id=${
                   contact.id
                 }  class="btn delete btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button>

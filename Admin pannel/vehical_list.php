@@ -42,10 +42,10 @@ include_once 'assets/components/header.php';
                     <div class="card">
                         <div class="card-body" id="contact_error">
 
-                            <h5 class="mt-0">staff information</h5>
+                            <h5 class="mt-0">vehicle list</h5>
 
                             <p class="sub-header"></p>
-                            <button type="button" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#custom-modal"><i class="mdi mdi-plus-circle me-1"></i> Add staff</button>
+                            <a href="add_vehical.php"><button type="button" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-plus-circle me-1"></i> Add new vehical</button></a>
                             <div class="table-responsive">
                                 <table class="table table-centered mb-0" id="inline-editable">
                                     <thead>
