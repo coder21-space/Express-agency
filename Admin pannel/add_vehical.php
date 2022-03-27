@@ -66,12 +66,15 @@ include_once 'assets/components/header.php';
                                     <div class="wizard-form-error" id="vehical_no_error"></div>
                                 </div>
                                 <div class="form-group">
-
+                                    <!-- <label class="md-2" for="username"> trip type</label> -->
                                     <select class="form-control wizard-required" name="trip_type" id="trip_type">
-                                        <option selected>long trip</option>
+                                        <option value="" disabled selected>trip type</option>
                                         <option>short trip</option>
+                                        <option>long trip</option>
+
+
                                     </select>
-                                    <label for="username"> trip type</label>
+
                                     <div class="wizard-form-error" id="	trip_type_error"></div>
                                 </div>
 
@@ -95,7 +98,7 @@ include_once 'assets/components/header.php';
                                     <!-- <input type="text" class="form-control wizard-required" name="	vehical_type_id" id="	vehical_type_id">
                                     <label for="username" class="wizard-form-text-label">vehicle type id</label> -->
                                     <select name="vehicle_type_id" id="vehicle_type_id" class="form-select select " aria-label="Default select example">
-                                        <option value="select vehical type">select vehical type</option>
+                                        <option value="select vehical type" disabled selected>select vehical type</option>
 
                                         <?php
                                         include 'connection.php';

@@ -79,7 +79,7 @@ if (!isset($_GET['contact'])) {
                             <div class="tab-pane" id="home-b1">
                                 <?php echo $message['message'] ?> <button type="button" data-bs-toggle="modal" data-bs-target="#con-close-modal" class="btn btn-outline-primary mx-2 "><i class="fa-solid fa-reply"></i></button>
                             </div>
-                            <div class="tab-pane show active" id="profile-b1">
+                            <!-- <div class="tab-pane show active" id="profile-b1">
                                 <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,
                                     rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis
                                     pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean
@@ -89,7 +89,7 @@ if (!isset($_GET['contact'])) {
                                     commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
                                     parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
                                     pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
-                            </div>
+                            </div> -->
                             <div class="tab-pane" id="messages-b1">
 
                                 <div class="row">

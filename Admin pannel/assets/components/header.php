@@ -98,9 +98,9 @@ if (!user_check($conn)) {
             </button>
         </li>
 
-        <!-- <li>
-                            <h4 class="page-title-main"> <?php echo $header_heading  ?> </h4>
-                        </li> -->
+        <li>
+            <h4 class="page-title-main"> <?php echo $header_heading  ?> </h4>
+        </li>
 
     </ul>
 

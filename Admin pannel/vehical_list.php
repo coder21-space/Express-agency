@@ -53,8 +53,6 @@ include_once 'assets/components/header.php';
                                             <th>Id</th>
                                             <th>Name</th>
                                             <th>vehicle number</th>
-                                            <th>Trip type</th>
-                                            <th>Load capacity</th>
                                             <th>Created_at</th>
                                             <th>Action</th>
 

@@ -46,15 +46,15 @@ $(document).ready(function () {
             <td>${index + 1}</td>
             <td>${contact.name}</td>
             <td>${contact.vehical_no}</td>
-            <td>${contact.trip_type}</td>
-            <td>${contact.load_capacity}</td>
             <td>${contact.created_at}</td>
             
           
           
             <td>
                 <div class="d-flex">
-                <a href="vehical_single.php"><button type="button"class="btn btn-outline-primary  mx-2 "><i class="fa-solid fa-location-crosshairs"></i></button></a>   
+                <a href="vehical_single.php?vehicle=${
+                  contact.id
+                }"><button type="button"class="btn btn-outline-primary  mx-2 "><i class="fa-solid fa-location-crosshairs"></i></button></a>   
                 <button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" data-id=${
                   contact.id
                 }  class="btn delete btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button>

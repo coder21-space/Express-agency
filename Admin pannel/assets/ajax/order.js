@@ -53,10 +53,9 @@ $(document).ready(function () {
           
             <td>
                 <div class="d-flex">
-                <a href="customer_single.php"><button type="button"class="btn btn-outline-primary  mx-2 "><i class="fa-solid fa-location-crosshairs"></i></button></a>  
-                <button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" data-id=${
+                <a href="customer_order_single.php?order=${
                   contact.id
-                }  class="btn delete btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button>
+                }"><button type="button"class="btn btn-outline-primary  mx-2 "><i class="fa-solid fa-location-crosshairs"></i></button></a>
                 <button type="button" class=" update mx-2 btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-id=${
                   contact.id
                 } data-name=${

@@ -17,7 +17,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
         $submit = sql_prevent($conn, xss_prevent($_POST['submit']));
         switch ($submit) {
             case 'vehicle list':
-                $query = "select id,name,trip_type,load_capacity,vehical_no,created_at from vehicle";
+                $query = "select id,name,vehical_no,created_at from vehicle";
                 $query_execute = mysqli_query($conn, $query);
 
                 if (mysqli_num_rows($query_execute) > 0) {

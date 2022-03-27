@@ -29,50 +29,89 @@
                   </li>
                   <li class="menu-title">data information</li>
                   <li>
-
-                      <a href="Customer_list.php">
-                          <i class="mdi mdi-view-dashboard-outline"></i>
-                          <span> Customer list </span>
+                      <a href="#email" data-bs-toggle="collapse">
+                          <i class="mdi mdi-email-outline"></i>
+                          <span> Customer </span>
+                          <span class="menu-arrow"></span>
                       </a>
+                      <div class="collapse" id="email">
+                          <ul class="nav-second-level">
+                              <li>
+                                  <a href="add_customer.php">add Customer </a>
+                              </li>
+                              <li>
+                                  <a href="Customer_list.php">Customer list</a>
+                              </li>
+                          </ul>
+                      </div>
                   </li>
 
-                  <li>
-                      <a href="add_customer.php">
-                          <i class="mdi mdi-view-dashboard-outline"></i>
-                          <span>Add customer </span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="Customer_order_list.php">
-                          <i class="mdi mdi-view-dashboard-outline"></i>
-                          <span> Customer order list </span>
-                      </a>
-                  </li>
 
                   <li>
-                      <a href="add_customer_order.php">
-                          <i class="mdi mdi-view-dashboard-outline"></i>
-                          <span>add Customer order</span>
+                      <a href="#email" data-bs-toggle="collapse">
+                          <i class="mdi mdi-email-outline"></i>
+                          <span> Customer order </span>
+                          <span class="menu-arrow"></span>
                       </a>
-                  </li>
-                  <li>
-                      <a href="staff_list.php">
-                          <i class="mdi mdi-view-dashboard-outline"></i>
-                          <span>staff list</span>
-                      </a>
+                      <div class="collapse" id="email">
+                          <ul class="nav-second-level">
+                              <li>
+                                  <a href="add_customer_order.php">add Customer order</a>
+                              </li>
+                              <li>
+                                  <a href="Customer_order_list.php">Customer order list</a>
+                              </li>
+                          </ul>
+                      </div>
                   </li>
 
+
+
+
+
                   <li>
-                      <a href="add_staff.php">
-                          <i class="mdi mdi-view-dashboard-outline"></i>
-                          <span>Add new staff </span>
+                      <a href="#email" data-bs-toggle="collapse">
+                          <i class="mdi mdi-email-outline"></i>
+                          <span> Staff </span>
+                          <span class="menu-arrow"></span>
                       </a>
+                      <div class="collapse" id="email">
+                          <ul class="nav-second-level">
+
+                              <li>
+                                  <a href="staff_type.php">Staff type</a>
+                              </li>
+                              <li>
+                                  <a href="add_staff.php">add new Staff</a>
+                              </li>
+                              <li>
+                                  <a href="staff_list.php">Staff list</a>
+                              </li>
+                          </ul>
+                      </div>
                   </li>
+
+
                   <li>
-                      <a href="staff_type.php">
-                          <i class="mdi mdi-view-dashboard-outline"></i>
-                          <span>staff type </span>
+                      <a href="#email" data-bs-toggle="collapse">
+                          <i class="mdi mdi-email-outline"></i>
+                          <span> vehical </span>
+                          <span class="menu-arrow"></span>
                       </a>
+                      <div class="collapse" id="email">
+                          <ul class="nav-second-level">
+
+                              <li>
+                                  <a href="vehicle_type.php">vehicle type</a>
+                              </li>
+                              <li>
+                                  <a href="add_vehical.php">add new vehicle</a>
+                              </li>
+                              <li>
+                                  <a href="vehical_list.php">vehical list</a>
+                              </li>
+                          </ul>
+                      </div>
                   </li>
 
                   <li>
@@ -81,28 +120,6 @@
                           <span> payment list </span>
                       </a>
                   </li>
-
-
-                  <li>
-                      <a href="vehical_list.php">
-                          <i class="mdi mdi-view-dashboard-outline"></i>
-                          <span> vehical list </span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="add_vehical.php">
-                          <i class="mdi mdi-view-dashboard-outline"></i>
-                          <span> add new vehical </span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="vehicle_type.php">
-                          <i class="mdi mdi-view-dashboard-outline"></i>
-                          <span> vehical type </span>
-                      </a>
-                  </li>
-
-
 
               </ul>
           </div>
