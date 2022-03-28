@@ -7,7 +7,6 @@ function onYouTubePlayerAPIReady() {
         }
     })
 }
-
 function onPlayerReady(event) {
     
     var overlay = document.getElementById("video_overlay");
@@ -26,10 +25,8 @@ function onPlayerReady(event) {
         playButton.style.display = 'inline-block';
         pauseButton.style.display = 'none';
         overlay.classList.remove('playing')
-    })
-    
+    })   
 }
-
 // Inject YouTube API script
 var tag = document.createElement('script');
 tag.src = "//www.youtube.com/player_api";

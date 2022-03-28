@@ -61,7 +61,7 @@ include_once 'assets/components/header.php';
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control wizard-required" name="vehical_no" id="	vehical_no">
+                                    <input type="text" class="form-control wizard-required" name="vehical_no" id="vehical_no">
                                     <label for="pwd" class="wizard-form-text-label"> vehical number</label>
                                     <div class="wizard-form-error" id="vehical_no_error"></div>
                                 </div>

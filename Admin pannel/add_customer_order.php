@@ -48,15 +48,13 @@ include_once 'assets/components/header.php';
                                 <ul class="list-unstyled form-wizard-steps clearfix">
                                     <li class="active"><span>1</span></li>
                                     <li><span>2</span></li>
-
                                     <li><span>3</span></li>
+                                    <li><span>4</span></li>
                                 </ul>
                             </div>
                             <fieldset class="wizard-fieldset show">
                                 <h5> add customer order deatils</h5>
                                 <div class="form-group">
-                                    <!-- <input type="text" class="form-control wizard-required" name="	vehical_type_id" id="	vehical_type_id">
-                                    <label for="username" class="wizard-form-text-label">vehicle type id</label> -->
                                     <select name="customer_id" id="customer_id" class="form-select select " aria-label="Default select example">
                                         <option value="select customer id ">select customer id</option>
 
@@ -82,15 +80,20 @@ include_once 'assets/components/header.php';
                                     <label for="pwd" class="wizard-form-text-label">source add </label>
                                     <div class="wizard-form-error" id="	source_add_error"></div>
                                 </div>
+
                                 <div class="form-group">
                                     <input type="text" class="form-control wizard-required" name="destination_add" id="	destination_add">
                                     <label for="pwd" class="wizard-form-text-label">destination add</label>
                                     <div class="wizard-form-error" id="destination_add_error"></div>
                                 </div>
+
+
+
                                 <div class="form-group clearfix">
                                     <a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
                                 </div>
                             </fieldset>
+
                             <fieldset class="wizard-fieldset">
                                 <h5>add customer order deatils</h5>
                                 <div class="form-group">
@@ -99,15 +102,14 @@ include_once 'assets/components/header.php';
 
                                     <div class="wizard-form-error" id="start_date_error"></div>
                                 </div>
+
                                 <div class="form-group">
                                     <label for="username" class="mx-2">end date</label>
                                     <input type="date" class="form-control wizard-required" name="end_data" id="end_data">
-
                                     <div class="wizard-form-error" id="end_data_error"></div>
                                 </div>
+
                                 <div class="form-group">
-                                    <!-- <input type="text" class="form-control wizard-required" name="	vehical_type_id" id="	vehical_type_id">
-                                    <label for="username" class="wizard-form-text-label">vehicle type id</label> -->
                                     <select name="vehical_type_id" id="vehical_type_id" class="form-select select " aria-label="Default select example">
                                         <option value="select vehical type">select vehical type</option>
 
@@ -117,33 +119,93 @@ include_once 'assets/components/header.php';
                                         $query_execute = mysqli_query($conn, $query);
                                         if (mysqli_num_rows($query_execute) > 0) {
                                             while ($result = mysqli_fetch_array($query_execute)) {  ?>
-
-                                                <!-- <option value="" selected></option> -->
                                                 <option value="<?php echo $result['id'] ?>"><?php echo $result['name'] ?></option>
                                         <?php                                       }
                                         }
                                         ?>
-
                                     </select>
                                     <div class="wizard-form-error" id="vehical_type_id_error"></div>
                                 </div>
-                                <div class="form-group clearfix">
-                                    <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
-                                    <a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
-                                </div>
-                            </fieldset>
-                            <fieldset class="wizard-fieldset">
-                                <h5>customer Information</h5>
+
+                                <!-- <div class="form-group">
+                                    <select class="form-control wizard-required" name="status" id="status">
+                                        <option value="" disabled selected>status</option>
+                                        <option>failed</option>
+                                        <option>complete</option>
+                                        <option>panding</option>
+                                    </select>
+                                    <div class="wizard-form-error" id="	status_error"></div>
+                                </div> -->
+
                                 <div class="form-group">
                                     <input type="number" class="form-control wizard-required" name="pay_id" id="pay_id">
                                     <label for="username" class="wizard-form-text-label">pay id</label>
                                     <div class="wizard-form-error" id="pay_id_error"></div>
                                 </div>
-                                <!-- <div class="form-group">
-                                    <input type="text" class="form-control wizard-required" name="status" id="status">
-                                    <label for="email" class="wizard-form-text-label">status</label>
+
+                                <div class="form-group clearfix">
+                                    <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
+                                    <a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="wizard-fieldset">
+                                <h5>Bank Information</h5>
+
+                                <div class="form-group">
+                                    <input type="number" class="form-control wizard-required" id="transaction_id" name="transaction_id">
+                                    <label for="transaction_id" class="wizard-form-text-label">transaction id*</label>
+                                    <div class="transaction_id_error"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="number" class="form-control wizard-required" id="account_no" name="account_no">
+                                    <label for="account_no" class="wizard-form-text-label">account no*</label>
+                                    <div class="account_no_error"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <select class="form-control wizard-required" name="mode_of_pay" id="mode_of_pay">
+                                        <option value="" disabled selected>mode_of_pay</option>
+                                        <option>upi</option>
+                                        <option>net banking</option>
+                                        <option>card payment</option>
+                                    </select>
                                     <div class="wizard-form-error" id="status_error"></div>
-                                </div> -->
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control wizard-required" id="bank_name" name="bank_name">
+                                    <label for="bank name" class="wizard-form-text-label">bank name*</label>
+                                    <div class="bank_name_error"></div>
+                                </div>
+
+                                <div class="form-group clearfix">
+                                    <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
+                                    <a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="wizard-fieldset">
+                                <h5>customer Information</h5>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control wizard-required" id="amount" name="amount">
+                                    <label for="amount" class="wizard-form-text-label">amount*</label>
+                                    <div class="amount_error"></div>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <select class="form-control wizard-required" name="status" id="status">
+                                        <option value="status" disabled selected>status</option>
+                                        <option>failed</option>
+                                        <option>complete</option>
+                                        <option>panding</option>
+                                    </select>
+                                    <div class="wizard-form-error" id="status_error"></div>
+                                </div>
+
 
                                 <div class="form-group clearfix">
                                     <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>

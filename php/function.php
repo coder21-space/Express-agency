@@ -10,4 +10,3 @@ include 'connection.php';
 
         return mysqli_real_escape_string($conn,$value);
     }
-?>

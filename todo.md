@@ -1,4 +1,4 @@
-### kaushal Project Work List
+### kaushal Project pending work
 
 
 - [ ]  responsive website
@@ -6,9 +6,9 @@
 - [ ]  preloader
 - [ ]  image size reduce
 - [ ]  top header ui make best
-
-
-
+- [ ]  footer ui all link working (instagram,youtube,snapchat)hover effect
+- [ ]  dynamic data show in gallery 
+- [ ]  cms
 
 
 ### Learning List

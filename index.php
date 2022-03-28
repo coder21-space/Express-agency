@@ -9,10 +9,6 @@
     <?php include_once 'components/head_end.php' ?>
     <!--================END INCLUDE HEAD END PHP=================-->
 
-    <!-- Preloader -->
-    <!-- <div id="preloader">
-      <div id="status"></div>
-    </div> -->
 
     <!--================INCLUDE HEADER NAV PHP=================-->
     <?php include_once 'components/header.php' ?>
@@ -186,7 +182,6 @@
       </div>
     </section>
     <!--================End Services chose Area =================-->
-
 
     <!-- Call to action section start -->
     <section class="callToAct-sec overlay-dblue">

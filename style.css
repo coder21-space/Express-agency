@@ -1,10 +1,7 @@
-
-
 /*------------------------------------
 
 	CSS Index
-	============
-	
+	============	
 	01. Common style     //
 	02. Preloader CSS    // not working yet
 	03. Back to top CSS   //
@@ -14,11 +11,8 @@
 	07. About style       //
 	08. Service style     //
 	10. Call to action style // 
-	
-
 
 --------------------------------------*/
-
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500');
 @import url('https://fonts.googleapis.com/css?family=Rubik:400,500,700');
 
@@ -60,8 +54,7 @@ section {
 	width: 100%;
 }
 
-/********** Common style **********/
-
+/********** start Common style **********/
 .overlay-black,
 .overlay-dblue {
 	position: relative;
@@ -176,9 +169,9 @@ section {
 .common-padd-btm {
 	padding-bottom: 100px;
 }
+/**********end Common style **********/
 
-
-/********** Back to top CSS **********/
+/**********start Back to top CSS **********/
 #back-to-top {
 	display: none;
 	position: fixed;
@@ -200,9 +193,8 @@ section {
 	line-height: 0;
 	vertical-align: middle;
 }
-
-
-/********* Header top style **********/
+/**********end Back to top CSS **********/
+/*********start Header top style **********/
 .header-top {
 	display: block;
 	position: relative;
@@ -234,7 +226,6 @@ section {
 	color: #fff;
 	cursor: pointer;
 }
-
 
 .language ul {
 	margin: 0;
@@ -284,10 +275,9 @@ section {
 	margin-left: 17rem;
 	position: relative;
 }
-/********* Header top style end **********/
+/********* end Header top style **********/
 
-
-/********** Header style **********/
+/**********start Header style **********/
 .header-sec {
 	position: relative;
 	width: 100%;
@@ -383,7 +373,6 @@ section {
 	height: auto;
 }
 
-
 .header-sec.sticky .nav-menu li a {
 	padding: 15px 12px 15px;
 }
@@ -412,7 +401,6 @@ section {
 	-o-transition: 300ms;
 	transition: 300ms;
 }
-
 .search-btn:hover {
 	color: #2354cd;
 }
@@ -461,10 +449,9 @@ section {
 	top: 0;
 }
 
-/**********  Header style end **********/
+/**********end  Header style  **********/
 
-
-/**********  Slider style **********/
+/**********start  Slider style **********/
 .slider-caro .nivo-caption {
 	position: absolute;
 	width: 100%;
@@ -623,12 +610,9 @@ section {
 .particle-bg .slide-caption span {
 	color: #c6c6c6;
 }
+/**********end Slider style  **********/
 
-
-/**********  Slider style end **********/
-
-
-/**********  About style  **********/
+/**********start  About style  **********/
 .art-content {
 	position: relative;
 	display: block;
@@ -693,11 +677,9 @@ section {
 	color: #fff;
 	box-shadow: 0 0 0 10px rgba(255, 255, 255, .6);
 }
+/**********end About style  **********/
 
-/**********  About style end **********/
-
-
-/**********  Service style  **********/
+/**********start Service style  **********/
 .service-sec {
 	background: #fafbff;
 	padding-bottom: 75px;
@@ -768,11 +750,9 @@ section {
 .s3 {
 	background-image: url(images/service/bg-3.png);
 }
-/**********  Service style end **********/
+/**********end  Service style **********/
 
-
-
-/**********  Call to action style  **********/
+/**********start Call to action style  **********/
 .callToAct-sec {
 	padding: 113px 0 106px;
 	background-image: url(images/video_bg.jpg);
@@ -816,5 +796,5 @@ section {
 	background: #0a1631;
 	color: #fff;
 }
-/**********  Call to action style end **********/
+/**********end  Call to action style  **********/
 

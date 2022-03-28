@@ -16,7 +16,7 @@
 
 <!--================INCLUDE HEAD START PHP=================-->
 
-<?php $header_heading = 'customer order list';
+<?php $header_heading = 'vehical maintenance';
 include_once 'assets/components/header.php';
 ?>
 <!--================END INCLUDE HEAD END PHP=================-->
@@ -42,22 +42,19 @@ include_once 'assets/components/header.php';
                     <div class="card">
                         <div class="card-body" id="contact_error">
 
-                            <h5 class="mt-0">vehicle list</h5>
+                            <h5 class="mt-0">vehical maintenance list</h5>
 
                             <p class="sub-header"></p>
-                            <a href="add_vehical.php"><button type="button" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-plus-circle me-1"></i> Add new vehical</button></a>
+                            <button type="button" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#custom-modal"><i class="mdi mdi-plus-circle me-1"></i> Add data</button>
                             <div class="table-responsive">
                                 <table class="table table-centered mb-0" id="inline-editable">
                                     <thead>
-                                        <th>Id</th>
-                                        <th>Customer_id</th>
-                                        <!-- <th>Source_add</th>
-                                        <th>destination_add</th>
-                                        <th>st_date</th>
-                                        <th>end_date</th> -->
-                                        <th>vehical_id</th>
-                                        <th>pay_id</th>
-                                        <th>created_at</th>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Name</th>
+                                            <th>created_at</th>
+                                            <th>Action</th>
+
 
                                         </tr>
                                     </thead>
@@ -92,15 +89,46 @@ include_once 'assets/components/header.php';
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header bg-light">
-                <h4 class="modal-title" id="myCenterModalLabel">Add order</h4>
+                <h4 class="modal-title" id="myCenterModalLabel">Add vehical maintenance</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
                 <form id="insert-form">
                     <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
+                        <!-- <label for="name" class="form-label">Name</label>
                         <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
-                        <span class="text-danger" id="name_error"></span>
+                        <span class="text-danger" id="name_error"></span> -->
+
+
+
+                        <select name="vehicle_id" id="vehicle_id" class="form-control">
+                            <option value="select vehicle id ">select vehical id</option>
+
+                            <?php
+                            include 'connection.php';
+                            $query = "select * from vehicle";
+                            $query_execute = mysqli_query($conn, $query);
+                            if (mysqli_num_rows($query_execute) > 0) {
+                                while ($result = mysqli_fetch_array($query_execute)) {  ?>
+
+                                    <!-- <option value="" selected></option> -->
+                                    <option value="<?php echo $result['id'] ?>"><?php echo $result['name'] ?></option>
+                            <?php                                       }
+                            }
+                            ?>
+                        </select>
+                        <span class="text-danger" id="vehicle_id_error"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Amount</label>
+                        <input type="text" class="form-control" name="amount" id="amount" placeholder="Enter amount">
+                        <span class="text-danger" id="amount_error"></span>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="description" placeholder="Enter description" name="description">
+                        <span class="text-danger" id="description_error"></span>
 
                     </div>
 
@@ -117,7 +145,7 @@ include_once 'assets/components/header.php';
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header bg-light">
-                <h4 class="modal-title" id="myCenterModalLabel">Add order</h4>
+                <h4 class="modal-title" id="myCenterModalLabel">Add vehical</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
@@ -168,42 +196,29 @@ include_once 'assets/components/header.php';
 
 <script src="https://kit.fontawesome.com/76d2de9cd5.js" crossorigin="anonymous"></script>
 <!-- Vendor -->
-
 <script src="assets/libs/jquery/jquery.min.js"></script>
 <script src="assets/ajax/common.js"></script>
-<script src="assets/ajax/order.js"></script>
+<script src="assets/ajax/add_vehicle_maintenance.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/libs/simplebar/simplebar.min.js"></script>
 <script src="assets/libs/node-waves/waves.min.js"></script>
-<script src="assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
-<script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
+<!-- <script src="assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
+<script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script> -->
 <script src="assets/libs/feather-icons/feather.min.js"></script>
+<script src="assets/js/pages/wizard.js"></script>
 
 
-
-<!-- third party js -->
-<script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
-<script src="assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script src="assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
-<script src="assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
-<script src="assets/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="assets/libs/datatables.net-buttons/js/buttons.flash.min.js"></script>
-<script src="assets/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script src="assets/libs/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-<script src="assets/libs/datatables.net-select/js/dataTables.select.min.js"></script>
 <script src="assets/libs/pdfmake/build/pdfmake.min.js"></script>
 <script src="assets/libs/pdfmake/build/vfs_fonts.js"></script>
-<!-- third party js ends -->
 
-<!-- Datatables init -->
-<script src="assets/js/pages/datatables.init.js"></script>
+<!-- third party js ends -->
 
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
-
 <script src="assets/ajax/sweetalert.js"></script>
+
+
 
 <!--================INCLUDE FOOTER PHP=================-->
 <?php include_once 'assets/components/script_end.php' ?>

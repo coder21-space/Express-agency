@@ -44,9 +44,9 @@ $(document).ready(function () {
       previous += `
         <tr>
             <td>${index + 1}</td>
-            <td>${contact.name}</td>
-            <td>${contact.email}</td>
-            <td>${contact.phone}</td>
+            <td>${contact.customer_id}</td>
+            <td>${contact.vehical_type_id}</td>
+            <td>${contact.pay_id}</td>
             <td>${contact.created_at}</td>
             
           

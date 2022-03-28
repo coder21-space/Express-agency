@@ -125,20 +125,6 @@
         count = false;
     }
     
-
-    //======================
-    // Mixit up
-    //======================
-
-    // if($('.portfolio-filter').length > 0) {
-    //     var mixer = mixitup('.portfolio-filter', {
-    //         selectors: {
-    //             control: '[data-mixitup-control]'
-    //         }
-    //     });
-    // }
-
-
 	//======================
     // Smooth scroll
     //======================

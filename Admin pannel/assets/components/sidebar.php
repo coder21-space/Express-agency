@@ -110,6 +110,9 @@
                               <li>
                                   <a href="vehical_list.php">vehical list</a>
                               </li>
+                              <li>
+                                  <a href="vehicle_maintenance.php">vehical maintenance list</a>
+                              </li>
                           </ul>
                       </div>
                   </li>
