@@ -3,25 +3,25 @@
 include 'php/function.php';
 
 if (!isset($_GET['vehicle'])) {
-    header('location:vehical_list.php');
+    header('location:vehicle_maintenance.php');
 } else {
     // check contact is from database
-    $id = $_GET['vehicle'];
-    $check_id = "SELECT id FROM vehicle WHERE id = $id";
+    $id = $_GET['vehicle_maintenance'];
+    $check_id = "SELECT id FROM vehicle_maintenance WHERE id = $id";
     $query = mysqli_query($conn, $check_id);
     $result = mysqli_num_rows($query);
 
     // after get single contact run Sql query
     if ($result > 0) {
 
-        $sql = "SELECT * FROM vehicle WHERE id = $id";
+        $sql = "SELECT * FROM vehicle_maintenance WHERE id = $id";
         $result = mysqli_query($conn, $sql);
         $message = array();
         while ($row = mysqli_fetch_assoc($result)) {
             $message = $row;
         }
     } else {
-        header('location:vehical_list.php');
+        header('location:vehicle_maintenance.php');
     }
 }
 ?>
@@ -118,7 +118,7 @@ if (!isset($_GET['vehicle'])) {
         </li>
 
         <li>
-            <h4 class="page-title-main"> vehicle single information </h4>
+            <h4 class="page-title-main"> vehicle single maintenance </h4>
         </li>
     </ul>
     <div class="clearfix"></div>
@@ -143,7 +143,7 @@ if (!isset($_GET['vehicle'])) {
                         <div class="row justify-content-between">
                             <div class="col-md-4">
                                 <div class="mt-3 mt-md-0">
-                                    vehicle single page
+                                    vehicle maintenance single page
                                 </div>
                             </div><!-- end col -->
                         </div><!-- end row -->
@@ -162,48 +162,16 @@ if (!isset($_GET['vehicle'])) {
                             <img src="assets/images/users/staff.png" class="rounded-circle avatar-xl img-thumbnail mb-2" alt="profile-image">
 
                             <div class="text-start">
-                                <p class="text-muted font-13"><strong> Name :</strong><?php echo $message['name'] ?></p>
-                                <p class="text-muted font-13"><strong>Trip type :</strong><?php echo $message['trip_type'] ?></p>
+                                <p class="text-muted font-13"><strong> Amount :</strong><?php echo $message['amount'] ?></p>
+                                <p class="text-muted font-13"><strong>description :</strong><?php echo $message['description'] ?></p>
 
-                                <p class="text-muted font-13"><strong>Load capacity :</strong> <?php echo $message['load_capacity'] ?></p>
+                                <p class="text-muted font-13"><strong>vehicle id :</strong> <?php echo $message['vehicle_id '] ?></p>
                             </div>
 
                         </div>
                     </div>
                 </div>
-                <!-- start row -->
-                <div class="row">
-                    <div class="col-xl-4">
-                        <div class="card">
-                            <div class=" card-body">
-                                <ul class="nav nav-tabs nav-bordered">
-                                    <li class="nav-item">
-                                        <a href="#home-b1" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
-                                            basic details
-                                        </a>
-                                    </li>
 
-                                    <li class="nav-item">
-                                        <a href="#messages-b1" id="previous-tab" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
-                                            other details
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="tab-content">
-                                    <div class="tab-pane" id="home-b1">
-                                        <p class="text-muted font-13"><strong> Name :</strong><?php echo $message['name'] ?></p>
-                                        <p class="text-muted font-13"><strong>vehical no :</strong><?php echo $message['vehical_no'] ?></p>
-                                    </div>
-
-                                    <div class="tab-pane" id="messages-b1">
-                                        <p class="text-muted font-13"><strong> vehicle type id :</strong><?php echo $message['vehicle_type_id'] ?></p>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <!--================INCLUDE FOOTER PHP=================-->
             <?php include_once 'assets/components/footer.php' ?>

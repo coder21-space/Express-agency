@@ -11,19 +11,12 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             $description = $_POST["description"];
 
 
-            // echo ($username);
-            // echo ($email);
-            // echo ($password);
-            // echo ($name);
-            // echo ($e_mail);
-            // echo ($phone);
-            // echo ($address);
-            // echo ($city);
-            // echo ($pincode);
-            // echo ($state);
-            // echo ($salary);
+            // echo ($vehicle_id);
+            // echo ($amount);
+            // echo ($description);
+
             $error = array();
-            $new_iv = bin2hex($iv);
+
 
             // validate data
 
@@ -62,7 +55,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
 
             if ($conn->query($sql2) == TRUE) {
 
-                echo json_encode(array("success" => true, "message" => "add customer details successful "));
+                echo json_encode(array("success" => true, "message" => "add vehicle maintenance details successful "));
             } else {
                 echo json_encode(array("success" => false, "message" => "Fill details correctly"));
             }

@@ -41,11 +41,11 @@ include_once 'assets/components/header.php';
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body" id="contact_error">
+                            <h4 class="mt-0 header-title">Staff type list</h4>
+                            <p class="text-muted font-14 mb-3">
 
-                            <h5 class="mt-0">staff type list</h5>
-
-                            <p class="sub-header"></p>
-                            <button type="button" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#custom-modal"><i class="mdi mdi-plus-circle me-1"></i> Add staff</button>
+                            </p>
+                            <button type="button" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#custom-modal"><i class="mdi mdi-plus-circle me-1"></i> Add data</button>
                             <div class="table-responsive">
                                 <table class="table table-centered mb-0" id="inline-editable">
                                     <thead>

@@ -53,7 +53,7 @@ include_once 'assets/components/header.php';
                                 </ul>
                             </div>
                             <fieldset class="wizard-fieldset show">
-                                <h5> add customer order deatils</h5>
+                                <h5>Fill customer order deatils</h5>
                                 <div class="form-group">
                                     <select name="customer_id" id="customer_id" class="form-select select " aria-label="Default select example">
                                         <option value="select customer id ">select customer id</option>
@@ -95,7 +95,7 @@ include_once 'assets/components/header.php';
                             </fieldset>
 
                             <fieldset class="wizard-fieldset">
-                                <h5>add customer order deatils</h5>
+                                <h5>Fill customer order deatils</h5>
                                 <div class="form-group">
                                     <label for="username" class="mx-2">start date</label>
                                     <input type="date" class="form-control wizard-required" name="start_date" id="start_date">
@@ -150,7 +150,7 @@ include_once 'assets/components/header.php';
                             </fieldset>
 
                             <fieldset class="wizard-fieldset">
-                                <h5>Bank Information</h5>
+                                <h5>Fill Bank deatils</h5>
 
                                 <div class="form-group">
                                     <input type="number" class="form-control wizard-required" id="transaction_id" name="transaction_id">
@@ -187,7 +187,7 @@ include_once 'assets/components/header.php';
                             </fieldset>
 
                             <fieldset class="wizard-fieldset">
-                                <h5>customer Information</h5>
+                                <h5>Fill Bank deatils</h5>
 
                                 <div class="form-group">
                                     <input type="text" class="form-control wizard-required" id="amount" name="amount">
@@ -209,7 +209,7 @@ include_once 'assets/components/header.php';
 
                                 <div class="form-group clearfix">
                                     <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
-                                    <button type="submit" style="margin-left: 0px; border: none; background: #fc1c03; color: #fff;" name="save"><a class="form-wizard-submit float-right">Submit</a></button>
+                                    <button type="submit" style="margin-left: 0px; border: none; " name="save"><a class="form-wizard-submit float-right">Submit</a></button>
                                 </div>
                             </fieldset>
                         </form>

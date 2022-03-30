@@ -13,7 +13,7 @@
 
                   <li>
                       <a href="dashboard.php">
-                          <i class="mdi mdi-view-dashboard-outline"></i>
+                          <i class="fas fa-home"></i>
                           <span> Dashboard </span>
                       </a>
                   </li>
@@ -23,14 +23,14 @@
 
                   <li>
                       <a href="contactus.php">
-                          <i class="mdi mdi-view-dashboard-outline"></i>
+                          <i class="fas fa-phone-volume"></i>
                           <span> Contact us </span>
                       </a>
                   </li>
-                  <li class="menu-title">data information</li>
+                  <li class="menu-title">DATA BASE</li>
                   <li>
                       <a href="#email" data-bs-toggle="collapse">
-                          <i class="mdi mdi-email-outline"></i>
+                          <i class="fas fa-user-tie"></i>
                           <span> Customer </span>
                           <span class="menu-arrow"></span>
                       </a>
@@ -49,7 +49,7 @@
 
                   <li>
                       <a href="#email" data-bs-toggle="collapse">
-                          <i class="mdi mdi-email-outline"></i>
+                          <i class="fas fa-shopping-cart"></i>
                           <span> Customer order </span>
                           <span class="menu-arrow"></span>
                       </a>
@@ -71,7 +71,7 @@
 
                   <li>
                       <a href="#email" data-bs-toggle="collapse">
-                          <i class="mdi mdi-email-outline"></i>
+                          <i class="fas fa-people-carry"></i>
                           <span> Staff </span>
                           <span class="menu-arrow"></span>
                       </a>
@@ -94,7 +94,7 @@
 
                   <li>
                       <a href="#email" data-bs-toggle="collapse">
-                          <i class="mdi mdi-email-outline"></i>
+                          <i class="fas fa-shipping-fast"></i>
                           <span> vehical </span>
                           <span class="menu-arrow"></span>
                       </a>
@@ -119,7 +119,7 @@
 
                   <li>
                       <a href="payment_list.php">
-                          <i class="mdi mdi-view-dashboard-outline"></i>
+                          <i class="fas fa-hand-holding-usd"></i>
                           <span> payment list </span>
                       </a>
                   </li>

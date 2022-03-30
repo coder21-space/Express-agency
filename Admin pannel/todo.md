@@ -7,9 +7,9 @@
 - [ ]  registration login page ui better(background image)
 - [ ]  logout dp image change
 - [ ]  chart.js in admin pannel
-- [ ]  sidebar ui make better(icon add)
-- [ ]  admin pannel themes match to website
-- [ ]  admin pannel manage fully(componets base script ,white spaceing ,extra file in folder,extra folder delete,extra code delete,less code,perfect)
+- [X]  sidebar ui make better(icon add)
+- [X]  admin pannel themes match to website
+- [ ]  admin pannel manage fully(components base script ,white spaceing ,extra file in folder,extra folder delete,extra code delete,less code,perfect)
 - [ ]  title change (not look like used template)
 
 
@@ -17,8 +17,8 @@
 
 - [ ]  table ui :- fix(pagination,pdf,overflow,responsive fix ,extra div all database table)
 - [ ]  contact us:- loader not working ,404 error single contact:-ui better,name change in folder,previous contact:-delete not working 
-- [ ]  staff:-update ,delete,404 error,loader,validation ,not working data fetch
-- [ ]  vehical:-update ,delete,404 error,loader,validation,vehical maintanace 
+- [ ]  staff:-update ,delete,404 error,loader,validation ,not working 
+- [ ]  vehical:-update ,delete,404 error,loader,validation, 
 - [ ]  customer:-update ,delete,404 error,loader,validation
 - [ ]  customer order:-update ,delete,404 error,loader,validation form not complte ,singal page ,payment
 

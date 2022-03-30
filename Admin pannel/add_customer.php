@@ -53,8 +53,7 @@ include_once 'assets/components/header.php';
                                 </ul>
                             </div>
                             <fieldset class="wizard-fieldset show">
-                                <h5>
-                                    customer Information</h5>
+                                <h5>Fill customer Information</h5>
                                 <div class="form-group">
                                     <input type="text" class="form-control wizard-required" name="name" id="name">
                                     <label for="email" class="wizard-form-text-label">Name</label>
@@ -85,7 +84,7 @@ include_once 'assets/components/header.php';
                             </fieldset>
 
                             <fieldset class="wizard-fieldset">
-                                <h5>customer Information</h5>
+                                <h5>Fill customer Information</h5>
                                 <div class="form-group">
                                     <input type="text" class="form-control wizard-required" name="city" id="city">
                                     <label for="username" class="wizard-form-text-label">City</label>
@@ -105,7 +104,7 @@ include_once 'assets/components/header.php';
 
                                 <div class="form-group clearfix">
                                     <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
-                                    <button type="submit" style="margin-left: 0px; border: none; background: #fc1c03; color: #fff;" name="save"><a class="form-wizard-submit float-right">Submit</a></button>
+                                    <button type="submit" style="margin-left: 0px; border: none; " name="save"><a class="form-wizard-submit float-right">Submit</a></button>
                                 </div>
                             </fieldset>
                         </form>

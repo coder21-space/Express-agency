@@ -68,7 +68,7 @@ if (!isset($_GET['staff'])) {
 
         <li class="dropdown notification-list topbar-dropdown">
             <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle">
+                <img src="assets/images/users/staff.png" alt="user-image" class="rounded-circle">
                 <span class="pro-user-name ms-1">
                     <?php
                     echo $_SESSION['user']['user_name']

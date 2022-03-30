@@ -1,17 +1,17 @@
-$("#loader").show();
-$("#inline-editable").hide();
+// $("#loader").show();
+// $("#inline-editable").hide();
 
 $(document).ready(function () {
-  $("#loader").hide();
-  $("#inline-editable").show();
+  // $("#loader").hide();
+  // $("#inline-editable").show();
 
   getdata();
   function getdata() {
     $.ajax({
-      url: "php/vehicle_type.php",
+      url: "php/vehicle_maintenance_fetch.php",
       type: "POST",
       dataType: "json",
-      data: { submit: "vehicle_type" },
+      data: { submit: "vehicle_maintenance_list" },
       success: function (response) {
         console.log(response);
         output = "";
@@ -44,12 +44,16 @@ $(document).ready(function () {
       previous += `
       <tr>
           <td>${index + 1}</td>
-          <td>${contact.name}</td>
+          <td>${contact.vehicle_id}</td>
+          <td>${contact.amount}</td>
+          <td>${contact.description}</td>
           <td>${contact.created_at}</td>
 
           <td>
               <div class="d-flex">
-              
+              <a href="vehicle_maintenance_single.php?vehicle_maintenance=${
+                contact.id
+              }"><button type="button"class="btn btn-outline-primary  mx-2 "><i class="fa-solid fa-location-crosshairs"></i></button></a>  
               <button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" data-id=${
                 contact.id
               }  class="btn delete btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button>
@@ -76,7 +80,7 @@ $(document).ready(function () {
     previous_error = "";
 
     $.ajax({
-      url: "vehicle_type.php",
+      url: "php/vehicle_maintenance_fetch.php",
       type: "POST",
       dataType: "json",
       data: { submit: "email", email: email },
@@ -122,24 +126,24 @@ $(document).ready(function () {
     // if (error) {
     //   return false;
     // }
-
     $.ajax({
       type: "POST",
-      url: "php/vehicle_maintenance",
-      data: $(this).serialize() + "&submit=true",
+      url: "php/vehicle_maintenance.php",
+      data: $(this).serialize() + "&save=true",
       cache: false,
       success: function (response) {
+        // $("#btn").show();
+        // $("#contact_submit_loader").hide();
+      
         response = JSON.parse(response);
-        $("#custom-modal").modal("hide");
+  
         if (response.success === true) {
-          swal({
-            icon: "success",
-            title: "success",
+          Toastify({
             text: response.message,
-          });
-          $("#insert-form")[0].reset();
-
-          getdata();
+  
+            duration: 3000,
+          }).showToast();
+          $("#staff_form")[0].reset();
         } else {
           for (const error in response.data) {
             $("#" + error + "_error").text(response.data[error]);
@@ -152,9 +156,12 @@ $(document).ready(function () {
           title: "something went wrong",
           text: response.message,
         });
+        // $("#btn").show();
+        // $("#contact_submit_loader").hide();
       },
     });
   });
+  
 //   update;
 
 //   $("#update-btn").click(function (e) {

@@ -16,7 +16,7 @@
 
 <!--================INCLUDE HEAD START PHP=================-->
 
-<?php $header_heading = 'customer list';
+<?php $header_heading = 'Customer';
 include_once 'assets/components/header.php';
 ?>
 <!--================END INCLUDE HEAD END PHP=================-->
@@ -42,19 +42,20 @@ include_once 'assets/components/header.php';
                     <div class="card">
                         <div class="card-body" id="contact_error">
 
-                            <h5 class="mt-0">customer information</h5>
+                            <h4 class="mt-0 header-title">Customer list</h4>
+                            <p class="text-muted font-14 mb-3">
 
-                            <p class="sub-header"></p>
-                            <a href="add_customer.php"><button type="button" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-plus-circle me-1"></i> Add new customer</button></a>
+                            </p>
+                            <a href="add_customer.php"><button type="button" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-plus-circle me-1"></i> Add data</button></a>
                             <div class="table-responsive">
                                 <table class="table table-centered mb-0" id="inline-editable">
                                     <thead>
                                         <tr>
                                             <th>Id</th>
                                             <th>Name</th>
-                                            <th>email</th>
-                                            <th>phone</th>
-                                            <th>created_at</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>Created_at</th>
                                             <th>Action</th>
 
 

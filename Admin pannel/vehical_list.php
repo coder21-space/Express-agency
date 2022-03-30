@@ -16,7 +16,7 @@
 
 <!--================INCLUDE HEAD START PHP=================-->
 
-<?php $header_heading = 'vehicle list';
+<?php $header_heading = 'Vehicle';
 include_once 'assets/components/header.php';
 ?>
 <!--================END INCLUDE HEAD END PHP=================-->
@@ -41,11 +41,11 @@ include_once 'assets/components/header.php';
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body" id="contact_error">
+                            <h4 class="mt-0 header-title">Vehical list</h4>
+                            <p class="text-muted font-14 mb-3">
 
-                            <h5 class="mt-0">vehicle list</h5>
-
-                            <p class="sub-header"></p>
-                            <a href="add_vehical.php"><button type="button" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-plus-circle me-1"></i> Add new vehical</button></a>
+                            </p>
+                            <a href="add_vehical.php"><button type="button" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-plus-circle me-1"></i> Add data</button></a>
                             <div class="table-responsive">
                                 <table class="table table-centered mb-0" id="inline-editable">
                                     <thead>

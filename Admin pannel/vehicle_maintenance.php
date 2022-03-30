@@ -9,6 +9,8 @@
 <link href="assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
 <link href="assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
 <link href="assets/libs/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
 <!-- third party css end -->
 <!--================INCLUDE HEAD START PHP=================-->
 <?php include_once 'assets/components/head_end.php' ?>
@@ -41,18 +43,20 @@ include_once 'assets/components/header.php';
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body" id="contact_error">
+                            <h4 class="mt-0 header-title">vehical maintenance list</h4>
+                            <p class="text-muted font-14 mb-3">
 
-                            <h5 class="mt-0">vehical maintenance list</h5>
-
-                            <p class="sub-header"></p>
+                            </p>
                             <button type="button" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#custom-modal"><i class="mdi mdi-plus-circle me-1"></i> Add data</button>
                             <div class="table-responsive">
                                 <table class="table table-centered mb-0" id="inline-editable">
                                     <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>Name</th>
-                                            <th>created_at</th>
+                                            <th>Vehicle_id</th>
+                                            <th>Amount</th>
+                                            <th>Description</th>
+                                            <th>Created_at</th>
                                             <th>Action</th>
 
 
@@ -216,7 +220,7 @@ include_once 'assets/components/header.php';
 
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
-<script src="assets/ajax/sweetalert.js"></script>
+
 
 
 

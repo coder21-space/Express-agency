@@ -9,7 +9,8 @@ body {
 }
 
 .form-wizard {
-  color: #888888;
+  /* placeholder color */
+  color: #201f1f;
   padding: 30px;
 }
 .form-wizard .wizard-form-radio {
@@ -36,7 +37,7 @@ body {
   outline: 0;
 }
 .form-wizard .wizard-form-radio input[type="radio"]:checked {
-  background-color: #fb1647;
+  background-color: #281cd1;
 }
 .form-wizard .wizard-form-radio input[type="radio"]:checked::before {
   content: "";
@@ -74,7 +75,7 @@ body {
 .form-wizard .form-wizard-next-btn,
 .form-wizard .form-wizard-previous-btn,
 .form-wizard .form-wizard-submit {
-  background-color: #d65470;
+  background-color: #281cd1;
   color: #ffffff;
   display: inline-block;
   min-width: 100px;
@@ -100,7 +101,7 @@ body {
 }
 .form-wizard .wizard-form-error {
   display: none;
-  background-color: #d70b0b;
+  background-color: #ca1111;
   position: absolute;
   left: 0;
   right: 0;
@@ -109,14 +110,14 @@ body {
   width: 100%;
 }
 .form-wizard .form-wizard-previous-btn {
-  background-color: #fb1647;
+  background-color: #281cd1;
 }
 .form-wizard .form-control {
   font-weight: 300;
   height: auto !important;
   padding: 15px;
-  color: #888888;
-  background-color: #f1f1f1;
+  color: #1b0707;
+  background-color: #ffffff;
   border: none;
 }
 .form-wizard .form-control:focus {
@@ -133,7 +134,8 @@ body {
   transition: 0.2s linear all;
 }
 .form-wizard .focus-input .wizard-form-text-label {
-  color: #d65470;
+/* error red */
+  color: #d65470; 
   top: -18px;
   transition: 0.2s linear all;
   font-size: 12px;
@@ -175,19 +177,19 @@ body {
 }
 .form-wizard .form-wizard-steps li.active span,
 .form-wizard .form-wizard-steps li.activated span {
-  background-color: #d65470;
+  background-color: #281cd1;
   color: #ffffff;
 }
 .form-wizard .form-wizard-steps li.active::after,
 .form-wizard .form-wizard-steps li.activated::after {
-  background-color: #d65470;
+  background-color: #281cd1;
   left: 50%;
   width: 50%;
-  border-color: #d65470;
+  border-color: #281cd1;
 }
 .form-wizard .form-wizard-steps li.activated::after {
   width: 100%;
-  border-color: #d65470;
+  border-color: #281cd1;
 }
 .form-wizard .form-wizard-steps li:last-child::after {
   left: 0;
