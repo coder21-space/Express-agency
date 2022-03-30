@@ -20,7 +20,7 @@ $(document).ready(function () {
           var output = get_contactlist_html(response.data);
           $("#contact").html(output);
         } else {
-          //           output_error += `
+                    output_error += `
           // <div class="card">
           // <div class="card-body p-4">
           //     <div class="text-center">
@@ -44,7 +44,7 @@ $(document).ready(function () {
       previous += `
       <tr>
           <td>${index + 1}</td>
-          <td>${contact.name}</td>
+          <td>${contact.vehical_name}</td>
           <td>${contact.created_at}</td>
 
           <td>
@@ -53,10 +53,10 @@ $(document).ready(function () {
               <button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" data-id=${
                 contact.id
               }  class="btn delete btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button>
-              <button type="button" class=" update mx-2 btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-id=${
+              <button type="button" class="update mx-2 btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-id=${
                 contact.id
-              } data-name=${
-        contact.name
+              } data-vehical_name=${
+        contact.vehical_name
       } data-bs-target="#updateModal"><i class="fa-solid fa-pen-to-square"></i></button>
 
               </div>
@@ -161,7 +161,7 @@ $(document).ready(function () {
 $('#update').on("click",function (e) {
   e.preventDefault();
   var id = $("#id").val();
-  var name = $("#name").val();
+  var vehical_name = $("#vehical_name").val();
   // var email= $("#email").val();
   // var phone= $("#phone").val();
    console.log(id);
@@ -169,11 +169,11 @@ $('#update').on("click",function (e) {
 
   var error = false;
 
-  if (isEmpty(name)) {
+  if (isEmpty(vehical_name)) {
       error = true;
-      $('#name_err').text("amount should not be blank!");
+      $('#vehical_name_err').text("amount should not be blank!");
   } else {
-      $('#name_err').text("");
+      $('#vehical_name_err').text("");
   }
   // if (isEmpty(email)) {
   //     error = true;
@@ -197,7 +197,7 @@ $('#update').on("click",function (e) {
       url: "PHP/vehicle_type.php",
       type: "POST",
       dataType: "json",
-      data: { submit: 'update', id: id, name:name},
+      data: { submit: 'update', id: id, vehical_name:vehical_name},
       success: function (response) {
 
           $('#updateModal').modal('hide');
@@ -244,7 +244,7 @@ $(document).on('click', '.update', function () {
 
 var id = $(this).attr('data-id');
 
-var name = $(this).attr('data-name');
+var vehical_name = $(this).attr('data-vehical_name');
 
 // var email= $(this).attr('data-email');
 // var phone= $(this).attr('data-phone');
@@ -252,7 +252,7 @@ var name = $(this).attr('data-name');
 $("#updateModal").modal('show');
 var id = $('#id').val(id);
 console.log(id);
-var name = $('#name').val(name);
+var vehical_name = $('#vehical_name').val(vehical_name);
 // var email = $('#email').val(email);
 // var phone = $('#phone').val(phone);
 
@@ -265,6 +265,9 @@ var name = $('#name').val(name);
 
   $("#contact").on("click", ".delete", function () {
     var id = $(this).attr("data-id");
+    // var id =$('#contact_delete').val(id);
+    // console.log(id);
+
     $("#confirm").on("click", function () {
       $.ajax({
         url: "php/vehicle_type.php",

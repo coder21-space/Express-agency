@@ -44,9 +44,9 @@ $(document).ready(function () {
       previous += `
         <tr>
             <td>${index + 1}</td>
-            <td>${contact.name}</td>
-            <td>${contact.email}</td>
-            <td>${contact.phone}</td>
+            <td>${contact.transaction_id}</td>
+            <td>${contact.bank_name}</td>
+            <td>${contact.amount}</td>
             <td>${contact.created_at}</td>
             
           
@@ -59,9 +59,11 @@ $(document).ready(function () {
                 <button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" data-id=${
                   contact.id
                 }  class="btn delete btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button>
-                <button type="button" class="update mx-2 btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-id=${
+                <button type="button" class=" update mx-2 btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-id=${
                   contact.id
-                } " data-name="${contact.name}" data-email="${contact.email}" data-phone="${contact.phone}"data-bs-target="#updateModal"><i class="fa-solid fa-pen-to-square"></i></button>
+                } data-name=${
+        contact.name
+      } data-bs-target="#updateModal"><i class="fa-solid fa-pen-to-square"></i></button>
                   
                 </div>
              
@@ -159,110 +161,80 @@ $(document).ready(function () {
       },
     });
   });
-
   // update
 
-  $('#update').on("click",function (e) {
+  $("#update-btn").click(function (e) {
     e.preventDefault();
     var id = $("#id").val();
     var name = $("#name").val();
-    var email= $("#email").val();
-    var phone= $("#phone").val();
-     console.log(id);
-     
-  
+    console.log(name);
     var error = false;
-  
+
     if (isEmpty(name)) {
-        error = true;
-        $('#name_err').text("name should not be blank!");
+      error = true;
+      $("#name_error").text("name should not be blank!");
     } else {
-        $('#name_err').text("");
+      $("#name_error").text("");
     }
-    if (isEmpty(email)) {
-        error = true;
-        $('#email_err').text("email should not be blank!");
-    } else {
-        $('#email_err').text("");
-    }
-    if (isEmpty(phone)) {
-        error = true;
-        $('#phone_err').text("phone should not be blank!");
-    } else {
-        $('#phone_err').text("");
-    }
-  
+
     if (error) {
-        return false;
+      return false;
     }
-  
-  
+
     $.ajax({
-        url: "add_customer_data.php",
-        type: "POST",
-        dataType: "json",
-        data: { submit: 'update', id: id, name:name ,email:email, phone:phone},
-        success: function (response) {
-  
-            $('#updateModal').modal('hide');
-            if (response.success === true) {
-                Toastify({
-                    text: response.message,
-                    className: "success",
-                    style: {
-                        background: "#78f76d",
-                    },
-                    close: true,
-                    gravity: top,
-                    duration: 3000,
-                    oldestFirst: true
-                }).showToast();    
-                    getdata();  
-            } else {
-                Toastify({
-                    text: response.message,
-                    className: "info",
-                    style: {
-                        background: "#ff4e21",
-                    }
-                }).showToast();
-            }
-        },
-  
-        error: function (error) {
-          swal({
-              icon: "error",
-              title: "something went wrong",
-              text: response.message
-          });
-          // $("#submit-contact").show();
-          // $("#loader").hide();
+      url: "php/add_customer_data",
+      type: "POST",
+      dataType: "json",
+      data: { submit: "update", id: id, name: name },
+      success: function (response) {
+        $("#updateModal").modal("hide");
+        if (response.success === true) {
+          Toastify({
+            text: response.message,
+            className: "success",
+            style: {
+              background: "#78f76d",
+            },
+            close: true,
+            gravity: top,
+            duration: 3000,
+            oldestFirst: true,
+          }).showToast();
+          getdata();
+        } else {
+          Toastify({
+            text: response.message,
+            className: "info",
+            style: {
+              background: "#ff4e21",
+            },
+          }).showToast();
+        }
       },
-  
-        
+
+      error: function (error) {
+        swal({
+          icon: "error",
+          title: "something went wrong",
+          text: response.message,
+        });
+        $("#submit-contact").show();
+        $("#loader").hide();
+      },
     });
   });
-  
-  
-  $(document).on('click', '.update', function () {
-  
-  var id = $(this).attr('data-id');
-  
-  var name = $(this).attr('data-name');
-  
-  var email= $(this).attr('data-email');
-  var phone= $(this).attr('data-phone');
-  
-  $("#updateModal").modal('show');
-  var id = $('#id').val(id);
-  console.log(id);
-  var name = $('#name').val(name);
-  var email = $('#email').val(email);
-  var phone = $('#phone').val(phone);
-  
-  
+
+  $(document).on("click", ".update", function () {
+    var id = $(this).attr("data-id");
+
+    var name = $(this).attr("data-name");
+
+    $("#updateModal").modal("show");
+    var id = $("#id").val(id);
+    alert(id);
+    var name = $("#name").val(name);
   });
-  
+
   // delete
 
   $("#contact").on("click", ".delete", function () {
@@ -272,7 +244,7 @@ $(document).ready(function () {
 
     $("#confirm").on("click", function () {
       $.ajax({
-        url: "php/add_customer_data.php",
+        url: "php/vehicle_type.php",
         type: "POST",
         dataType: "json",
         data: { submit: "delete", id: id },

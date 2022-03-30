@@ -131,6 +131,20 @@ include_once 'assets/components/header.php';
                         <span class="text-danger" id="name_error"></span>
 
                     </div>
+                    <div class="mb-3">
+                        <input type="hidden" id="id">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="name">
+                        <span class="text-danger" id="email_error"></span>
+
+                    </div>
+                    <div class="mb-3">
+                        <input type="hidden" id="id">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="number" class="form-control" id="phone" placeholder="Enter phone" name="phone">
+                        <span class="text-danger" id="phone_error"></span>
+
+                    </div>
 
                     <button type="submit" class="btn btn-light waves-effect waves-light" id="update">update</button>
                     <button type="button" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal">Cancel</button>
@@ -155,7 +169,7 @@ include_once 'assets/components/header.php';
                         the message you want to delete</p>
 
                     <button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary my-2" data-bs-dismiss="modal" id="delete">Delete</button>
+                    <button type="button" class="btn btn-primary my-2" data-bs-dismiss="modal" id="confirm">Delete</button>
                 </div>
             </div>
         </div><!-- /.modal-content -->

@@ -150,7 +150,7 @@ include_once 'assets/components/header.php';
                         the message you want to delete</p>
 
                     <button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary my-2" data-bs-dismiss="modal" id="delete">Delete</button>
+                    <button type="button" class="btn btn-primary my-2" data-bs-dismiss="modal" id="confirm">Delete</button>
                 </div>
             </div>
         </div><!-- /.modal-content -->

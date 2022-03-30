@@ -51,15 +51,23 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
 
                 // break;
 
-            case 'contact-delete':
-                $id = $_POST['id'];
-                $query = "DELETE FROM staff_type where id='$id'";
-                $query_execute = mysqli_query($conn, $query);
-                if ($query_execute) {
-                    echo json_encode(array("success" => true, "message" => "Record Deleted successfully"));
-                } else {
-                    echo json_encode(array("success" => false, "message" => "Some error Occured"));
+            case 'delete':
+                $id = sql_prevent($conn, xss_prevent($_POST['id']));
+
+                $check_id = "select id from vehicle_type where id=$id";
+
+                //check id exist or not
+                // encrypt id
+                if ($check_id) {
+                    $query = "DELETE FROM vehicle_type where id='$id'";
+                    $query_execute = mysqli_query($conn, $query);
+                    if ($query_execute) {
+                        echo json_encode(array("success" => true, "message" => "Record Deleted successfully"));
+                    } else {
+                        echo json_encode(array("success" => false, "message" => "Some error Occured"));
+                    }
                 }
+
                 break;
 
             case 'update':

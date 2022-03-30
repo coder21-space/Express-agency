@@ -52,15 +52,13 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 // break;
             case 'delete':
                 $id = sql_prevent($conn, xss_prevent($_POST['id']));
-                $hash_id = password_hash($id, PASSWORD_DEFAULT);
-                $id_decrypt = password_verify($id, PASSWORD_DEFAULT);
 
-                $check_id = "select id from staff where id=$id";
+                $check_id = "select id from vehicle_type where id=$id";
 
                 //check id exist or not
                 // encrypt id
                 if ($check_id) {
-                    $query = "DELETE FROM staff where id='$id'";
+                    $query = "DELETE FROM vehicle_type where id='$id'";
                     $query_execute = mysqli_query($conn, $query);
                     if ($query_execute) {
                         echo json_encode(array("success" => true, "message" => "Record Deleted successfully"));

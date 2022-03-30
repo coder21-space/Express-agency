@@ -2,7 +2,7 @@
 
 include 'php/function.php';
 
-if (!isset($_GET['vehicle'])) {
+if (!isset($_GET['vehicle_maintenance'])) {
     header('location:vehicle_maintenance.php');
 } else {
     // check contact is from database

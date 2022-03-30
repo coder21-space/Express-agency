@@ -55,7 +55,7 @@ $(document).ready(function () {
                 <a href="vehical_single.php?vehicle=${
                   contact.id
                 }"><button type="button"class="btn btn-outline-primary  mx-2 "><i class="fa-solid fa-location-crosshairs"></i></button></a>   
-                <button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" data-id=${
+                <button type="button" data-bs-toggle="modal"  data-id=${
                   contact.id
                 }  class="btn delete btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button>
                 <button type="button" class=" update mx-2 btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-id=${
@@ -238,9 +238,12 @@ $(document).ready(function () {
 
   $("#contact").on("click", ".delete", function () {
     var id = $(this).attr("data-id");
+    // var id =$('#contact_delete').val(id);
+    // console.log(id);
+
     $("#confirm").on("click", function () {
       $.ajax({
-        url: "php/vehicle_data.php.php",
+        url: "php/vehicle_fetch.php",
         type: "POST",
         dataType: "json",
         data: { submit: "delete", id: id },

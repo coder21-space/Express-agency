@@ -50,20 +50,29 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 }
 
                 break;
-
             case 'update':
                 $id = sql_prevent($conn, xss_prevent($_POST['id']));
                 $name = sql_prevent($conn, xss_prevent($_POST['name']));
-                // $query = "UPDATE vehicle_type SET name = '$name', WHERE id ='$id' ";
-                $query = "UPDATE `customer ` SET `name` = '$name' WHERE `customer `.`id` = $id ";
+                $email = sql_prevent($conn, xss_prevent($_POST['email']));
+                $phone = sql_prevent($conn, xss_prevent($_POST['phone']));
 
-                $query_execute = mysqli_query($conn, $query);
-                if ($query_execute) {
-                    echo json_encode(array("success" => true, "message" => "customer details Updated successfully"));
-                    die;
-                } else {
-                    echo json_encode(array("success" => false, "message" => "Some error Occured"));
-                    die;
+
+                $hash_id = password_hash($id, PASSWORD_DEFAULT);
+                $id_decrypt = password_verify($id, PASSWORD_DEFAULT);
+
+                $query = "UPDATE `customer` SET `name` = '$name',`email` = '$email',`phone` = '$phone' WHERE `customer`.`id` = $id ";
+                $check_id = "select id from customer where id=$id";
+
+                if ($check_id) {
+
+                    $query_execute = mysqli_query($conn, $query);
+                    if ($query_execute) {
+                        echo json_encode(array("success" => true, "message" => " Updated successfully"));
+                        die;
+                    } else {
+                        echo json_encode(array("success" => false, "message" => "Some error Occured"));
+                        die;
+                    }
                 }
                 break;
         }

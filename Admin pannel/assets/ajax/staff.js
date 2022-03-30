@@ -372,14 +372,17 @@ $(document).ready(function () {
 
   $("#contact").on("click", ".delete", function () {
     var id = $(this).attr("data-id");
+    // var id =$('#contact_delete').val(id);
+    // console.log(id);
+
     $("#confirm").on("click", function () {
       $.ajax({
-        url: "PHP/staff.php",
+        url: "php/vehicle_type.php",
         type: "POST",
         dataType: "json",
         data: { submit: "delete", id: id },
         success: function (response) {
-          $("#secondmodal").modal("hide");
+          $("#danger-alert-modal").modal("hide");
           if (response.success) {
             swal({
               icon: "success",

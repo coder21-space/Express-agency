@@ -29,7 +29,7 @@ if ($_SERVER['SERVER_NAME'] == constant("HOST_NAME")) {
             // from function.php
             $name = sql_prevent($conn, xss_prevent($_POST['name']));
 
-            $sql = "INSERT INTO `vehicle_type` (`name`, `created_at`) VALUES ( '$name', current_timestamp());";
+            $sql = "INSERT INTO `vehicle_type` (`vehical_name`, `created_at`) VALUES ( '$name', current_timestamp());";
 
             if ($conn->query($sql) == true) {
                 echo json_encode(array("success" => true, "message" => " $name add successfully ."));

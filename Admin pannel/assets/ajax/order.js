@@ -32,6 +32,7 @@ $(document).ready(function () {
           // // </div>
           // // </div>`;
         }
+        
         // $("#contact_error").html(output_error);
       },
       error: function (error) {},
@@ -44,9 +45,8 @@ $(document).ready(function () {
       previous += `
         <tr>
             <td>${index + 1}</td>
-            <td>${contact.customer_id}</td>
-            <td>${contact.vehical_type_id}</td>
-            <td>${contact.pay_id}</td>
+            <td>${contact.name}</td>
+            <td>${contact.vehical_name}</td>
             <td>${contact.created_at}</td>
             
           
@@ -56,6 +56,9 @@ $(document).ready(function () {
                 <a href="customer_order_single.php?order=${
                   contact.id
                 }"><button type="button"class="btn btn-outline-primary  mx-2 "><i class="fa-solid fa-location-crosshairs"></i></button></a>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" data-id=${
+                  contact.id
+                }  class="btn delete btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button>
                 <button type="button" class=" update mx-2 btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-id=${
                   contact.id
                 } data-name=${
@@ -111,16 +114,16 @@ $(document).ready(function () {
 
   $("#insert-form").on("submit", function (e) {
     e.preventDefault();
-    var name = $("#name").val();
+    // var name = $("#name").val();
 
-    var error = false;
+    // var error = false;
 
-    if (isEmpty(name)) {
-      error = true;
-      $("#name_error").text("**Name should not be empty");
-    } else {
-      $("#name_error").text("");
-    }
+    // if (isEmpty(name)) {
+    //   error = true;
+    //   $("#name_error").text("**Name should not be empty");
+    // } else {
+    //   $("#name_error").text("");
+    // }
 
     if (error) {
       return false;
@@ -232,10 +235,14 @@ $(document).ready(function () {
     var name = $("#name").val(name);
   });
 
+
   // delete
 
   $("#contact").on("click", ".delete", function () {
     var id = $(this).attr("data-id");
+    // var id =$('#contact_delete').val(id);
+    // console.log(id);
+
     $("#confirm").on("click", function () {
       $.ajax({
         url: "php/add_customer_order_data.php",

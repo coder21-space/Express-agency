@@ -50,7 +50,6 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 }
 
                 break;
-
             case 'update':
                 $id = sql_prevent($conn, xss_prevent($_POST['id']));
                 $name = sql_prevent($conn, xss_prevent($_POST['name']));

@@ -42,21 +42,17 @@ include_once 'assets/components/header.php';
                     <div class="card">
                         <div class="card-body" id="contact_error">
 
-                            <h5 class="mt-0">vehicle list</h5>
+                            <h5 class="mt-0">customer order list</h5>
 
                             <p class="sub-header"></p>
-                            <a href="add_vehical.php"><button type="button" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-plus-circle me-1"></i> Add new vehical</button></a>
+                            <a href="add_customer_order.php"><button type="button" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-plus-circle me-1"></i> add data</button></a>
                             <div class="table-responsive">
                                 <table class="table table-centered mb-0" id="inline-editable">
                                     <thead>
                                         <th>Id</th>
                                         <th>Customer_id</th>
-                                        <!-- <th>Source_add</th>
-                                        <th>destination_add</th>
-                                        <th>st_date</th>
-                                        <th>end_date</th> -->
                                         <th>vehical_id</th>
-                                        <th>pay_id</th>
+
                                         <th>created_at</th>
 
                                         </tr>
@@ -153,7 +149,7 @@ include_once 'assets/components/header.php';
                         the message you want to delete</p>
 
                     <button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary my-2" data-bs-dismiss="modal" id="delete">Delete</button>
+                    <button type="button" class="btn btn-primary my-2" data-bs-dismiss="modal" id="confirm">Delete</button>
                 </div>
             </div>
         </div><!-- /.modal-content -->

@@ -13,7 +13,13 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             $end_data = $_POST["end_data"];
             $vehical_type_id = $_POST["vehical_type_id"];
             // $status = $_POST["status"];
-            $pay_id = $_POST["pay_id"];
+            $transaction_id = $_POST["transaction_id"];
+            $account_no = $_POST["account_no"];
+            $mode_of_pay = $_POST["mode_of_pay"];
+            $bank_name = $_POST["bank_name"];
+            $amount = $_POST["amount"];
+
+
             $error = array();
 
             // validate data
@@ -43,9 +49,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             // if (empty($status)) {
             //     $error['status'] = "status type id should not be empty";
             // }
-            if (empty($pay_id)) {
-                $error['pay_id'] = "pay id should not be empty";
-            }
+
 
             if (sizeof($error) > 0) {
                 echo json_encode(array("success" => false, "data" => $error));
@@ -60,14 +64,23 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             $end_data = sql_prevent($conn, xss_prevent($_POST['end_data']));
             $vehical_type_id = sql_prevent($conn, xss_prevent($_POST['vehical_type_id']));
             // $status = sql_prevent($conn, xss_prevent($_POST['status']));
-            $pay_id = sql_prevent($conn, xss_prevent($_POST['pay_id']));
+
 
             // run sql
-
-
-            $sql2 = "INSERT INTO `order` (`customer_id`, `source_add`, `destination_add`, `start_date`, `end_data`, `vehical_type_id`,`pay_id`) VALUES ('$customer_id','$source_add','$destination_add','$start_date','$end_data','$vehical_type_id','$pay_id')";
+            $sql2 = "INSERT INTO `payment` (`transaction_id`, `account_no`, `mode_of_pay`, `bank_name`, `amount`) VALUES ('$transaction_id','$account_no','$mode_of_pay','$bank_name','$amount')";
 
             if ($conn->query($sql2) == TRUE) {
+                $result2 = mysqli_query($conn, "SELECT * FROM payment WHERE transaction_id = '$transaction_id'");
+                if ($result2->num_rows > 0) {
+                    $row = mysqli_fetch_assoc($result2);
+                    $pay_id = $row['id'];
+                }
+
+
+                $sql = "INSERT INTO `orders` (`customer_id`, `source_add`, `destination_add`, `start_date`, `end_data`, `vehical_type_id`,`pay_id`) VALUES ('$customer_id','$source_add','$destination_add','$start_date','$end_data','$vehical_type_id','$pay_id')";
+            }
+
+            if ($conn->query($sql) == TRUE) {
 
                 echo json_encode(array("success" => true, "message" => " customer order details successful "));
             } else {

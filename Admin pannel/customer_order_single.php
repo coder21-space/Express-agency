@@ -2,19 +2,19 @@
 
 include 'php/function.php';
 
-if (!isset($_GET['order'])) {
+if (!isset($_GET['orders'])) {
     header('location:customer_order_list.php');
 } else {
     // check contact is from database
-    $id = $_GET['order'];
-    $check_id = "SELECT id FROM order WHERE id = $id";
+    $id = $_GET['orders'];
+    $check_id = "SELECT id FROM orders WHERE id = $id";
     $query = mysqli_query($conn, $check_id);
     $result = mysqli_num_rows($query);
 
     // after get single contact run Sql query
     if ($result > 0) {
 
-        $sql = "SELECT * FROM order WHERE id = $id";
+        $sql = "SELECT * FROM orders WHERE id = $id";
         $result = mysqli_query($conn, $sql);
         $message = array();
         while ($row = mysqli_fetch_assoc($result)) {

@@ -137,11 +137,6 @@ include_once 'assets/components/header.php';
                                     <div class="wizard-form-error" id="	status_error"></div>
                                 </div> -->
 
-                                <div class="form-group">
-                                    <input type="number" class="form-control wizard-required" name="pay_id" id="pay_id">
-                                    <label for="username" class="wizard-form-text-label">pay id</label>
-                                    <div class="wizard-form-error" id="pay_id_error"></div>
-                                </div>
 
                                 <div class="form-group clearfix">
                                     <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
@@ -195,16 +190,7 @@ include_once 'assets/components/header.php';
                                     <div class="amount_error"></div>
                                 </div>
 
-                                <div class="form-group">
 
-                                    <select class="form-control wizard-required" name="status" id="status">
-                                        <option value="status" disabled selected>status</option>
-                                        <option>failed</option>
-                                        <option>complete</option>
-                                        <option>panding</option>
-                                    </select>
-                                    <div class="wizard-form-error" id="status_error"></div>
-                                </div>
 
 
                                 <div class="form-group clearfix">

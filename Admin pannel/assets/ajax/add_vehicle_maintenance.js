@@ -162,108 +162,113 @@ $(document).ready(function () {
     });
   });
   
-//   update;
+  update;
 
-//   $("#update-btn").click(function (e) {
-//     e.preventDefault();
-//     var id = $("#id").val();
-//     var name = $("#name").val();
-//     console.log(name);
-//     var error = false;
+  $("#update-btn").click(function (e) {
+    e.preventDefault();
+    var id = $("#id").val();
+    var name = $("#name").val();
+    console.log(name);
+    var error = false;
 
-//     if (isEmpty(name)) {
-//       error = true;
-//       $("#name_error").text("name should not be blank!");
-//     } else {
-//       $("#name_error").text("");
-//     }
+    if (isEmpty(name)) {
+      error = true;
+      $("#name_error").text("name should not be blank!");
+    } else {
+      $("#name_error").text("");
+    }
 
-//     if (error) {
-//       return false;
-//     }
+    if (error) {
+      return false;
+    }
 
-//     $.ajax({
-//       url: "php/vehicle_type.php",
-//       type: "POST",
-//       dataType: "json",
-//       data: { submit: "update", id: id, name: name },
-//       success: function (response) {
-//         $("#updateModal").modal("hide");
-//         if (response.success === true) {
-//           Toastify({
-//             text: response.message,
-//             className: "success",
-//             style: {
-//               background: "#78f76d",
-//             },
-//             close: true,
-//             gravity: top,
-//             duration: 3000,
-//             oldestFirst: true,
-//           }).showToast();
-//           getdata();
-//         } else {
-//           Toastify({
-//             text: response.message,
-//             className: "info",
-//             style: {
-//               background: "#ff4e21",
-//             },
-//           }).showToast();
-//         }
-//       },
+    $.ajax({
+      url: "php/vehicle_type.php",
+      type: "POST",
+      dataType: "json",
+      data: { submit: "update", id: id, name: name },
+      success: function (response) {
+        $("#updateModal").modal("hide");
+        if (response.success === true) {
+          Toastify({
+            text: response.message,
+            className: "success",
+            style: {
+              background: "#78f76d",
+            },
+            close: true,
+            gravity: top,
+            duration: 3000,
+            oldestFirst: true,
+          }).showToast();
+          getdata();
+        } else {
+          Toastify({
+            text: response.message,
+            className: "info",
+            style: {
+              background: "#ff4e21",
+            },
+          }).showToast();
+        }
+      },
 
-//       error: function (error) {
-//         swal({
-//           icon: "error",
-//           title: "something went wrong",
-//           text: response.message,
-//         });
-//         $("#submit-contact").show();
-//         $("#loader").hide();
-//       },
-//     });
-//   });
+      error: function (error) {
+        swal({
+          icon: "error",
+          title: "something went wrong",
+          text: response.message,
+        });
+        $("#submit-contact").show();
+        $("#loader").hide();
+      },
+    });
+  });
 
-//   $(document).on("click", ".update", function () {
-//     var id = $(this).attr("data-id");
+  $(document).on("click", ".update", function () {
+    var id = $(this).attr("data-id");
 
-//     var name = $(this).attr("data-name");
+    var name = $(this).attr("data-name");
 
-//     $("#updateModal").modal("show");
-//     var id = $("#id").val(id);
-//     alert(id);
-//     var name = $("#name").val(name);
-//   });
+    $("#updateModal").modal("show");
+    var id = $("#id").val(id);
+    alert(id);
+    var name = $("#name").val(name);
+  });
 
-//   // delete
+ 
+  // delete
 
-//   $("#contact").on("click", ".delete", function () {
-//     var id = $(this).attr("data-id");
-//     $("#confirm").on("click", function () {
-//       $.ajax({
-//         url: "php/vehicle_type.php",
-//         type: "POST",
-//         dataType: "json",
-//         data: { submit: "delete", id: id },
-//         success: function (response) {
-//           $("#danger-alert-modal").modal("hide");
-//           if (response.success) {
-//             swal({
-//               icon: "success",
-//               title: "success",
-//               text: response.message,
-//             });
-//             getdata();
-//           } else {
-//             swal({
-//               icon: "error",
-//               title: "error",
-//               text: response.message,
-//             });
-//           }
-//         },
-//       });
-//     });
-//   });
+  $("#contact").on("click", ".delete", function () {
+    var id = $(this).attr("data-id");
+    // var id =$('#contact_delete').val(id);
+    // console.log(id);
+
+    $("#confirm").on("click", function () {
+      $.ajax({
+        url: "php/vehicle_type.php",
+        type: "POST",
+        dataType: "json",
+        data: { submit: "delete", id: id },
+        success: function (response) {
+          $("#danger-alert-modal").modal("hide");
+          if (response.success) {
+            swal({
+              icon: "success",
+              title: "success",
+              text: response.message,
+            });
+            getdata();
+          } else {
+            swal({
+              icon: "error",
+              title: "error",
+              text: response.message,
+            });
+          }
+        },
+      });
+    });
+  });
 });
+

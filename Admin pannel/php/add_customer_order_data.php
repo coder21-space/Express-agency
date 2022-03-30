@@ -17,7 +17,11 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
         $submit = sql_prevent($conn, xss_prevent($_POST['submit']));
         switch ($submit) {
             case 'customer order list':
-                $query = "select id,customer_id,source_add,destination_add,start_date,end_data,vehical_type_id,status,pay_id,created_at from order";
+                $query = "SELECT orders.id,vehicle_type.vehical_name, customer.name, orders.created_at
+                FROM orders
+                INNER JOIN customer ON orders.customer_id=customer.id
+                INNER JOIN vehicle_type ON orders.vehical_type_id=vehicle_type.id;
+                ";
                 $query_execute = mysqli_query($conn, $query);
 
                 if (mysqli_num_rows($query_execute) > 0) {
@@ -35,12 +39,12 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             case 'delete':
                 $id = sql_prevent($conn, xss_prevent($_POST['id']));
 
-                $check_id = "select id from order where id=$id";
+                $check_id = "select id from orders where id=$id";
 
                 //check id exist or not
                 // encrypt id
                 if ($check_id) {
-                    $query = "DELETE FROM customer where id='$id'";
+                    $query = "DELETE FROM orders where id='$id'";
                     $query_execute = mysqli_query($conn, $query);
                     if ($query_execute) {
                         echo json_encode(array("success" => true, "message" => "Record Deleted successfully"));

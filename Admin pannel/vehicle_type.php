@@ -122,9 +122,9 @@ include_once 'assets/components/header.php';
                 <form id="insert-form">
                     <div class="mb-3">
                         <input type="hidden" id="id">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
-                        <span class="text-danger" id="name_error"></span>
+                        <label for="vehical_name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="vehical_name" placeholder="Enter name" name="vehical_name">
+                        <span class="text-danger" id="vehical_name_error"></span>
 
                     </div>
 
@@ -151,7 +151,7 @@ include_once 'assets/components/header.php';
                         the message you want to delete</p>
 
                     <button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary my-2" data-bs-dismiss="modal" id="delete">Delete</button>
+                    <button type="button" class="btn btn-primary my-2" data-bs-dismiss="modal" id="confirm">Delete</button>
                 </div>
             </div>
         </div><!-- /.modal-content -->
