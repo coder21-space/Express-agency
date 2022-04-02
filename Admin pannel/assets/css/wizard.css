@@ -13,11 +13,13 @@ body {
   color: #201f1f;
   padding: 30px;
 }
+
 .form-wizard .wizard-form-radio {
   display: inline-block;
   margin-left: 5px;
   position: relative;
 }
+
 .form-wizard .wizard-form-radio input[type="radio"] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -33,12 +35,15 @@ body {
   position: relative;
   cursor: pointer;
 }
+
 .form-wizard .wizard-form-radio input[type="radio"]:focus {
   outline: 0;
 }
+
 .form-wizard .wizard-form-radio input[type="radio"]:checked {
   background-color: #281cd1;
 }
+
 .form-wizard .wizard-form-radio input[type="radio"]:checked::before {
   content: "";
   position: absolute;
@@ -52,6 +57,7 @@ body {
   margin: 0 auto;
   top: 8px;
 }
+
 .form-wizard .wizard-form-radio input[type="radio"]:checked::after {
   content: "";
   display: inline-block;
@@ -65,13 +71,16 @@ body {
   z-index: 100;
   border-radius: 50%;
 }
-.form-wizard .wizard-form-radio input[type="radio"] ~ label {
+
+.form-wizard .wizard-form-radio input[type="radio"]~label {
   padding-left: 10px;
   cursor: pointer;
 }
+
 .form-wizard .form-wizard-header {
   text-align: center;
 }
+
 .form-wizard .form-wizard-next-btn,
 .form-wizard .form-wizard-previous-btn,
 .form-wizard .form-wizard-submit {
@@ -83,22 +92,26 @@ body {
   padding: 10px;
   text-align: center;
 }
+
 .form-wizard .form-wizard-next-btn:hover,
 .form-wizard .form-wizard-next-btn:focus,
 .form-wizard .form-wizard-previous-btn:hover,
 .form-wizard .form-wizard-previous-btn:focus,
 .form-wizard .form-wizard-submit:hover,
 .form-wizard .form-wizard-submit:focus {
-  color: #ffffff;
+  color: #f9fdfc;
   opacity: 0.6;
   text-decoration: none;
 }
+
 .form-wizard .wizard-fieldset {
   display: none;
 }
+
 .form-wizard .wizard-fieldset.show {
   display: block;
 }
+
 .form-wizard .wizard-form-error {
   display: none;
   background-color: #ca1111;
@@ -109,9 +122,11 @@ body {
   height: 2px;
   width: 100%;
 }
+
 .form-wizard .form-wizard-previous-btn {
   background-color: #281cd1;
 }
+
 .form-wizard .form-control {
   font-weight: 300;
   height: auto !important;
@@ -120,34 +135,41 @@ body {
   background-color: #ffffff;
   border: none;
 }
+
 .form-wizard .form-control:focus {
   box-shadow: none;
 }
+
 .form-wizard .form-group {
   position: relative;
   margin: 25px 0;
 }
+
 .form-wizard .wizard-form-text-label {
   position: absolute;
   left: 10px;
   top: 16px;
   transition: 0.2s linear all;
 }
+
 .form-wizard .focus-input .wizard-form-text-label {
-/* error red */
-  color: #d65470; 
+  /* error red */
+  color: #5a5858;
   top: -18px;
   transition: 0.2s linear all;
   font-size: 12px;
 }
+
 .form-wizard .form-wizard-steps {
   margin: 30px 0;
 }
+
 .form-wizard .form-wizard-steps li {
   width: 25%;
   float: left;
   position: relative;
 }
+
 .form-wizard .form-wizard-steps li::after {
   background-color: #f3f3f3;
   content: "";
@@ -161,6 +183,7 @@ body {
   border-bottom: 1px solid #dddddd;
   border-top: 1px solid #dddddd;
 }
+
 .form-wizard .form-wizard-steps li span {
   background-color: #dddddd;
   border-radius: 50%;
@@ -172,14 +195,17 @@ body {
   width: 40px;
   z-index: 1;
 }
+
 .form-wizard .form-wizard-steps li:last-child::after {
   width: 50%;
 }
+
 .form-wizard .form-wizard-steps li.active span,
 .form-wizard .form-wizard-steps li.activated span {
   background-color: #281cd1;
   color: #ffffff;
 }
+
 .form-wizard .form-wizard-steps li.active::after,
 .form-wizard .form-wizard-steps li.activated::after {
   background-color: #281cd1;
@@ -187,13 +213,16 @@ body {
   width: 50%;
   border-color: #281cd1;
 }
+
 .form-wizard .form-wizard-steps li.activated::after {
   width: 100%;
   border-color: #281cd1;
 }
+
 .form-wizard .form-wizard-steps li:last-child::after {
   left: 0;
 }
+
 .form-wizard .wizard-password-eye {
   position: absolute;
   right: 32px;
@@ -201,6 +230,7 @@ body {
   transform: translateY(-50%);
   cursor: pointer;
 }
+
 @keyframes click-radio-wave {
   0% {
     width: 25px;
@@ -208,6 +238,7 @@ body {
     opacity: 0.35;
     position: relative;
   }
+
   100% {
     width: 60px;
     height: 60px;
@@ -216,6 +247,7 @@ body {
     opacity: 0;
   }
 }
+
 @media screen and (max-width: 767px) {
   .wizard-content-left {
     height: auto;

@@ -1,5 +1,5 @@
+<!-- SINAGL PAGE DATA SHOW -->
 <?php
-
 include 'php/function.php';
 
 if (!isset($_GET['customer'])) {
@@ -25,16 +25,16 @@ if (!isset($_GET['customer'])) {
     }
 }
 ?>
+<!--END SINAGL PAGE DATA SHOW -->
 
-<!--================INCLUDE HEAD START PHP=================-->
+
+<!--====================== START HTML =========================-->
 <?php include_once 'assets/components/head_start.php' ?>
-<!--================END INCLUDE HEAD END PHP=================-->
+<!--================== END HTML META TAG ======================-->
 
-<link rel="shortcut icon" href="assets/images/favicon.ico">
-
-<!--================INCLUDE HEAD START PHP=================-->
+<!--====================== START BODY_END =========================-->
 <?php include_once 'assets/components/head_end.php' ?>
-<!--================END INCLUDE HEAD END PHP=================-->
+<!--====================== END BODY_END ===========================-->
 
 <!-- Topbar Start -->
 <div class="navbar-custom">
@@ -68,7 +68,7 @@ if (!isset($_GET['customer'])) {
 
         <li class="dropdown notification-list topbar-dropdown">
             <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle">
+                <img src="assets/images/users/staff.png" alt="user-image" class="rounded-circle">
                 <span class="pro-user-name ms-1">
                     <?php
                     echo $_SESSION['user']['user_name']
@@ -118,7 +118,7 @@ if (!isset($_GET['customer'])) {
         </li>
 
         <li>
-            <h4 class="page-title-main"> customer single information </h4>
+            <h4 class="page-title-main">Customer single</h4>
         </li>
     </ul>
     <div class="clearfix"></div>
@@ -126,9 +126,9 @@ if (!isset($_GET['customer'])) {
 </div>
 <!-- end Topbar -->
 
-<!--================INCLUDE HEAD START PHP=================-->
+<!--====================== START SIDEBAR ===========================-->
 <?php include_once 'assets/components/sidebar.php' ?>
-<!--================END INCLUDE HEAD END PHP=================-->
+<!--======================= END SIDEBAR ============================-->
 
 <!-- ============================================================== -->
 <!-- Start Page Content here -->
@@ -214,9 +214,6 @@ if (!isset($_GET['customer'])) {
                     </div>
                 </div>
             </div>
-            <!--================INCLUDE FOOTER PHP=================-->
-            <?php include_once 'assets/components/footer.php' ?>
-            <!--================END INCLUDE FOOTER PHP=================-->
         </div>
     </div>
 </div>
@@ -225,32 +222,20 @@ if (!isset($_GET['customer'])) {
 <!-- End Page content -->
 <!-- ============================================================== -->
 
-<!--================INCLUDE HEAD START PHP=================-->
-<?php include_once 'assets/components/modals.php' ?>
-<!--================END INCLUDE HEAD END PHP=================-->
+<!--=================== START FOOTER ===============================-->
+<?php include_once 'assets/components/footer.php' ?>
+<!--===================== END FOOTER ===============================-->
 
+<!-- fontawesome  -->
 <script src="https://kit.fontawesome.com/76d2de9cd5.js" crossorigin="anonymous"></script>
 
-<!-- Vendor -->
-<script src="assets/libs/jquery/jquery.min.js"></script>
-<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/libs/simplebar/simplebar.min.js"></script>
-<script src="assets/libs/node-waves/waves.min.js"></script>
-<script src="assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
-<script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
-<script src="assets/libs/feather-icons/feather.min.js"></script>
-
-<script src="assets/ajax/contact-data.js"></script>
-
-<!-- Table Editable plugin-->
-<script src="assets/libs/jquery-tabledit/jquery.tabledit.min.js"></script>
-
-<!-- Table editable init-->
-<script src="assets/js/pages/tabledit.init.js"></script>
+<!--======================= START MAIN SCRIPT ==========================-->
+<?php include_once 'assets/components/script_start.php' ?>
+<!--====================== END  MAIN SCRIPT ============================-->
 
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
 
-<!--================INCLUDE HEAD START PHP=================-->
+<!--======================== START CLOSING HTML ==========================-->
 <?php include_once 'assets/components/script_end.php' ?>
-<!--================END INCLUDE HEAD END PHP=================-->
+<!--======================== END CLOSING HTML ============================-->

@@ -13,29 +13,33 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             $city = $_POST["city"];
             $pincode = $_POST["pincode"];
             $state = $_POST["state"];
-
-
-            // echo ($username);
-            // echo ($email);
-            // echo ($password);
-            // echo ($name);
-            // echo ($e_mail);
-            // echo ($phone);
-            // echo ($address);
-            // echo ($city);
-            // echo ($pincode);
-            // echo ($state);
-            // echo ($salary);
             $error = array();
-            $new_iv = bin2hex($iv);
 
             // validate data
-
-            if (empty($e_mail)) {
-                $error['e_mail'] = "email should not be empty";
-            } else if (!filter_var($e_mail, FILTER_VALIDATE_EMAIL)) {
-                $error['e_mail'] = "email should  be valid";
+            if (empty($name)) {
+                $error['name'] = "Name should not be empty";
             }
+            if (empty($e_mail)) {
+                $error['e_mail'] = "Email should not be empty";
+            } else if (!filter_var($e_mail, FILTER_VALIDATE_EMAIL)) {
+                $error['e_mail'] = "Email should  be valid";
+            }
+            if (empty($phone)) {
+                $error['phone'] = "Phone should not be empty";
+            }
+            if (empty($address)) {
+                $error['address'] = "Address should not be empty";
+            }
+            if (empty($city)) {
+                $error['city'] = "City should not be empty";
+            }
+            if (empty($pincode)) {
+                $error['pincode'] = "Pincode should not be empty";
+            }
+            if (empty($state)) {
+                $error['state'] = "State should not be empty";
+            }
+
 
             if (sizeof($error) > 0) {
                 echo json_encode(array("success" => false, "data" => $error));
@@ -43,8 +47,6 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             }
 
             // prevent sql and xss
-
-
             $name = sql_prevent($conn, xss_prevent($_POST['name']));
             $e_mail = sql_prevent($conn, xss_prevent($_POST['e_mail']));
             $phone = sql_prevent($conn, xss_prevent($_POST['phone']));
@@ -53,20 +55,12 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             $pincode = sql_prevent($conn, xss_prevent($_POST['pincode']));
             $state = sql_prevent($conn, xss_prevent($_POST['state']));
 
-
-
-            //encryption of password
-
             // run sql
-
-
-
-
             $sql2 = "INSERT INTO `customer` (`name`, `email`, `phone`, `address`, `city`, `pincode`, `state`) VALUES ('$name','$e_mail','$phone','$address','$city','$pincode','$state')";
 
             if ($conn->query($sql2) == TRUE) {
 
-                echo json_encode(array("success" => true, "message" => "add customer details successful "));
+                echo json_encode(array("success" => true, "message" => "Customer add successfully👍🏻"));
             } else {
                 echo json_encode(array("success" => false, "message" => "Fill details correctly"));
             }

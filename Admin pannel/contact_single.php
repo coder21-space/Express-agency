@@ -235,11 +235,11 @@ if (!isset($_GET['contact'])) {
 <!-- fontawesome  -->
 <script src="https://kit.fontawesome.com/76d2de9cd5.js" crossorigin="anonymous"></script>
 
-<!--======================== START MAIN SCRIPT ==========================-->
+<!--======================= START MAIN SCRIPT ==========================-->
 <?php include_once 'assets/components/script_start.php' ?>
-<!--======================== END  MAIN SCRIPT ============================-->
-<!-- Vendor -->
+<!--====================== END  MAIN SCRIPT ============================-->
 
+<!-- Vendor -->
 <script>
     var contact_email = "<?php echo $message['email'] ?>";
 </script>

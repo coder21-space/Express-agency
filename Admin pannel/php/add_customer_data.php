@@ -37,8 +37,6 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
 
                 $check_id = "select id from customer where id=$id";
 
-                //check id exist or not
-                // encrypt id
                 if ($check_id) {
                     $query = "DELETE FROM customer where id='$id'";
                     $query_execute = mysqli_query($conn, $query);
@@ -56,10 +54,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 $email = sql_prevent($conn, xss_prevent($_POST['email']));
                 $phone = sql_prevent($conn, xss_prevent($_POST['phone']));
 
-
-                $hash_id = password_hash($id, PASSWORD_DEFAULT);
-                $id_decrypt = password_verify($id, PASSWORD_DEFAULT);
-
+                // sql query
                 $query = "UPDATE `customer` SET `name` = '$name',`email` = '$email',`phone` = '$phone' WHERE `customer`.`id` = $id ";
                 $check_id = "select id from customer where id=$id";
 
@@ -67,10 +62,10 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
 
                     $query_execute = mysqli_query($conn, $query);
                     if ($query_execute) {
-                        echo json_encode(array("success" => true, "message" => " Updated successfully"));
+                        echo json_encode(array("success" => true, "message" => " Updated successfully👍🏻"));
                         die;
                     } else {
-                        echo json_encode(array("success" => false, "message" => "Some error Occured"));
+                        echo json_encode(array("success" => false, "message" => "Some error Occured❌"));
                         die;
                     }
                 }

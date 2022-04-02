@@ -85,7 +85,7 @@ function getdata() {
 }
 
 //contact us and single page delete modals
-$("#delete").click(function (e) {
+$("#confirm").click(function (e) {
   e.preventDefault();
   var id = $("#contact_delete").val();
   var page = "contactus";

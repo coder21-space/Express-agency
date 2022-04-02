@@ -1,9 +1,4 @@
-$("#loader").show();
-$("#inline-editable").hide();
-
 $(document).ready(function () {
-  $("#loader").hide();
-  $("#inline-editable").show();
 
   getdata();
   function getdata() {
@@ -13,7 +8,6 @@ $(document).ready(function () {
       dataType: "json",
       data: { submit: "customer list" },
       success: function (response) {
-        console.log(response);
         output = "";
         output_error = "";
         if (response.success) {
@@ -47,10 +41,7 @@ $(document).ready(function () {
             <td>${contact.name}</td>
             <td>${contact.email}</td>
             <td>${contact.phone}</td>
-            <td>${contact.created_at}</td>
-            
-          
-          
+            <td>${contact.created_at}</td>         
             <td>
                 <div class="d-flex">
                 <a href="customer_single.php?customer=${
@@ -63,11 +54,9 @@ $(document).ready(function () {
                   contact.id
                 } " data-name="${contact.name}" data-email="${contact.email}" data-phone="${contact.phone}"data-bs-target="#updateModal"><i class="fa-solid fa-pen-to-square"></i></button>
                   
-                </div>
-             
+                </div>             
             </td>
-        </tr>
-        `;
+        </tr>`;
     });
 
     return previous;
@@ -110,165 +99,99 @@ $(document).ready(function () {
     });
   });
 
-  $("#insert-form").on("submit", function (e) {
-    e.preventDefault();
-    var name = $("#name").val();
-
-    var error = false;
-
-    if (isEmpty(name)) {
-      error = true;
-      $("#name_error").text("**Name should not be empty");
-    } else {
-      $("#name_error").text("");
-    }
-
-    if (error) {
-      return false;
-    }
-
-    $.ajax({
-      type: "POST",
-      url: "php/customer.php",
-      data: $(this).serialize() + "&submit=true",
-      cache: false,
-      success: function (response) {
-        response = JSON.parse(response);
-        $("#custom-modal").modal("hide");
-        if (response.success === true) {
-          swal({
-            icon: "success",
-            title: "success",
-            text: response.message,
-          });
-          $("#insert-form")[0].reset();
-
-          getdata();
-        } else {
-          for (const error in response.data) {
-            $("#" + error + "_error").text(response.data[error]);
-          }
-        }
-      },
-      error: function (error) {
-        swal({
-          icon: "error",
-          title: "something went wrong",
-          text: response.message,
-        });
-      },
-    });
-  });
-
   // update
-
   $('#update').on("click",function (e) {
     e.preventDefault();
     var id = $("#id").val();
     var name = $("#name").val();
     var email= $("#email").val();
     var phone= $("#phone").val();
-     console.log(id);
      
   
     var error = false;
   
     if (isEmpty(name)) {
         error = true;
-        $('#name_err').text("name should not be blank!");
+        $('#name_error').text("Name should not be blank!");
     } else {
-        $('#name_err').text("");
+        $('#name_error').text("");
     }
     if (isEmpty(email)) {
         error = true;
-        $('#email_err').text("email should not be blank!");
+        $('#email_error').text("Email should not be blank!");
     } else {
-        $('#email_err').text("");
+        $('#email_error').text("");
     }
     if (isEmpty(phone)) {
         error = true;
-        $('#phone_err').text("phone should not be blank!");
+        $('#phone_error').text("Phone should not be blank!");
     } else {
-        $('#phone_err').text("");
+        $('#phone_error').text("");
     }
   
     if (error) {
         return false;
     }
   
-  
     $.ajax({
-        url: "add_customer_data.php",
+        url: "php/add_customer_data.php",
         type: "POST",
         dataType: "json",
-        data: { submit: 'update', id: id, name:name ,email:email, phone:phone},
+        data: { submit: 'update', id: id, name:name, email:email, phone:phone},
         success: function (response) {
-  
-            $('#updateModal').modal('hide');
-            if (response.success === true) {
-                Toastify({
-                    text: response.message,
-                    className: "success",
-                    style: {
-                        background: "#78f76d",
-                    },
-                    close: true,
-                    gravity: top,
-                    duration: 3000,
-                    oldestFirst: true
-                }).showToast();    
-                    getdata();  
-            } else {
-                Toastify({
-                    text: response.message,
-                    className: "info",
-                    style: {
-                        background: "#ff4e21",
-                    }
-                }).showToast();
-            }
-        },
-  
+
+          $('#updateModal').modal('hide');
+          if (response.success === true) {
+              Toastify({
+                  text: response.message,
+                  className: "success",
+                  style: {
+                      background: "#0f9175",
+                  },
+                  close: true,
+                  gravity: top,
+                  duration: 3000,
+                  oldestFirst: true
+              }).showToast();    
+                  getdata();  
+          } else {
+              Toastify({
+                  text: response.message,
+                  className: "info",
+                  style: {
+                      background: "#ff4e21",
+                  }
+              }).showToast();
+          }
+      },  
         error: function (error) {
           swal({
               icon: "error",
               title: "something went wrong",
               text: response.message
           });
-          // $("#submit-contact").show();
-          // $("#loader").hide();
-      },
-  
-        
+      },        
     });
   });
-  
   
   $(document).on('click', '.update', function () {
   
   var id = $(this).attr('data-id');
-  
   var name = $(this).attr('data-name');
-  
   var email= $(this).attr('data-email');
   var phone= $(this).attr('data-phone');
   
   $("#updateModal").modal('show');
   var id = $('#id').val(id);
-  console.log(id);
+
   var name = $('#name').val(name);
   var email = $('#email').val(email);
   var phone = $('#phone').val(phone);
-  
-  
   });
   
   // delete
-
   $("#contact").on("click", ".delete", function () {
     var id = $(this).attr("data-id");
-    // var id =$('#contact_delete').val(id);
-    // console.log(id);
 
     $("#confirm").on("click", function () {
       $.ajax({
