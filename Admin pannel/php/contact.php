@@ -9,7 +9,6 @@ if (!user_check($conn)) {
     die;
 }
 
-
 if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!isset($_POST['submit'])) {
@@ -33,8 +32,8 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                     echo json_encode(array("success" => false, "data" => "data not found"));
                     die;
                 }
-
                 break;
+
             case 'contact-delete':
                 $id = $_POST['id'];
                 $query = "DELETE FROM contact where id='$id'";
@@ -45,8 +44,8 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                     echo json_encode(array("success" => false, "message" => "Some error Occured"));
                 }
                 break;
+
             case 'contact-message':
-                // $id = sql_prevent($conn, xss_prevent($_POST['id']));
                 $id = $_POST['id'];
                 $query = "SELECT message FROM contact where id='$id' ORDER BY created_at DESC";
                 $query_execute = mysqli_query($conn, $query);
@@ -61,6 +60,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                     echo json_encode(array("success" => false, "message" => $message));
                 }
                 break;
+
             case 'previous-contact':
                 $user_email = $_POST['email'];
                 $query = "SELECT id, name, email, subject, created_at FROM contact  WHERE email = '" . $user_email . "' ORDER BY created_at DESC";
@@ -71,13 +71,13 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                     while ($result2 = mysqli_fetch_array($query_execute2, MYSQLI_ASSOC)) {
                         $data2[] = $result2;
                     }
+
                     echo json_encode(array("success" => true, "data" => $data2, 'data-no' => mysqli_num_rows($query_execute2)));
                 } else {
+
                     echo json_encode(array("success" => true, "data" => "NO data found!"));
                 }
-
                 break;
-
 
             default:
                 echo json_encode(array("success" => false, "message" => "Method not found"));

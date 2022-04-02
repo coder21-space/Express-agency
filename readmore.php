@@ -2,9 +2,6 @@
       <?php include_once 'components/head_start.php' ?>
       <!--================END INCLUDE HEAD END PHP=================-->
 
-      <link rel="icon" href="images/icons8-truck-64.png" type="image/x-icon">
-      <title>express agency</title>
-
       <!--================INCLUDE HEAD END PHP=================-->
       <?php include_once 'components/head_end.php' ?>
       <!--================END INCLUDE HEAD END PHP=================-->

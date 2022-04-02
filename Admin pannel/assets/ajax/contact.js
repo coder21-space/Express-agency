@@ -1,38 +1,33 @@
-// $("#loader").show();
-// $("#inline-editable").hide();
 function get_contact_hrtml(data) {
   var output = "";
   data.forEach((contact, index) => {
     output += `
     <tr>
     <td>${index + 1}</td>
-    <td><a href="contactdetails.php?contact=${contact.id}">${contact.name}</td>
+    <td><a href="contact_single.php?contact=${contact.id}">${contact.name}</td>
     <td>${contact.email}</td>
     <td>${contact.subject}</td> 
      <td>${contact.created_at}</td>               
         <td>
-        <button type="button"
-        data-bs-toggle="modal" data-bs-target="#staticBackdrop"class="btn btn-outline-success select" 
-        data-id="${
-          contact.id
-        }"><i class="fa-solid fa-envelope"></i></button><button  type="button"data-bs-toggle="modal" data-bs-target="#con-close-modal"class="btn btn-outline-primary mx-2 "><i class="fa-solid fa-reply"></i></button><button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" data-id="${
-      contact.id
-    }" class="btn delete btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button> </td></tr>`;
+        <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-id="${contact.id}"class="btn btn-outline-success select"><i class="fa-solid fa-envelope"></i></button>
+        <button type="button" data-bs-toggle="modal" data-bs-target="#con-close-modal"class="btn btn-outline-primary mx-1"><i class="fa-solid fa-reply"></i></button>
+        <button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" data-id="${contact.id}"class="btn delete btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
+         </td></tr>`;
   });
   return output;
 }
+
 previous();
 function previous() {
   $("#previous-tab").click(function (e) {
     output = "";
     output_error = "";
     $.ajax({
-      url: "PHP/contact-data.php",
+      url: "PHP/contact.php",
       type: "POST",
       dataType: "json",
       data: { submit: "previous-contact", email: contact_email },
       success: function (response) {
-        // console.log(response);
         if (response.success) {
           $("#contact").html(get_contact_hrtml(response.data));
         } else {
@@ -60,14 +55,13 @@ function getdata() {
   output = "";
   output_error = "";
   $.ajax({
-    url: "PHP/contact-data.php",
+    url: "PHP/contact.php",
     type: "POST",
     dataType: "json",
     data: {
       submit: "contact-list",
     },
     success: function (response) {
-      // console.log(response);
 
       if (response.success === true) {
         $("#contact-list").html(get_contact_hrtml(response.data));
@@ -89,17 +83,15 @@ function getdata() {
     error: function (error) {},
   });
 }
+
 //contact us and single page delete modals
 $("#delete").click(function (e) {
-  // contact-list - all data
-  // single - single data
   e.preventDefault();
-
   var id = $("#contact_delete").val();
   var page = "contactus";
 
   $.ajax({
-    url: "php/contact-data.php",
+    url: "php/contact.php",
     type: "POST",
     dataType: "json",
     data: {
@@ -137,11 +129,11 @@ $(document).on("click", ".delete", function () {
 });
 
 //single page message modals
-$("#inline-editable tbody").on("click", ".select", function () {
+$("#responsive-datatable tbody").on("click", ".select", function () {
   var id = $(this).attr("data-id");
 
   $.ajax({
-    url: "php/contact-data.php",
+    url: "php/contact.php",
     type: "POST",
     dataType: "json",
     data: {
@@ -157,11 +149,11 @@ $("#inline-editable tbody").on("click", ".select", function () {
 });
 
 //contact us page message modals
-$("#datatable-buttons tbody").on("click", ".select", function () {
+$("#responsive-datatable tbody").on("click", ".select", function () {
   var id = $(this).attr("data-id");
 
   $.ajax({
-    url: "php/contact-data.php",
+    url: "php/contact.php",
     type: "POST",
     dataType: "json",
     data: {

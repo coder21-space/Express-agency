@@ -22,6 +22,16 @@
 - [ ]  customer:-update ,delete,404 error,loader,validation
 - [ ]  customer order:-update ,delete,404 error,loader,validation form not complte ,singal page ,payment
 
+
+### Database pending work
+
+- [ ]  dashboard:- chart js 
+- [ ]  contact us:- loader not working ,404 error not working,datatable not working, single contact:-loader not working ,404 error not working,datatable not working,button ui not good
+- [ ]  staff:-update ,delete,404 error,loader,validation ,not working 
+- [ ]  vehical:-update ,delete,404 error,loader,validation, 
+- [ ]  customer:-update ,delete,404 error,loader,validation
+- [ ]  customer order:-update ,delete,404 error,loader,validation form not complte ,singal page ,payment
+
 ### kaushal project work list 14/3/22
 ### Database (transporation logistics managment)
 
@@ -53,3 +63,4 @@
       vehicle_main_list.php
 
 - [ ] make UI all table
+

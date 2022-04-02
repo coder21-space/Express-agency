@@ -1,40 +1,47 @@
+<!-- SINAGL PAGE DATA SHOW -->
 <?php
 
 include 'php/function.php';
 
-if (!isset($_GET['orders'])) {
-    header('location:customer_order_list.php');
+if (!isset($_GET['contact'])) {
+    header('location:contact_list.php');
 } else {
     // check contact is from database
-    $id = $_GET['orders'];
-    $check_id = "SELECT id FROM orders WHERE id = $id";
+    $id = $_GET['contact'];
+    $check_id = "SELECT id FROM contact WHERE id = $id";
     $query = mysqli_query($conn, $check_id);
     $result = mysqli_num_rows($query);
 
     // after get single contact run Sql query
     if ($result > 0) {
 
-        $sql = "SELECT * FROM orders WHERE id = $id";
+        $sql = "SELECT * FROM contact WHERE id = $id";
         $result = mysqli_query($conn, $sql);
         $message = array();
         while ($row = mysqli_fetch_assoc($result)) {
             $message = $row;
         }
     } else {
-        header('location:customer_order_list.php');
+        header('location:contact_list.php');
     }
 }
 ?>
+<!--END SINAGL PAGE DATA SHOW -->
 
-<!--================INCLUDE HEAD START PHP=================-->
+<!--====================== START HTML =========================-->
 <?php include_once 'assets/components/head_start.php' ?>
-<!--================END INCLUDE HEAD END PHP=================-->
+<!--================== END HTML META TAG ======================-->
 
-<link rel="shortcut icon" href="assets/images/favicon.ico">
+<!-- third party css -->
+<link href="assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+<link href="assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+<link href="assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+<link href="assets/libs/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+<!-- third party css end -->
 
-<!--================INCLUDE HEAD START PHP=================-->
+<!--====================== START BODY_END =========================-->
 <?php include_once 'assets/components/head_end.php' ?>
-<!--================END INCLUDE HEAD END PHP=================-->
+<!--====================== END BODY_END ===========================-->
 
 <!-- Topbar Start -->
 <div class="navbar-custom">
@@ -118,7 +125,7 @@ if (!isset($_GET['orders'])) {
         </li>
 
         <li>
-            <h4 class="page-title-main"> customer order information </h4>
+            <h4 class="page-title-main">Contact single</h4>
         </li>
     </ul>
     <div class="clearfix"></div>
@@ -126,9 +133,9 @@ if (!isset($_GET['orders'])) {
 </div>
 <!-- end Topbar -->
 
-<!--================INCLUDE HEAD START PHP=================-->
+<!--====================== START SIDEBAR ===========================-->
 <?php include_once 'assets/components/sidebar.php' ?>
-<!--================END INCLUDE HEAD END PHP=================-->
+<!--======================= END SIDEBAR ============================-->
 
 <!-- ============================================================== -->
 <!-- Start Page Content here -->
@@ -143,7 +150,7 @@ if (!isset($_GET['orders'])) {
                         <div class="row justify-content-between">
                             <div class="col-md-4">
                                 <div class="mt-3 mt-md-0">
-                                    customer order single page
+                                    Contact single page
                                 </div>
                             </div><!-- end col -->
                         </div><!-- end row -->
@@ -162,83 +169,91 @@ if (!isset($_GET['orders'])) {
                             <img src="assets/images/users/staff.png" class="rounded-circle avatar-xl img-thumbnail mb-2" alt="profile-image">
 
                             <div class="text-start">
-                                <p class="text-muted font-13"><strong> Customer id :</strong><?php echo $message['customer_id'] ?></p>
+                                <p class="text-muted font-13"><strong> Name : </strong><?php echo $message['name'] ?></p>
+                                <p class="text-muted font-13"><strong> Email : </strong><?php echo $message['email'] ?></p>
 
-                                <p class="text-muted font-13"><strong>Source add :</strong><?php echo $message['source_add'] ?></p>
-
-                                <p class="text-muted font-13"><strong>Destination add :</strong> <?php echo $message['destination_add'] ?></p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <!-- start row -->
-                <div class="row">
-                    <div class="col-xl-4">
-                        <div class="card">
-                            <div class=" card-body">
-                                <ul class="nav nav-tabs nav-bordered">
-                                    <li class="nav-item">
-                                        <a href="#home-b1" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
-                                            basic details
-                                        </a>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a href="#messages-b1" id="previous-tab" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
-                                            other details
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="tab-content">
-                                    <div class="tab-pane" id="home-b1">
-                                        <p class="text-muted font-13"><strong> Customer id :</strong><?php echo $message['customer_id'] ?></p>
-
-                                        <p class="text-muted font-13"><strong>Start date:</strong><?php echo $message['start_date'] ?></p>
-
-                                        <p class="text-muted font-13"><strong>End date:</strong><?php echo $message['end_data'] ?></p>
-                                    </div>
-
-                                    <div class="tab-pane" id="messages-b1">
-                                        <p class="text-muted font-13"><strong> vehicle type id :</strong><?php echo $message['vehicle_type_id'] ?></p>
-
-                                    </div>
-                                </div>
+                                <p class="text-muted font-13"><strong> Message : </strong> <?php echo $message['message'] ?></p>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#con-close-modal" class="btn btn-outline-primary mx-2 "><i class="fa-solid fa-reply"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--================INCLUDE FOOTER PHP=================-->
-            <?php include_once 'assets/components/footer.php' ?>
-            <!--================END INCLUDE FOOTER PHP=================-->
         </div>
+
+        <!-- Start Content-->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body table-responsive" id="list_error">
+                        <h4 class="mt-0 header-title">Previous contact list</h4>
+                        <p class="text-muted font-14 mb-3">
+                        </p>
+
+                        <table id="responsive-datatable" class="table table-bordered table-bordered dt-responsive nowrap">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Subject</th>
+                                    <th>Created_at</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="contact-list">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Start Content-->
     </div>
 </div>
-
 <!-- ============================================================== -->
 <!-- End Page content -->
 <!-- ============================================================== -->
+
+<!--=================== START FOOTER ===============================-->
+<?php include_once 'assets/components/footer.php' ?>
+<!--===================== END FOOTER ===============================-->
+
+
+
 
 <!--================INCLUDE HEAD START PHP=================-->
 <?php include_once 'assets/components/modals.php' ?>
 <!--================END INCLUDE HEAD END PHP=================-->
 
+<!--======================== START MODALS ==========================-->
+<?php include_once 'assets/components/modals.php' ?>
+<!--======================== END MODALS ============================-->
+
+<!-- fontawesome  -->
 <script src="https://kit.fontawesome.com/76d2de9cd5.js" crossorigin="anonymous"></script>
 
+<!--======================== START MAIN SCRIPT ==========================-->
+<?php include_once 'assets/components/script_start.php' ?>
+<!--======================== END  MAIN SCRIPT ============================-->
 <!-- Vendor -->
-<script src="assets/libs/jquery/jquery.min.js"></script>
-<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/libs/simplebar/simplebar.min.js"></script>
-<script src="assets/libs/node-waves/waves.min.js"></script>
-<script src="assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
-<script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
-<script src="assets/libs/feather-icons/feather.min.js"></script>
 
+<script>
+    var contact_email = "<?php echo $message['email'] ?>";
+</script>
 <script src="assets/ajax/contact.js"></script>
 
-<!-- Table Editable plugin-->
-<script src="assets/libs/jquery-tabledit/jquery.tabledit.min.js"></script>
+
+<!-- third party js -->
+<script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+<script src="assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+<script src="assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
+<!-- third party js ends -->
 
 <!-- Table editable init-->
 <script src="assets/js/pages/tabledit.init.js"></script>
@@ -246,6 +261,9 @@ if (!isset($_GET['orders'])) {
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
 
-<!--================INCLUDE HEAD START PHP=================-->
+<!-- sweet alert -->
+<script src="assets/ajax/sweetalert.js"></script>
+
+<!--======================== START CLOSING HTML ==========================-->
 <?php include_once 'assets/components/script_end.php' ?>
-<!--================END INCLUDE HEAD END PHP=================-->
+<!--======================== END CLOSING HTML ============================-->
