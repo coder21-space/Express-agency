@@ -1,5 +1,5 @@
+<!-- SINAGL PAGE DATA SHOW -->
 <?php
-
 include 'php/function.php';
 
 if (!isset($_GET['staff'])) {
@@ -25,16 +25,17 @@ if (!isset($_GET['staff'])) {
     }
 }
 ?>
+<!--END SINAGL PAGE DATA SHOW -->
 
-<!--================INCLUDE HEAD START PHP=================-->
+
+<!--====================== START HTML =========================-->
 <?php include_once 'assets/components/head_start.php' ?>
-<!--================END INCLUDE HEAD END PHP=================-->
+<!--================== END HTML META TAG ======================-->
 
-<link rel="shortcut icon" href="assets/images/favicon.ico">
-
-<!--================INCLUDE HEAD START PHP=================-->
+<!--====================== START BODY_END =========================-->
 <?php include_once 'assets/components/head_end.php' ?>
-<!--================END INCLUDE HEAD END PHP=================-->
+<!--====================== END BODY_END ===========================-->
+
 
 <!-- Topbar Start -->
 <div class="navbar-custom">
@@ -125,10 +126,9 @@ if (!isset($_GET['staff'])) {
 
 </div>
 <!-- end Topbar -->
-
-<!--================INCLUDE HEAD START PHP=================-->
+!--====================== START SIDEBAR ===========================-->
 <?php include_once 'assets/components/sidebar.php' ?>
-<!--================END INCLUDE HEAD END PHP=================-->
+<!--======================= END SIDEBAR ============================-->
 
 <!-- ============================================================== -->
 <!-- Start Page Content here -->
@@ -151,7 +151,6 @@ if (!isset($_GET['staff'])) {
                 </div><!-- end card -->
             </div><!-- end col-->
         </div><!-- end row -->
-
 
         <!-- start row -->
         <div class="row">
@@ -216,43 +215,27 @@ if (!isset($_GET['staff'])) {
                     </div>
                 </div>
             </div>
-            <!--================INCLUDE FOOTER PHP=================-->
-            <?php include_once 'assets/components/footer.php' ?>
-            <!--================END INCLUDE FOOTER PHP=================-->
+
         </div>
     </div>
 </div>
-
 <!-- ============================================================== -->
 <!-- End Page content -->
 <!-- ============================================================== -->
 
-<!--================INCLUDE HEAD START PHP=================-->
-<?php include_once 'assets/components/modals.php' ?>
-<!--================END INCLUDE HEAD END PHP=================-->
-
+<!--================INCLUDE FOOTER PHP=================-->
+<?php include_once 'assets/components/footer.php' ?>
+<!--================END INCLUDE FOOTER PHP=================-->
+<!-- fontawesome  -->
 <script src="https://kit.fontawesome.com/76d2de9cd5.js" crossorigin="anonymous"></script>
 
-<!-- Vendor -->
-<script src="assets/libs/jquery/jquery.min.js"></script>
-<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/libs/simplebar/simplebar.min.js"></script>
-<script src="assets/libs/node-waves/waves.min.js"></script>
-<script src="assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
-<script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
-<script src="assets/libs/feather-icons/feather.min.js"></script>
-
-<script src="assets/ajax/contact-data.js"></script>
-
-<!-- Table Editable plugin-->
-<script src="assets/libs/jquery-tabledit/jquery.tabledit.min.js"></script>
-
-<!-- Table editable init-->
-<script src="assets/js/pages/tabledit.init.js"></script>
+<!--======================= START MAIN SCRIPT ==========================-->
+<?php include_once 'assets/components/script_start.php' ?>
+<!--====================== END  MAIN SCRIPT ============================-->
 
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
 
-<!--================INCLUDE HEAD START PHP=================-->
+<!--======================== START CLOSING HTML ==========================-->
 <?php include_once 'assets/components/script_end.php' ?>
-<!--================END INCLUDE HEAD END PHP=================-->
+<!--======================== END CLOSING HTML ============================-->

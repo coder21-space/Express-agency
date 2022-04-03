@@ -35,6 +35,11 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             case 'delete':
                 $id = sql_prevent($conn, xss_prevent($_POST['id']));
 
+                //check id exist or not
+                // encrypt id
+                $hash_id = password_hash($id, PASSWORD_DEFAULT);
+                $id_decrypt = password_verify($id, PASSWORD_DEFAULT);
+
                 $check_id = "select id from customer where id=$id";
 
                 if ($check_id) {
@@ -53,6 +58,11 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 $name = sql_prevent($conn, xss_prevent($_POST['name']));
                 $email = sql_prevent($conn, xss_prevent($_POST['email']));
                 $phone = sql_prevent($conn, xss_prevent($_POST['phone']));
+
+                //check id exist or not
+                // encrypt id
+                $hash_id = password_hash($id, PASSWORD_DEFAULT);
+                $id_decrypt = password_verify($id, PASSWORD_DEFAULT);
 
                 // sql query
                 $query = "UPDATE `customer` SET `name` = '$name',`email` = '$email',`phone` = '$phone' WHERE `customer`.`id` = $id ";

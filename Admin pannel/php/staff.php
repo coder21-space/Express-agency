@@ -29,39 +29,24 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 } else {
                     echo json_encode(array("success" => false, "data" => "NO data found!"));
                 }
-
                 break;
 
-                // case 'delete':
-                //     $id = sql_prevent($conn, xss_prevent($_POST['id']));
-
-                //     $check_id = "select id from staff where id=$id";
-
-                //check id exist or not
-                // encrypt id
-                // if ($check_id) {
-                //     $query = "DELETE FROM staff where id='$id'";
-                //     $query_execute = mysqli_query($conn, $query);
-                //     if ($query_execute) {
-                //         echo json_encode(array("success" => true, "message" => "Record Deleted successfully"));
-                //     } else {
-                //         echo json_encode(array("success" => false, "message" => "Some error Occured"));
-                //     }
-                // }
-
-                // break;
             case 'delete':
                 $id = sql_prevent($conn, xss_prevent($_POST['id']));
 
-                $check_id = "select id from vehicle_type where id=$id";
-
                 //check id exist or not
                 // encrypt id
+                $hash_id = password_hash($id, PASSWORD_DEFAULT);
+                $id_decrypt = password_verify($id, PASSWORD_DEFAULT);
+
+                $check_id = "select id from staff where id=$id";
+
+
                 if ($check_id) {
-                    $query = "DELETE FROM vehicle_type where id='$id'";
+                    $query = "DELETE FROM staff where id='$id'";
                     $query_execute = mysqli_query($conn, $query);
                     if ($query_execute) {
-                        echo json_encode(array("success" => true, "message" => "Record Deleted successfully"));
+                        echo json_encode(array("success" => true, "message" => "Record Deleted successfully 👍🏻"));
                     } else {
                         echo json_encode(array("success" => false, "message" => "Some error Occured"));
                     }
@@ -72,26 +57,28 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             case 'update':
                 $id = sql_prevent($conn, xss_prevent($_POST['id']));
                 $name = sql_prevent($conn, xss_prevent($_POST['name']));
-                $email = sql_prevent($conn, xss_prevent($_POST['email']));
-                $phone = sql_prevent($conn, xss_prevent($_POST['phone']));
 
                 $hash_id = password_hash($id, PASSWORD_DEFAULT);
                 $id_decrypt = password_verify($id, PASSWORD_DEFAULT);
 
-                $query = "UPDATE `staff` SET `name` = '$name',`email` = '$email',`phone` = '$phone' WHERE `staff`.`id` = $id ";
+                $query = "UPDATE `staff` SET `name` = '$name' WHERE `staff`.`id` = $id ";
                 $check_id = "select id from staff where id=$id";
 
                 if ($check_id) {
 
                     $query_execute = mysqli_query($conn, $query);
                     if ($query_execute) {
-                        echo json_encode(array("success" => true, "message" => "staff details Updated successfully"));
+                        echo json_encode(array("success" => true, "message" => " Updated successfully👍🏻 "));
                         die;
                     } else {
                         echo json_encode(array("success" => false, "message" => "Some error Occured"));
                         die;
                     }
                 }
+                break;
+            default:
+                echo json_encode(array("success" => false, "message" => "Method not found"));
+                die;
                 break;
         }
     } else {

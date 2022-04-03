@@ -18,17 +18,6 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             $salary = $_POST["salary"];
             $staff_type_id = $_POST["staff_type_id"];
 
-            // echo ($username);
-            // echo ($email);
-            // echo ($password);
-            // echo ($name);
-            // echo ($e_mail);
-            // echo ($phone);
-            // echo ($address);
-            // echo ($city);
-            // echo ($pincode);
-            // echo ($state);
-            // echo ($salary);
             $error = array();
             $new_iv = bin2hex($iv);
 
@@ -38,7 +27,6 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             } else if (preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=|!:,.;]*[-a-z0-9+&@#\/%=|]/i", $username)) {
                 $error['username'] = "username should be valid";
             }
-
             if (empty($email)) {
                 $error['email'] = "email should not be empty";
             } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -49,11 +37,30 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             } else if (!filter_var($e_mail, FILTER_VALIDATE_EMAIL)) {
                 $error['e_mail'] = "email should  be valid";
             }
-
             if (empty($password)) {
                 $error['password'] = "password should not be empty";
             }
-
+            if (empty($name)) {
+                $error['name'] = "Name should not be empty";
+            }
+            if (empty($phone)) {
+                $error['phone'] = "Phone should not be empty";
+            }
+            if (empty($address)) {
+                $error['address'] = "Address should not be empty";
+            }
+            if (empty($city)) {
+                $error['city'] = "city should not be empty";
+            }
+            if (empty($pincode)) {
+                $error['pincode'] = "Pincode should not be empty";
+            }
+            if (empty($state)) {
+                $error['state'] = "State should not be empty";
+            }
+            if (empty($salary)) {
+                $error['salary'] = "Salary should not be empty";
+            }
             if (sizeof($error) > 0) {
                 echo json_encode(array("success" => false, "data" => $error));
                 die;

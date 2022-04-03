@@ -1,38 +1,30 @@
-<!--================INCLUDE HEAD START PHP=================-->
+<!--====================== START HTML =========================-->
 <?php include_once 'assets/components/head_start.php' ?>
-<!--================END INCLUDE HEAD END PHP=================-->
-<!-- App favicon -->
-<link rel="shortcut icon" href="assets/images/favicon.ico" />
+<!--================== END HTML META TAG ======================-->
 
-<!-- third party css -->
-<link href="assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/libs/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+<!-- wizard css  -->
 <link href="assets/css/wizard.css" rel="stylesheet" type="text/css" />
+
+<!-- toastify  -->
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
-<!-- third party css end -->
-<!--================INCLUDE HEAD START PHP=================-->
+<!--====================== START BODY_END =========================-->
 <?php include_once 'assets/components/head_end.php' ?>
-<!--================END INCLUDE HEAD END PHP=================-->
+<!--====================== END BODY_END ===========================-->
 
-<!--================INCLUDE HEAD START PHP=================-->
-
-<?php $header_heading = 'staff type';
+<!--====================== START HEADER ===========================-->
+<?php $header_heading = 'Add staff';
 include_once 'assets/components/header.php';
 ?>
-<!--================END INCLUDE HEAD END PHP=================-->
+<!--======================= END HEADER ============================-->
 
-<!--================INCLUDE HEAD START PHP=================-->
+<!--====================== START SIDEBAR ===========================-->
 <?php include_once 'assets/components/sidebar.php' ?>
-<!--================END INCLUDE HEAD END PHP=================-->
-
+<!--======================= END SIDEBAR ============================-->
 
 <!-- ============================================================== -->
 <!-- Start Page Content here -->
 <!-- ============================================================== -->
-
 <div class="content-page">
     <div class="content">
 
@@ -127,8 +119,7 @@ include_once 'assets/components/header.php';
                                 <div class="form-group">
 
                                     <select name="staff_type_id" id="staff_type_id" class="form-select select " aria-label="Default select example">
-                                        <option value="select staff type">select staff type</option>
-
+                                        <option value="select staff type" disabled selected>select staff type</option>
 
                                         <?php
                                         include 'connection.php';
@@ -138,23 +129,18 @@ include_once 'assets/components/header.php';
                                         if (mysqli_num_rows($query_execute) > 0) {
 
                                             while ($result = mysqli_fetch_array($query_execute)) {
-
                                         ?>
-                                                <!-- <option value="" selected></option> -->
                                                 <option value="<?php echo $result['id'] ?>"><?php echo $result['name'] ?></option>
 
                                         <?php
-
                                             }
                                         }
                                         ?>
 
-
-
                                     </select>
-
                                     <div class="wizard-form-error" id="salary_error"></div>
                                 </div>
+
                                 <div class="form-group clearfix">
                                     <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
                                     <button type="submit" style="margin-left: 0px; border: none; " name="save"><a class="form-wizard-submit float-right">Submit</a></button>
@@ -164,42 +150,34 @@ include_once 'assets/components/header.php';
                     </div>
                 </div>
             </div>
-
         </div> <!-- container -->
-
     </div> <!-- content -->
-
-    <!--================INCLUDE FOOTER PHP=================-->
-    <?php include_once 'assets/components/footer.php' ?>
-    <!--================END INCLUDE FOOTER PHP=================-->
 </div>
+<!-- ============================================================== -->
+<!-- End Page content -->
+<!-- ============================================================== -->
 
+<!--=================== START FOOTER ===============================-->
+<?php include_once 'assets/components/footer.php' ?>
+<!--===================== END FOOTER ===============================-->
 
+<!-- fontawesome -->
 <script src="https://kit.fontawesome.com/76d2de9cd5.js" crossorigin="anonymous"></script>
+<!-- toastify -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+<!--======================== START MAIN SCRIPT ==========================-->
+<?php include_once 'assets/components/script_start.php' ?>
+<!--======================== END  MAIN SCRIPT ============================-->
+
 <!-- Vendor -->
-<script src="assets/libs/jquery/jquery.min.js"></script>
 <script src="assets/ajax/common.js"></script>
 <script src="assets/ajax/add_staff.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/libs/simplebar/simplebar.min.js"></script>
-<script src="assets/libs/node-waves/waves.min.js"></script>
-<!-- <script src="assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
-<script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script> -->
-<script src="assets/libs/feather-icons/feather.min.js"></script>
 <script src="assets/js/pages/wizard.js"></script>
-
-
-<script src="assets/libs/pdfmake/build/pdfmake.min.js"></script>
-<script src="assets/libs/pdfmake/build/vfs_fonts.js"></script>
-
-<!-- third party js ends -->
 
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
 
-
-
-<!--================INCLUDE FOOTER PHP=================-->
+<!--======================== START CLOSING HTML ==========================-->
 <?php include_once 'assets/components/script_end.php' ?>
-<!--================END INCLUDE FOOTER PHP=================-->
+<!--======================== END CLOSING HTML ============================-->

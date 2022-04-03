@@ -99,15 +99,33 @@ $(document).ready(function () {
     });
   });
 
+
+  $("#insert-form").on("submit", function (e) {
+    e.preventDefault();
+    // var name = $("#name").val();
+
+    // var error = false;
+
+    // if (isEmpty(name)) {
+    //   error = true;
+    //   $("#name_error").text("**Name should not be empty");
+    // } else {
+    //   $("#name_error").text("");
+    // }
+
+    if (error) {
+      return false;
+    }
+  });
+
   // update
   $('#update').on("click",function (e) {
     e.preventDefault();
     var id = $("#id").val();
     var name = $("#name").val();
-    var email= $("#email").val();
+    var email = $("#email").val();
     var phone= $("#phone").val();
-     
-  
+
     var error = false;
   
     if (isEmpty(name)) {
@@ -118,7 +136,7 @@ $(document).ready(function () {
     }
     if (isEmpty(email)) {
         error = true;
-        $('#email_error').text("Email should not be blank!");
+        $('#email_error').text("email should not be blank!");
     } else {
         $('#email_error').text("");
     }

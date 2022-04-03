@@ -35,10 +35,14 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             case 'delete':
                 $id = sql_prevent($conn, xss_prevent($_POST['id']));
 
-                $check_id = "select id from vehicle_type where id=$id";
-
                 //check id exist or not
                 // encrypt id
+                $hash_id = password_hash($id, PASSWORD_DEFAULT);
+                $id_decrypt = password_verify($id, PASSWORD_DEFAULT);
+
+                $check_id = "select id from vehicle_type where id=$id";
+
+
                 if ($check_id) {
                     $query = "DELETE FROM vehicle_type where id='$id'";
                     $query_execute = mysqli_query($conn, $query);
@@ -54,6 +58,11 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             case 'update':
                 $id = sql_prevent($conn, xss_prevent($_POST['id']));
                 $name = sql_prevent($conn, xss_prevent($_POST['name']));
+
+                //check id exist or not
+                // encrypt id
+                $hash_id = password_hash($id, PASSWORD_DEFAULT);
+                $id_decrypt = password_verify($id, PASSWORD_DEFAULT);
                 // $query = "UPDATE vehicle_type SET name = '$name', WHERE id ='$id' ";
                 $query = "UPDATE `vehicle_maintenance` SET `name` = '$name' WHERE `vehicle_maintenance`.`id` = $id ";
 

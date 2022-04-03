@@ -34,11 +34,13 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
 
             case 'delete':
                 $id = sql_prevent($conn, xss_prevent($_POST['id']));
+                //check id exist or not
+                // encrypt id
+                $hash_id = password_hash($id, PASSWORD_DEFAULT);
+                $id_decrypt = password_verify($id, PASSWORD_DEFAULT);
 
                 $check_id = "select id from vehicle_type where id=$id";
 
-                //check id exist or not
-                // encrypt id
                 if ($check_id) {
                     $query = "DELETE FROM vehicle_type where id='$id'";
                     $query_execute = mysqli_query($conn, $query);

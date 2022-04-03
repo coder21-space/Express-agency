@@ -55,6 +55,8 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             $pincode = sql_prevent($conn, xss_prevent($_POST['pincode']));
             $state = sql_prevent($conn, xss_prevent($_POST['state']));
 
+
+
             // run sql
             $sql2 = "INSERT INTO `customer` (`name`, `email`, `phone`, `address`, `city`, `pincode`, `state`) VALUES ('$name','$e_mail','$phone','$address','$city','$pincode','$state')";
 

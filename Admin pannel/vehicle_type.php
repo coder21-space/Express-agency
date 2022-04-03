@@ -1,37 +1,34 @@
-<!--================INCLUDE HEAD START PHP=================-->
+<!--====================== START HTML =========================-->
 <?php include_once 'assets/components/head_start.php' ?>
-<!--================END INCLUDE HEAD END PHP=================-->
-<!-- App favicon -->
-<link rel="shortcut icon" href="assets/images/favicon.ico" />
+<!--================== END HTML META TAG ======================-->
 
 <!-- third party css -->
 <link href="assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
 <link href="assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
 <link href="assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
 <link href="assets/libs/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 <!-- third party css end -->
-<!--================INCLUDE HEAD START PHP=================-->
+
+<!-- toastify  -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+<!--====================== START BODY_END =========================-->
 <?php include_once 'assets/components/head_end.php' ?>
-<!--================END INCLUDE HEAD END PHP=================-->
+<!--====================== END BODY_END ===========================-->
 
-<!--================INCLUDE HEAD START PHP=================-->
-
+<!--====================== START HEADER ===========================-->
 <?php $header_heading = 'Vehical type';
 include_once 'assets/components/header.php';
 ?>
-<!--================END INCLUDE HEAD END PHP=================-->
+<!--======================= END HEADER ============================-->
 
-<!--================INCLUDE HEAD START PHP=================-->
+<!--====================== START SIDEBAR ===========================-->
 <?php include_once 'assets/components/sidebar.php' ?>
-<!--================END INCLUDE HEAD END PHP=================-->
-
-
+<!--======================= END SIDEBAR ============================-->
 
 <!-- ============================================================== -->
 <!-- Start Page Content here -->
 <!-- ============================================================== -->
-
 <div class="content-page">
     <div class="content">
 
@@ -55,8 +52,6 @@ include_once 'assets/components/header.php';
                                             <th>Name</th>
                                             <th>created_at</th>
                                             <th>Action</th>
-
-
                                         </tr>
                                     </thead>
 
@@ -69,23 +64,21 @@ include_once 'assets/components/header.php';
                     </div> <!-- end card -->
                 </div> <!-- end col -->
             </div> <!-- end row -->
-
         </div> <!-- container -->
-
     </div> <!-- content -->
-
     <!-- content -->
-
-    <!-- Footer Start -->
-
-    <!--================INCLUDE FOOTER PHP=================-->
-    <?php include_once 'assets/components/footer.php' ?>
-    <!--================END INCLUDE FOOTER PHP=================-->
 </div>
 
+<!--==============================================================-->
+<!-- End Page content -->
+<!-- ============================================================== -->
+
+<!--=================== START FOOTER ===============================-->
+<?php include_once 'assets/components/footer.php' ?>
+<!--===================== END FOOTER ===============================-->
 
 
-<!-- Modal -->
+<!--Add Modal -->
 <div class="modal fade" id="custom-modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -110,7 +103,7 @@ include_once 'assets/components/header.php';
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<!-- Modal -->
+<!--update Modal -->
 <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -136,60 +129,43 @@ include_once 'assets/components/header.php';
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<!-- Danger Alert Modal -->
-<div id="danger-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content modal-filled bg-danger">
-            <div class="modal-body">
-                <div class="text-center">
-                    <i class="dripicons-wrong h1 text-white"></i>
-                    <input type="hidden" id="contact_delete">
-                    <h4 class="mt-2 text-white">This action is dangerous</h4>
 
-                    <p class="mt-3 text-white"> Delete Message
-                        Locate the conversation that has the message you want to delete then tap on it. Touch and hold
-                        the message you want to delete</p>
+<!--======================== START MODALS ==========================-->
+<?php include_once 'assets/components/modals.php' ?>
+<!--======================== END MODALS ============================-->
 
-                    <button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary my-2" data-bs-dismiss="modal" id="confirm">Delete</button>
-                </div>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-
-<!-- ============================================================== -->
-<!-- End Page content -->
-<!-- ============================================================== -->
-</div>
-
+<!-- fontawesome  -->
 <script src="https://kit.fontawesome.com/76d2de9cd5.js" crossorigin="anonymous"></script>
-<!-- Vendor -->
-<script src="assets/libs/jquery/jquery.min.js"></script>
+
+<!-- toastify -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+<!--======================= START MAIN SCRIPT ==========================-->
+<?php include_once 'assets/components/script_start.php' ?>
+<!--====================== END  MAIN SCRIPT ============================-->
+
 <script src="assets/ajax/common.js"></script>
 <script src="assets/ajax/vehicle_type.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/libs/simplebar/simplebar.min.js"></script>
-<script src="assets/libs/node-waves/waves.min.js"></script>
-<!-- <script src="assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
-<script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script> -->
-<script src="assets/libs/feather-icons/feather.min.js"></script>
-<script src="assets/js/pages/wizard.js"></script>
 
 
-<script src="assets/libs/pdfmake/build/pdfmake.min.js"></script>
-<script src="assets/libs/pdfmake/build/vfs_fonts.js"></script>
-
+<!-- third party js -->
+<script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+<script src="assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+<script src="assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
 <!-- third party js ends -->
+
+<!-- Table editable init-->
+<script src="assets/js/pages/tabledit.init.js"></script>
 
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
+
+<!-- sweet alert -->
 <script src="assets/ajax/sweetalert.js"></script>
 
-
-
-<!--================INCLUDE FOOTER PHP=================-->
+<!--======================== START CLOSING HTML ==========================-->
 <?php include_once 'assets/components/script_end.php' ?>
-<!--================END INCLUDE FOOTER PHP=================-->
+<!--======================== END CLOSING HTML ============================-->

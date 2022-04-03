@@ -78,14 +78,13 @@ include_once 'assets/components/header.php';
     <!-- content -->
 </div>
 
-<!-- ============================================================== -->
+<!--==============================================================-->
 <!-- End Page content -->
 <!-- ============================================================== -->
 
 <!--=================== START FOOTER ===============================-->
 <?php include_once 'assets/components/footer.php' ?>
 <!--===================== END FOOTER ===============================-->
-
 
 
 <!--update Modal -->
@@ -99,15 +98,15 @@ include_once 'assets/components/header.php';
             <div class="modal-body">
                 <form id="insert-form">
                     <div class="mb-3">
-                        <input type="hidden" id="id">
+                        <input type="hidden" id="id" name="id">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
                         <span class="text-danger" id="name_error"></span>
                     </div>
 
                     <div class="mb-3">
-                        <input type="hidden" id="id">
-                        <label for="email" class="form-label">Email</label>
+
+                        <label for="" class="form-label">Email</label>
                         <input type="email" class="form-control" id="email" placeholder="Enter email" name="name">
                         <span class="text-danger" id="email_error"></span>
 

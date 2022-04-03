@@ -23,18 +23,26 @@
 - [ ]  customer order:-update ,delete,404 error,loader,validation form not complte ,singal page ,payment
 
 
+
+
 ### Database pending work
 
 - [ ]  dashboard:- chart js 
 
 - [ ]  contact us:- loader not working ,404 error not working,datatable not working, single contact:-loader not working ,404 error not working,datatable not working,button ui not good
 
-- [ ]  customer: loader not working ,404 error not working ,update email error,not working customer single:-loader not working ,404 error not working,datatable not working
+- [ ]  customer: loader not working ,404 error not working ,update email error, customer single:-loader not working ,404 error not working,datatable not working
 
-- [ ]  staff:-update ,delete,404 error,loader,validation ,not working 
+- [ ]  staff common:-loader not working ,404 error not working staff single:-common
+- [ ]  staff type:-update not working
+- [ ]  Add staff:-validation not working
+- [ ]  staff list:-update email not working
+
 - [ ]  vehical:-update ,delete,404 error,loader,validation, 
 
 - [ ]  customer order:-update ,delete,404 error,loader,validation form not complte ,singal page ,payment
+
+- [ ] any form submit button not show error
 
 ### kaushal project work list 14/3/22
 ### Database (transporation logistics managment)
