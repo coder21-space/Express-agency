@@ -5,30 +5,27 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_POST["save"])) {
             $iv = openssl_random_pseudo_bytes(16);
-
-            $vehicle_id = $_POST["vehicle_id"];
+            $vehical_id = $_POST["vehical_id"];
             $amount = $_POST["amount"];
             $description = $_POST["description"];
 
-
-            // echo ($vehicle_id);
-            // echo ($amount);
-            // echo ($description);
-
+            echo ($vehical_id);
+            echo ($amount);
+            echo ($description);
             $error = array();
 
 
             // validate data
-
-            if (empty($vehicle_id)) {
-                $error['vehicle_id'] = "vehicle id should not be empty";
-            }
+            // if (empty($vehical_id)) {
+            //     $error['vehical_id'] = "vehical id should not be empty";
+            // }
             if (empty($amount)) {
-                $error['amount'] = "amount  should not be empty";
+                $error['amount'] = "Amount  should not be empty";
             }
             if (empty($description)) {
-                $error['description'] = "description should not be empty";
+                $error['description'] = "Description  should not be empty";
             }
+
 
             if (sizeof($error) > 0) {
                 echo json_encode(array("success" => false, "data" => $error));
@@ -36,28 +33,21 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             }
 
             // prevent sql and xss
-
-
-            $vehicle_id = sql_prevent($conn, xss_prevent($_POST['vehicle_id']));
+            // $vehical_id  = sql_prevent($conn, xss_prevent($_POST['vehical_id ']));
             $amount = sql_prevent($conn, xss_prevent($_POST['amount']));
             $description = sql_prevent($conn, xss_prevent($_POST['description']));
 
 
 
-            //encryption of password
-
             // run sql
 
-
-
-
-            $sql2 = "INSERT INTO `vehicle_maintenance` (`vehicle_id`, `amount`, `description`) VALUES ('$vehicle_id','$amount','$description')";
+            $sql2 = "INSERT INTO `vehicle_maintenance` (`vehical_id`, `amount`, `description`) VALUES ('$vehical_id','$amount','$description')";
 
             if ($conn->query($sql2) == TRUE) {
 
-                echo json_encode(array("success" => true, "message" => "add vehicle maintenance details successful "));
+                echo json_encode(array("success" => true, "message" => "add data successfully👍🏻 "));
             } else {
-                echo json_encode(array("success" => false, "message" => "Fill details correctly"));
+                echo json_encode(array("success" => false, "message" => "Fill details correctly❌"));
             }
         }
     }

@@ -95,8 +95,6 @@ include_once 'assets/components/header.php';
                                     <div class="wizard-form-error" id="load_capacity_error"></div>
                                 </div>
                                 <div class="form-group">
-                                    <!-- <input type="text" class="form-control wizard-required" name="	vehical_type_id" id="	vehical_type_id">
-                                    <label for="username" class="wizard-form-text-label">vehicle type id</label> -->
                                     <select name="vehicle_type_id" id="vehicle_type_id" class="form-select select " aria-label="Default select example">
                                         <option value="select vehical type" disabled selected>select vehical type</option>
 
@@ -106,13 +104,10 @@ include_once 'assets/components/header.php';
                                         $query_execute = mysqli_query($conn, $query);
                                         if (mysqli_num_rows($query_execute) > 0) {
                                             while ($result = mysqli_fetch_array($query_execute)) {  ?>
-
-                                                <!-- <option value="" selected></option> -->
-                                                <option value="<?php echo $result['id'] ?>"><?php echo $result['name'] ?></option>
+                                                <option value="<?php echo $result['id'] ?>"><?php echo $result['vehical_name'] ?></option>
                                         <?php                                       }
                                         }
                                         ?>
-
                                     </select>
                                     <div class="wizard-form-error" id="vehicle_type_id_error"></div>
                                 </div>

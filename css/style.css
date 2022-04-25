@@ -1729,7 +1729,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 /* Banner area css
 ===================================================================== */
 .banner_area {
-  background: url() no-repeat scroll center center;
+  background: url(../images/bg.jpg) no-repeat scroll center center;
   background-size: cover;
   position: relative;
   z-index: 2;

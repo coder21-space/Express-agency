@@ -1,9 +1,4 @@
-// $("#loader").show();
-// $("#inline-editable").hide();
-
 $(document).ready(function () {
-  // $("#loader").hide();
-  // $("#inline-editable").show();
 
   getdata();
   function getdata() {
@@ -13,24 +8,24 @@ $(document).ready(function () {
       dataType: "json",
       data: { submit: "vehicle_maintenance_list" },
       success: function (response) {
-        console.log(response);
+     
         output = "";
         output_error = "";
         if (response.success) {
           var output = get_contactlist_html(response.data);
           $("#contact").html(output);
         } else {
-          //           output_error += `
-          // <div class="card">
-          // <div class="card-body p-4">
-          //     <div class="text-center">
-          //         <h1 class="text-error">OOPS!</h1>
-          //         <h3 class="mt-3 mb-2">Page not Found</h3>
-          //         <p class="text-muted mb-3">NO INFORMATION FOUND</p>
-          //         <a href="dashboard.php" class="btn btn-danger waves-effect waves-light"><i class="fas fa-home me-1"></i> Back to Home</a>
-          //     </div>
-          // </div>
-          // </div>`;
+          // output_error += `
+          // // <div class="card">
+          // // <div class="card-body p-4">
+          // //     <div class="text-center">
+          // //         <h1 class="text-error">OOPS!</h1>
+          // //         <h3 class="mt-3 mb-2">Page not Found</h3>
+          // //         <p class="text-muted mb-3">NO INFORMATION FOUND</p>
+          // //         <a href="dashboard.php" class="btn btn-danger waves-effect waves-light"><i class="fas fa-home me-1"></i> Back to Home</a>
+          // //     </div>
+          // // </div>
+          // // </div>`;
         }
         // $("#contact_error").html(output_error);
       },
@@ -42,55 +37,55 @@ $(document).ready(function () {
     previous = "";
     contacts.forEach((contact, index) => {
       previous += `
-      <tr>
-          <td>${index + 1}</td>
-          <td>${contact.vehicle_id}</td>
-          <td>${contact.amount}</td>
-          <td>${contact.description}</td>
-          <td>${contact.created_at}</td>
-
-          <td>
-              <div class="d-flex">
-              <a href="vehicle_maintenance_single.php?vehicle_maintenance=${
-                contact.id
-              }"><button type="button"class="btn btn-outline-primary  mx-2 "><i class="fa-solid fa-location-crosshairs"></i></button></a>  
-              <button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" data-id=${
-                contact.id
-              }  class="btn delete btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button>
-              <button type="button" class=" update mx-2 btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-id=${
-                contact.id
-              } data-name=${
-        contact.name
+        <tr>
+            <td>${index + 1}</td>
+            <td>${contact.name}</td>
+            <td>${contact.vehical_no}</td>
+            <td>${contact.created_at}</td>
+            
+          
+          
+            <td>
+                <div class="d-flex">
+                <a href="vehicle_maintenance_single.php?vehicle_maintenance_single=${
+                  contact.id
+                }"><button type="button"class="btn btn-outline-primary  mx-2 "><i class="fa-solid fa-location-crosshairs"></i></button></a>   
+                <button type="button" data-bs-toggle="modal" data-bs-target="#danger-alert-modal" data-id=${
+                  contact.id
+                }  class="btn delete btn-outline-danger "><i class="fa-solid fa-trash-can"></i></button>
+                <button type="button" class=" update mx-2 btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-id=${
+                  contact.id
+                } data-amount=${
+        contact.amount
+      } data-description=${
+        contact.description
       } data-bs-target="#updateModal"><i class="fa-solid fa-pen-to-square"></i></button>
-
-              </div>
-
-          </td>
-      </tr>
-      `;
+                  
+                </div>
+             
+            </td>
+        </tr>
+        `;
     });
 
     return previous;
   }
 
   $("#previous-data").on("click", function () {
-    $("#loader").hide();
-    $("#datatable").show();
-
     previous_error = "";
 
     $.ajax({
-      url: "php/vehicle_maintenance_fetch.php",
+      url: "vehicle_maintenance_fetch.php",
       type: "POST",
       dataType: "json",
       data: { submit: "email", email: email },
       success: function (response) {
-        console.log(response);
+
         if (!response.success) {
           var contact_list = get_contactlist_html(response.data);
           $("#previous-contact").html(contact_list);
         } else {
-          //           previous_error += `
+          // previous_error += `
           // <div class="card">
           // <div class="card-body p-4">
           //     <div class="text-center">
@@ -110,31 +105,35 @@ $(document).ready(function () {
     });
   });
 
-  $("#insert-form").on("submit", function (e) {
-    e.preventDefault();
-    // var name = $("#name").val();
-
+// add data modals
+$("#staff_form").on("submit", function (e) {
+  e.preventDefault();
+    // var amount = $("#amount").val();
+    // var description = $("#description").val();
     // var error = false;
 
-    // if (isEmpty(name)) {
+    // if (isEmpty(amount)) {
     //   error = true;
-    //   $("#name_error").text("**Name should not be empty");
+    //   $("#amount_error").text("**Amount should not be empty");
     // } else {
-    //   $("#name_error").text("");
+    //   $("#amount_error").text("");
     // }
-
+    // if (isEmpty(description)) {
+    //   error = true;
+    //   $("#description_error").text("**Description should not be empty");
+    // } else {
+    //   $("#description_error").text("");
+    // }
     // if (error) {
     //   return false;
     // }
+
     $.ajax({
       type: "POST",
       url: "php/vehicle_maintenance.php",
       data: $(this).serialize() + "&save=true",
       cache: false,
       success: function (response) {
-        // $("#btn").show();
-        // $("#contact_submit_loader").hide();
-      
         response = JSON.parse(response);
   
         if (response.success === true) {
@@ -156,97 +155,96 @@ $(document).ready(function () {
           title: "something went wrong",
           text: response.message,
         });
-        // $("#btn").show();
-        // $("#contact_submit_loader").hide();
       },
+    });
+  });
+
+  // update
+  $('#update').on("click",function (e) {
+    e.preventDefault();
+    var id = $("#id").val();
+    var amount = $("#amount").val();
+    var description= $("#description").val();
+    var error = false;
+  
+    if (isEmpty(amount)) {
+        error = true;
+        $('#amount_error').text("Amount should not be blank!");
+    } else {
+        $('#amount_error').text("");
+    }
+    if (isEmpty(description)) {
+        error = true;
+        $('#description_error').text("Description number should not be blank!");
+    } else {
+        $('#description_error').text("");
+    }
+  
+    if (error) {
+        return false;
+    }
+  
+    $.ajax({
+        url: "php/vehicle_maintenance_fetch.php",
+        type: "POST",
+        dataType: "json",
+        data: { submit: 'update', id: id, amount:amount, vehical_no:vehical_no},
+        success: function (response) {
+
+          $('#updateModal').modal('hide');
+          if (response.success === true) {
+              Toastify({
+                  text: response.message,
+                  className: "success",
+                  style: {
+                      background: "#0f9175",
+                  },
+                  close: true,
+                  gravity: top,
+                  duration: 3000,
+                  oldestFirst: true
+              }).showToast();    
+                  getdata();  
+          } else {
+              Toastify({
+                  text: response.message,
+                  className: "info",
+                  style: {
+                      background: "#ff4e21",
+                  }
+              }).showToast();
+          }
+      },  
+        error: function (error) {
+          swal({
+              icon: "error",
+              title: "something went wrong",
+              text: response.message
+          });
+      },        
     });
   });
   
-  update;
+  $(document).on('click', '.update', function () {
+  
+  var id = $(this).attr('data-id');
+  var amount = $(this).attr('data-amount');
+  var description= $(this).attr('data-description');
+  
+  $("#updateModal").modal('show');
+  var id = $('#id').val(id);
 
-  $("#update-btn").click(function (e) {
-    e.preventDefault();
-    var id = $("#id").val();
-    var name = $("#name").val();
-    console.log(name);
-    var error = false;
-
-    if (isEmpty(name)) {
-      error = true;
-      $("#name_error").text("name should not be blank!");
-    } else {
-      $("#name_error").text("");
-    }
-
-    if (error) {
-      return false;
-    }
-
-    $.ajax({
-      url: "php/vehicle_type.php",
-      type: "POST",
-      dataType: "json",
-      data: { submit: "update", id: id, name: name },
-      success: function (response) {
-        $("#updateModal").modal("hide");
-        if (response.success === true) {
-          Toastify({
-            text: response.message,
-            className: "success",
-            style: {
-              background: "#78f76d",
-            },
-            close: true,
-            gravity: top,
-            duration: 3000,
-            oldestFirst: true,
-          }).showToast();
-          getdata();
-        } else {
-          Toastify({
-            text: response.message,
-            className: "info",
-            style: {
-              background: "#ff4e21",
-            },
-          }).showToast();
-        }
-      },
-
-      error: function (error) {
-        swal({
-          icon: "error",
-          title: "something went wrong",
-          text: response.message,
-        });
-        $("#submit-contact").show();
-        $("#loader").hide();
-      },
-    });
+  var amount = $('#amount').val(amount);
+  var description = $('#description').val(description);
   });
-
-  $(document).on("click", ".update", function () {
-    var id = $(this).attr("data-id");
-
-    var name = $(this).attr("data-name");
-
-    $("#updateModal").modal("show");
-    var id = $("#id").val(id);
-    alert(id);
-    var name = $("#name").val(name);
-  });
-
- 
+  
   // delete
-
   $("#contact").on("click", ".delete", function () {
     var id = $(this).attr("data-id");
-    // var id =$('#contact_delete').val(id);
-    // console.log(id);
 
     $("#confirm").on("click", function () {
       $.ajax({
-        url: "php/vehicle_type.php",
+        url: "php/vehicle_maintenance_fetch.php",
         type: "POST",
         dataType: "json",
         data: { submit: "delete", id: id },
@@ -271,4 +269,3 @@ $(document).ready(function () {
     });
   });
 });
-

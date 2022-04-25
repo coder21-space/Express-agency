@@ -46,15 +46,6 @@
             </div>
           </div>
           <div class="col-sm-4">
-            <div class="single-contact wow fadeInUp" data-wow-delay=".4s">
-              <div class="contact-icon">
-                <i class="fa fa-phone"></i>
-              </div>
-              <h2>contact number:</h2>
-              <p><a href="callto:someone@example.com">+234567890</a></p>
-            </div>
-          </div>
-          <div class="col-sm-4">
             <div class="single-contact wow fadeInUp" data-wow-delay=".6s">
               <div class="contact-icon">
                 <i class="fa fa-envelope"></i>
@@ -63,6 +54,16 @@
               <p><a href="mailto:someone@example.com">xyz@gmail.com</a></p>
             </div>
           </div>
+          <div class="col-sm-4">
+            <div class="single-contact wow fadeInUp" data-wow-delay=".4s">
+              <div class="contact-icon">
+                <i class="fa fa-phone"></i>
+              </div>
+              <h2>contact number:</h2>
+              <p><a href="callto:someone@example.com">+234567890</a></p>
+            </div>
+          </div>
+
         </div>
         <div class="row contact-form-design-area">
           <div class="col-lg12 col-md-12 col-xxl">

@@ -119,24 +119,13 @@ include_once 'assets/components/header.php';
                                         $query_execute = mysqli_query($conn, $query);
                                         if (mysqli_num_rows($query_execute) > 0) {
                                             while ($result = mysqli_fetch_array($query_execute)) {  ?>
-                                                <option value="<?php echo $result['id'] ?>"><?php echo $result['name'] ?></option>
+                                                <option value="<?php echo $result['id'] ?>"><?php echo $result['vehical_name'] ?></option>
                                         <?php                                       }
                                         }
                                         ?>
                                     </select>
                                     <div class="wizard-form-error" id="vehical_type_id_error"></div>
                                 </div>
-
-                                <!-- <div class="form-group">
-                                    <select class="form-control wizard-required" name="status" id="status">
-                                        <option value="" disabled selected>status</option>
-                                        <option>failed</option>
-                                        <option>complete</option>
-                                        <option>panding</option>
-                                    </select>
-                                    <div class="wizard-form-error" id="	status_error"></div>
-                                </div> -->
-
 
                                 <div class="form-group clearfix">
                                     <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
